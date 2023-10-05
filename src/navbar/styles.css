@@ -1,0 +1,199 @@
+body {
+  color: #4c4b5b;
+  font-family: "Euclid Circular A", "Poppins";
+  padding-top: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a {
+  cursor: pointer;
+  transition: 0.3s;
+  color: inherit;
+  font-weight: 600;
+}
+
+/* Estilos para el menú de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  width: 100%;
+  height: 72px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #2c8b64;
+  color: #f9f9ff;
+  transition: 0.3s;
+  z-index: 999999;
+}
+
+/* Estilos para el menú de navegación visible */
+.navbar.visible {
+  top: 0;
+  transform: translateY(0);
+}
+
+.navbar > img {
+  width: 150px;
+  height: 70px;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-items > a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.96);
+  height: 72px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-items > a:hover {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+/* Estilos para el botón de menú desplegable */
+.menu-toggle {
+  display: none; /* Ocultar el botón en pantallas grandes */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  margin: 5px auto;
+  transition: 0.4s;
+}
+
+/* Estilos para las secciones */
+h2 {
+  font-size: 20px;
+  margin: 0 0 4px;
+  cursor: default;
+}
+
+li {
+  list-style: none;
+}
+
+
+section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 100px 60px;
+}
+
+section.shaded {
+  background: #f9f9ff;
+}
+
+section > img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  padding: 50px;
+  background: #f9f9ff;
+}
+
+section.shaded > img {
+  padding: 20px;
+}
+
+section > p {
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .nav-items {
+    flex: 1;
+    justify-content: flex-start;
+  }
+  
+  .nav-items ul {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .nav-items > a {
+    height: auto;
+  }
+}
+
+/* Estilos para el menú de navegación en pantallas pequeñas */
+@media (max-width: 767px) {
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+  
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: -120px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin: 5px auto;
+    transition: 0.4s;
+  }
+  
+  .nav-items {
+    display: none;
+    background: #2c8b64;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    list-style: none;
+  }
+  
+  .nav-items.visible {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-items > a {
+    height: auto;
+  }
+}

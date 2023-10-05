@@ -1,0 +1,56 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "tituloH2": "Cómoda Feria",
+            "descripcionA": "Cómoda Feria es un principio una modesta cómoda que una abuela regala a su preciosa nieta, cuando se independiza con su novio. Cuando su abuela falta, es su mayor tesoro.",
+            "descripcionB": "De ahí escogí un precioso papel de seda de la casa Mint by Michelle (de la cual soy distribuidora), para que siempre tenga la alegría  al contemplarla de una niña, y la variedad de verdes es por su amor por la naturaleza.",
+            "imagenes": [
+                "https://i.ibb.co/KyP33QQ/20211122-103524.jpg",
+                "https://i.ibb.co/RNW1XQt/IMG-20211109-101138-079.jpg",
+                "https://i.ibb.co/Ky6KJdy/IMG-20211122-103839-463.jpg",
+                "https://i.ibb.co/tz9zD3P/Whats-App-Image-2023-09-24-at-17-03-00.jpg"
+            ],
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 2,
+            "tituloH2": "BANQUETA IKEA",
+            "descripcionA": "Banqueta Ikea, es la archiconocida banqueta de esa famosísima tienda, a la que en un momento de locura romántica le hice un Decoupage y Envejecidos  (técnicas) con globos antiguos, y reconvertirla en un pequeño mueble auxiliar,",
+            "descripcionB": "Mesita / Banqueta",
+            "imagenes": [
+                "https://i.ibb.co/G3KRzDm/20220121-093804.jpg",
+                "https://i.ibb.co/S3KcGbG/20220121-094417.jpg",
+                "https://i.ibb.co/HG8zmNp/Screenshot-20210404-134044-Chrome.jpg",
+                "https://i.ibb.co/Tk55bLD/Whats-App-Image-2023-09-24-at-17-04-23.jpg"
+            ],
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 3,
+            "tituloH2": "MUEBLE JOYA LILIBETH",
+            "descripcionA": "Lilibeth desde que me la encontré al lado de un contenedor, vi que era diferente y muy especial. Interpreté los pasos según me lo iba pidiendo el propio mueble",
+            "descripcionB": "Un espectacular Papel,  y lo más destacado es que, en el momento que la creo en Junio 2021, las texturas/ relieves ( especialmente creado desde cero), en los muebles, no se suele dar, y ahora es tendencia",
+            "imagenes": [
+                "https://i.ibb.co/6F76cVh/20220623-104431.jpg",
+                "https://i.ibb.co/RNNtwwK/20220623-104453.jpg",
+                "https://i.ibb.co/MNSvrDM/20220623-105104.jpg",
+                "https://i.ibb.co/1sP2DZT/Whats-App-Image-2023-09-24-at-17-15-55.jpg"
+            ],
+            "curiosidad": "El mueble Lilibeth, fue el que me hizo ganar un concurso nacional de la famosa cadena CanalDecasa, donde hice mi propio programa de televisión! Programa que aún se puede ver en diferentes plataformas de TV."
+        },
+        {
+            "id": 4,
+            "tituloH2": "Proximamente...",
+            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "imagenes": [
+                "https://via.placeholder.com/150",
+                "https://via.placeholder.com/150",
+                "https://via.placeholder.com/150",
+                "https://via.placeholder.com/150"
+            ],
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        }
+    ]
+}

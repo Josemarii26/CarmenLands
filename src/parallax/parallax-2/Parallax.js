@@ -1,17 +1,19 @@
 import "./styles.css";
 
-import html from "./html.png";
-import css from "./css.png";
-import es6 from "./es6.png";
-import react from "./react.png";
+
+import { MyComponent } from "./MyComponent";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-import logo from "./logo.svg";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import products from "./products.json";
+
+import { Overlay } from "./Overlay";
+
 
 export const Parallax = () => {
+
   const containerRef = useRef();
 
   useEffect(() => {
@@ -30,62 +32,26 @@ export const Parallax = () => {
     });
   }, []);
 
+
   return (
     <>
-      <nav>
-        <img src={logo} />
-        <a href="#"> Home </a>
-        <a href="#"> Skills </a>
-        <a href="#"> Contact </a>
-      </nav>
       <section className="banner">
         <div className="banner-content">
-          <h2>Hi, I'm Peter</h2>
-          <h3>Frontend Developer</h3>
+          <h2>Hola, soy Carmen!</h2>
+          <h3>Artista creativa y curiosa</h3>
+          
         </div>
       </section>
       <div ref={containerRef} className="container">
-        <section className="description panel blue">
-          <img src={html} />
-          <h2>HTML</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
-            labore eius cum perferendis consectetur culpa laboriosam quam, sed
-            ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
-            deleniti eaque sed.
-          </p>
-        </section>
-        <section className="panel red">
-          <img src={css} />
-          <h2>CSS</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
-            labore eius cum perferendis consectetur culpa laboriosam quam, sed
-            ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
-            deleniti eaque sed.
-          </p>
-        </section>
-        <section className="description panel blue">
-          <img src={es6} />
-          <h2>ES6</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
-            labore eius cum perferendis consectetur culpa laboriosam quam, sed
-            ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
-            deleniti eaque sed.
-          </p>
-        </section>
-        <section className="panel red">
-          <img src={react} />
-          <h2>React JS</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
-            labore eius cum perferendis consectetur culpa laboriosam quam, sed
-            ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
-            deleniti eaque sed.
-          </p>
-        </section>
+        {products.products.map((product) => (
+          <section className="panel blue" key={product.id}>
+            <MyComponent {...product} />
+          </section>
+        ))}
+
+
       </div>
+
       <section className="footer">
         <h2>Contact</h2>
         <form>
@@ -93,6 +59,7 @@ export const Parallax = () => {
 
           <textarea rows={6} placeholder="Message" />
           <button>SUBMIT</button>
+          
         </form>
       </section>
     </>
