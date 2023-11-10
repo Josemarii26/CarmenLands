@@ -56,6 +56,14 @@ export const Navbar = () => {
     setIsNavbarVisible2(!isNavbarVisible2);
   };
 
+  const handleHomeLinkClick = () => {
+    if (window.location.pathname === "/") {
+      setTimeout(() => {
+        window.location.reload(); // Recarga la ventana después de 1 segundo
+      }, 1800);
+    }
+  };
+
   return (
     <nav className={`navbar ${isNavbarVisible ? 'visible' : ''}`}>
       <img src={logo} alt="Logo" />
@@ -67,13 +75,13 @@ export const Navbar = () => {
       <div className={`nav-items ${isNavbarVisible2 ? 'visible' : ''}`}>
         
         <ul>
-          <li>
-            <WavyLink to="/" color="#ff44fd">
+          <li onClick={handleHomeLinkClick}>
+            <WavyLink to="/" color="#c4dd39" >
               Soy Carmen!
             </WavyLink>
           </li>
           <li>
-            <WavyLink direction="up" to="/about" color="#8f44fd">
+            <WavyLink direction="up" to="/tienda" color="#45db52">
               Tienda
             </WavyLink>
           </li>

@@ -2,7 +2,7 @@
     "products": [
         {
             "id": 1,
-            "tituloH2": "Cómoda Feria",
+            "tituloH2": "COMODA FERIA 🎡",
             "descripcionA": "Cómoda Feria es un principio una modesta cómoda que una abuela regala a su preciosa nieta, cuando se independiza con su novio. Cuando su abuela falta, es su mayor tesoro.",
             "descripcionB": "De ahí escogí un precioso papel de seda de la casa Mint by Michelle (de la cual soy distribuidora), para que siempre tenga la alegría  al contemplarla de una niña, y la variedad de verdes es por su amor por la naturaleza.",
             "imagenes": [
@@ -15,7 +15,7 @@
         },
         {
             "id": 2,
-            "tituloH2": "BANQUETA IKEA",
+            "tituloH2": "BANQUETA IKEA 🎈",
             "descripcionA": "Banqueta Ikea, es la archiconocida banqueta de esa famosísima tienda, a la que en un momento de locura romántica le hice un Decoupage y Envejecidos  (técnicas) con globos antiguos, y reconvertirla en un pequeño mueble auxiliar,",
             "descripcionB": "Mesita / Banqueta",
             "imagenes": [
@@ -28,7 +28,7 @@
         },
         {
             "id": 3,
-            "tituloH2": "MUEBLE JOYA LILIBETH",
+            "tituloH2": "MUEBLE JOYA LILIBETH 🏅",
             "descripcionA": "Lilibeth desde que me la encontré al lado de un contenedor, vi que era diferente y muy especial. Interpreté los pasos según me lo iba pidiendo el propio mueble",
             "descripcionB": "Un espectacular Papel,  y lo más destacado es que, en el momento que la creo en Junio 2021, las texturas/ relieves ( especialmente creado desde cero), en los muebles, no se suele dar, y ahora es tendencia",
             "imagenes": [
@@ -41,16 +41,100 @@
         },
         {
             "id": 4,
-            "tituloH2": "Proximamente...",
+            "tituloH2": "COMODA JARDIN DE CARMEN 🌿",
             "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
             "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
             "imagenes": [
-                "https://via.placeholder.com/150",
-                "https://via.placeholder.com/150",
-                "https://via.placeholder.com/150",
-                "https://via.placeholder.com/150"
+                "https://i.ibb.co/JqYrsrD/20220403-125107.jpg",
+                "https://i.ibb.co/ZMV8nYQ/20220403-120253.jpg",
+                "https://i.ibb.co/yyfFXPb/20220303-134758.jpg"
             ],
             "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 5,
+            "tituloH2": "COMODA MAYO 🌹",
+            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "imagenes": [
+                "https://i.ibb.co/48BwK7d/Whats-App-Image-2023-09-24-at-17-03-30.jpg",
+                "https://i.ibb.co/3M3zhzW/20220212-105723.jpg",
+                "https://i.ibb.co/0FqpgJY/20220212-110307.jpg",
+                "https://i.ibb.co/Lx80btr/20220212-105507.jpg"
+            ],
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 6,
+            "tituloH2": "MESITA GRETA 🐝",
+            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "imagenes": [
+                "https://i.ibb.co/SK352b2/IMG-20211107-104351-834.jpg",
+                "https://i.ibb.co/ScRKmpm/Whats-App-Image-2023-09-24-at-17-05-41.jpg",
+                "https://i.ibb.co/mBtJYnZ/Whats-App-Image-2023-09-24-at-17-06-36.jpg"
+            ],
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 7,
+            "tituloH2": "MESA BAJA SALON TARA 🪘",
+            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "imagenes": [
+                "https://i.ibb.co/58WF62d/Whats-App-Image-2023-09-24-at-17-08-04.jpg"
+            ],
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 8,
+            "tituloH2": "MESITA RONDENIA 🧘",
+            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "imagenes": [
+                "https://i.ibb.co/q1n1442/Screenshot-20221011-173600-Facebook.jpg",
+                "https://i.ibb.co/5cCRsjQ/Whats-App-Image-2023-09-24-at-17-09-23.jpg"
+            ],
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 9,
+            "tituloH2": "MUEBLE BAJO LAVABO AMAPOLAS 🌼",
+            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "imagenes": [
+                "https://i.ibb.co/r49x55K/20220807-200014.jpg",
+                "https://i.ibb.co/rQVwXJ0/Screenshot-20220711-085513-Instagram.jpg",
+                "https://i.ibb.co/17XWDBn/Whats-App-Image-2023-09-24-at-17-18-24.jpg"
+            ],
+
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 10,
+            "tituloH2": "SILLA PRIMAVERA 🪑",
+            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "imagenes": [
+                "https://i.ibb.co/xstJbzj/Whats-App-Image-2023-08-25-at-18-40-46.jpg",
+                "https://i.ibb.co/DzmpPrc/FB-IMG-1629018293638.jpg",
+                "https://i.ibb.co/82pWgLD/Whats-App-Image-2023-09-24-at-16-46-49.jpg"
+            ],
+
+            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        },
+        {
+            "id": 11,
+            "tituloH2": "🚧 SEGUIMOS TRABAJANDO EN ELLO ⚒️",
+            "descripcionA": "Terminar un proyecto de ste tipo requiere mucha paciencia y dedicación, por lo que estamos trabajando en ello para poder ofrecerte más productos lo antes posible.",
+            "descripcionB": "Echa un vistazo de vez en cuando para ver las novedades.",
+            "imagenes": [
+                "https://i.ibb.co/xstJbzj/Whats-App-Image-2023-08-25-at-18-40-46.jpg",
+                "https://i.ibb.co/DzmpPrc/FB-IMG-1629018293638.jpg",
+                "https://i.ibb.co/82pWgLD/Whats-App-Image-2023-09-24-at-16-46-49.jpg"
+            ],
+
+            "curiosidad": "El tiempo que se tarda en realizar cada uno de los proyectos es muy variable, dependiendo de la complejidad del mismo."
         }
     ]
 }

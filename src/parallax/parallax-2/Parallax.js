@@ -9,7 +9,11 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
 import products from "./products.json";
 
+
 import { Overlay } from "./Overlay";
+import { Button, ButtonGroup } from '@chakra-ui/react'
+import { ArrowDownIcon } from '@chakra-ui/icons'
+import ScrollToTopButton from "./ScrollToTopButton";
 
 
 export const Parallax = () => {
@@ -31,14 +35,19 @@ export const Parallax = () => {
       },
     });
   }, []);
+  
 
 
   return (
     <>
       <section className="banner">
         <div className="banner-content">
-          <h2>Hola, soy Carmen!</h2>
-          <h3>Artista creativa y curiosa</h3>
+          <h2>Hola, <br></br>soy Carmen!👋</h2>
+          <h3>🎨Artista creativa y curiosa👩🏻‍🎨</h3>
+          <br></br>
+          <Button rightIcon={<ArrowDownIcon />}  colorScheme='white' variant='outline'>
+            Desliza para ver mi arte
+          </Button>
           
         </div>
       </section>
@@ -62,6 +71,7 @@ export const Parallax = () => {
           
         </form>
       </section>
+      <ScrollToTopButton />
     </>
   );
 };

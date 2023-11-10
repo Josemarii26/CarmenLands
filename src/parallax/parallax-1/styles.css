@@ -20,6 +20,10 @@ body {
   transition: 0.1s linear;
 }
 
+.disable-scroll .banner {
+  background-size: 110%; /* Ajusta el tamaño según tus preferencias */
+}
+
 .banner h2 {
   font-size: 48px;
   color: #f8f8f8;
