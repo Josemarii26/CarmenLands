@@ -22,7 +22,9 @@
                 "https://i.ibb.co/G3KRzDm/20220121-093804.jpg",
                 "https://i.ibb.co/S3KcGbG/20220121-094417.jpg",
                 "https://i.ibb.co/HG8zmNp/Screenshot-20210404-134044-Chrome.jpg",
-                "https://i.ibb.co/Tk55bLD/Whats-App-Image-2023-09-24-at-17-04-23.jpg"
+                "https://i.ibb.co/Tk55bLD/Whats-App-Image-2023-09-24-at-17-04-23.jpg",
+                "https://i.ibb.co/xmdrczx/Whats-App-Image-2023-11-14-at-23-22-36-4.jpg",
+                "https://i.ibb.co/10V05yb/Whats-App-Image-2023-11-14-at-23-22-36-1.jpg"
             ],
             "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
         },
@@ -42,14 +44,21 @@
         {
             "id": 4,
             "tituloH2": "COMODA JARDIN DE CARMEN 🌿",
-            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionA": "Después de una herencia, lo que queda, recuerda irremediablemente a la persona que partió y esta Cómoda típicamente de Ronda, recordaba la alegría y las ganas de vivir de su antigua dueña.",
+            "descripcionB": "La idea de este mueble de convertirla en un jardín permanente es, la necesidad de vivir feliz y en alegría permanente cada segundo.",
             "imagenes": [
                 "https://i.ibb.co/JqYrsrD/20220403-125107.jpg",
-                "https://i.ibb.co/ZMV8nYQ/20220403-120253.jpg",
+                "https://i.ibb.co/4J00Rdf/Whats-App-Image-2023-11-14-at-23-26-07-3.jpg",
+                "https://i.ibb.co/W0HdVnm/Whats-App-Image-2023-11-14-at-23-26-07-2.jpg",
+                "https://i.ibb.co/W0FX7VZ/Whats-App-Image-2023-11-14-at-23-26-08.jpg",
+                "https://i.ibb.co/1nN4bfs/Whats-App-Image-2023-11-14-at-23-26-08-1.jpg",
+                "https://i.ibb.co/h9x5GXT/Whats-App-Image-2023-11-14-at-23-26-07-1.jpg",
+                "https://i.ibb.co/vx3dLgm/Whats-App-Image-2023-11-14-at-23-26-07.jpg",
+                "https://i.ibb.co/y6H6PvH/Whats-App-Image-2023-11-14-at-23-27-01.jpg",
                 "https://i.ibb.co/yyfFXPb/20220303-134758.jpg"
+
             ],
-            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+            "curiosidad": "El nombre de este mueble es debido a que en mis obras los colores de la naturaleza es un contante, de ahí  'El jardín de Carmen'"
         },
         {
             "id": 5,
@@ -79,21 +88,27 @@
         {
             "id": 7,
             "tituloH2": "MESA BAJA SALON TARA 🪘",
-            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionA": "Tara es una Mesa Bodega para salón. Mesa baja, ideal para zona de sofa por su altura.",
+            "descripcionB": "La necesidad de reciclar en mi mente transformó un sencillo cajón de una antigua comoda (encontrada en la calle), en un mueble innovador en color y en estilo. Mezcla un original papel hindi, con unas sencillas patas metálicas ligeras opticamente.",
             "imagenes": [
-                "https://i.ibb.co/58WF62d/Whats-App-Image-2023-09-24-at-17-08-04.jpg"
+                "https://i.ibb.co/58WF62d/Whats-App-Image-2023-09-24-at-17-08-04.jpg",
+                "https://i.ibb.co/xY7dF34/Whats-App-Image-2023-11-14-at-22-55-13-1.jpg",
+                "https://i.ibb.co/VHsjVKH/Whats-App-Image-2023-11-14-at-22-55-14.jpg",
+                "https://i.ibb.co/2h4dBqV/Whats-App-Image-2023-11-14-at-22-56-48.jpg",
+                "https://i.ibb.co/xH2NNM5/Whats-App-Image-2023-11-14-at-22-55-13.jpg"
             ],
-            "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+            "curiosidad": "La necesidad de una zona de almacenaje para el vino, hizo necesario un gran espacio para ello. Dando el interior de esta mesa la medida para la reserva de una buena cantidad de botellas, en el mejor ángulo de Bodega!"
         },
         {
             "id": 8,
             "tituloH2": "MESITA RONDENIA 🧘",
-            "descripcionA": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-            "descripcionB": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+            "descripcionA": "La mesita Rondeña, según su dueña, tenía que fresca luminosa y llena de vida.",
+            "descripcionB": "Aquí el detalle de sus espigas, pintadas a mano con mimo!",
             "imagenes": [
                 "https://i.ibb.co/q1n1442/Screenshot-20221011-173600-Facebook.jpg",
-                "https://i.ibb.co/5cCRsjQ/Whats-App-Image-2023-09-24-at-17-09-23.jpg"
+                "https://i.ibb.co/5cCRsjQ/Whats-App-Image-2023-09-24-at-17-09-23.jpg",
+                "https://i.ibb.co/3cxhGbb/Whats-App-Image-2023-11-12-at-10-49-26.jpg",
+                "https://i.ibb.co/4YYLbqC/Whats-App-Image-2023-11-12-at-10-49-28.jpg"
             ],
             "curiosidad": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
         },
@@ -125,6 +140,22 @@
         },
         {
             "id": 11,
+            "tituloH2": "KOSMOS 🪐",
+            "descripcionA": "Este es Kosmos, un escritorio que estaba a punto de convertirse en leña para la chimenea.",
+            "descripcionB": "En él, se dan de la mano clasicismo isabelino y modernidad con el color azul noche.",
+            "imagenes": [
+                "https://i.ibb.co/BgnT84w/Whats-App-Image-2023-11-12-at-10-41-04.jpg",
+                "https://i.ibb.co/GxFF5Cm/Whats-App-Image-2023-11-12-at-10-41-04-2.jpg",
+                "https://i.ibb.co/J2d1p2k/Whats-App-Image-2023-11-12-at-10-41-04-1.jpg",
+                "https://i.ibb.co/gvhC9pP/Whats-App-Image-2023-11-12-at-10-41-03-1.jpg",
+                "https://i.ibb.co/mRnnqqc/Whats-App-Image-2023-11-12-at-10-41-03.jpg",
+                "https://i.ibb.co/644q2kX/Whats-App-Image-2023-11-12-at-10-41-04-3.jpg"
+            ],
+
+            "curiosidad": "Tiene una nueva tecnica llamada Sombreado!"
+        },
+        {
+            "id": 12,
             "tituloH2": "🚧 SEGUIMOS TRABAJANDO EN ELLO ⚒️",
             "descripcionA": "Terminar un proyecto de ste tipo requiere mucha paciencia y dedicación, por lo que estamos trabajando en ello para poder ofrecerte más productos lo antes posible.",
             "descripcionB": "Echa un vistazo de vez en cuando para ver las novedades.",

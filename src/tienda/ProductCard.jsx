@@ -31,7 +31,7 @@ export const ProductCard = ({ product, addToCart, onToggle, handleToggleCart }) 
     setIsHovered(false);
   };
 
-  const isMobile = window.innerWidth < 750;
+  const isMobile = window.innerWidth < 1050;
 
   
 
@@ -87,11 +87,12 @@ export const ProductCard = ({ product, addToCart, onToggle, handleToggleCart }) 
               </Carousel>
             </div>
           )}
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
+          <h4>{product.name}</h4>
+          <p>✅En Stock✅</p>
+          <p id='description'>{product.description}</p>
           <Tag size={'md'} key={'md'} variant='solid' colorScheme='green' >{product.label}</Tag>
 
-          <p>{product.price} €</p>
+          <h3>{product.price} €</h3>
           <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='green' variant='solid'>
             Añadir al carrito 
           </Button>
@@ -101,7 +102,7 @@ export const ProductCard = ({ product, addToCart, onToggle, handleToggleCart }) 
         <>
           <img src={product.images[0]} alt={product.name} />
           <h3>{product.name}</h3>
-          <p>{product.price} €</p>
+          <h4>{product.price} €</h4>
           <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='green' variant='solid'>
             Añadir al carrito
           </Button>

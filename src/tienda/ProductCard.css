@@ -20,7 +20,7 @@
 
 .product-card {
     flex: 1;
-
+    
     max-width: 300px;
     margin: 20px;
     display: flex;
@@ -54,13 +54,48 @@
     }
 
     p {
-        font-size: 1rem;
+        font-size: 10px;
         color: #777;
         z-index: 15;
     }
 
 
 }
+
+.product-card p {
+    font-size: 10px !important;
+}
+
+.product-card h4 {
+    font-size: 14px;
+    color: #777;
+}
+
+.product-card h3 {
+    margin-top: 6px;
+}
+
+.product-card #description {
+    margin-bottom: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.pagination button {
+    font-size: 14px;
+    font-weight: 600;
+}
+
 
 .overlay {
     position: fixed;
@@ -75,7 +110,10 @@
 }
 
 .product-card .chakra-button {
+    
+    bottom: 0;
     margin-top: 10px;
+    margin-bottom: 0;
     width: 100%;
 }
 
@@ -105,6 +143,8 @@
     height: 20vh;
     margin-bottom: 10px;
 }
+
+
 
 .product-card .carousel-2-mobile {
     justify-content: center;
@@ -171,9 +211,9 @@
 
 .filter-item {
     display: flex;
-    align-items: center;
+    align-content: center;
     gap: 10px;
-    padding-right: 4.5rem;
+    padding-right: 7.5rem;
     /* Espacio entre elementos de la lista */
 }
 
@@ -386,10 +426,32 @@
 
     }
 
+    .cart-container {
+        transform: scale(0.85);
+        margin-bottom: -5.5rem;
+    }
+
     #buttonCompra {
         transform: scale(1.25);
         margin-left: 0rem;
     }
+
+    .cart {
+        margin-bottom: 3rem;
+        margin-top: -3.8rem;
+    }
+
+    .remove-button {
+        width: 2.5rem;
+        margin-left: 1rem;
+    }
+
+    .remove-button span svg {
+        margin-top: -2px;
+        margin-left: -8px;
+    }
+
+    
 
     .bn632-hover {
         margin-bottom: 1rem;
@@ -401,6 +463,11 @@
         margin-left: 2rem;
 
     }
+    .cart-container li {
+        margin-top: 1rem;
+        margin-right: 0rem;
+    }
+    
 
 
 
@@ -478,6 +545,10 @@
     }
 
     .compras ul button .eliminar {
+        display: none;
+    }
+
+    .cart ul button .eliminar {
         display: none;
     }
 
@@ -576,4 +647,15 @@
     }
 
 
+}
+
+@media (max-width: 380px) {
+    .cart-container {
+        transform: scale(0.75);
+        margin-bottom: -8.5rem;
+    }
+    .cart {
+        margin-bottom: 5rem;
+        margin-top: -5.8rem;
+    }
 }

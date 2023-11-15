@@ -20,7 +20,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 
-export const Cart = ({ cart, removeFromCart, handleCloseCart }) => {
+export const Cart = ({ cart, setCart, removeFromCart, handleCloseCart }) => {
     const calculateTotal = () => {
         return cart.reduce((total, item) => total + item.price * item.quantity, 0);
     };
@@ -41,11 +41,15 @@ export const Cart = ({ cart, removeFromCart, handleCloseCart }) => {
     const buttonRef = useRef(null);
     const cartRef = useRef(null);
 
+    
+
+
 
 
 
     useEffect(() => {
         setTotal(calculateTotal());
+
     }, [cart]);
 
     useEffect(() => {
@@ -144,10 +148,10 @@ export const Cart = ({ cart, removeFromCart, handleCloseCart }) => {
 
 
     return (
-        <div className="cart-container" ref={cartRef}>
+        <div className="cart-container" ref={cartRef} >
             {showCompra ? (
-                <div className="container-compra">
-                    <form className="formulario-compra" data-aos="fade-right">
+                <div className="container-compra" >
+                    <form className="formulario-compra" data-aos="fade-right" >
                         <h2>Información de pedido 📋</h2>
 
                         <div className="campo">
@@ -209,13 +213,13 @@ export const Cart = ({ cart, removeFromCart, handleCloseCart }) => {
 
                     </form>
 
-                    <div className="compras" data-aos="fade-up">
+                    <div className="compras" data-aos="fade-up" >
                         <h2>Carrito de Compra 🛒</h2>
-                        <ul>
+                        <ul style={{ overflowY: 'auto', maxHeight: '13vh', marginLeft: '-33px' }}>
                             {cart.map((item) => (
                                 <li key={item.id}>
                                     <span className="item-name">{item.name}</span>
-                                    <span> ${item.price} x{item.quantity}</span>
+                                    <span> {item.price}€ x{item.quantity}</span>
                                     <Button rightIcon={<DeleteIcon />} className="remove-button2" onClick={() => removeFromCart(item.id)} colorScheme='red' variant='solid'>
                                         <div className='eliminar'>Eliminar</div>
 
@@ -279,8 +283,8 @@ export const Cart = ({ cart, removeFromCart, handleCloseCart }) => {
                     <ul>
                         {cart.map((item) => (
                             <li key={item.id}>
-                                <span className="item-name">{item.name}</span>
-                                <span>${item.price} x{item.quantity}</span>
+                                <span className="item-name">{item.name} </span>
+                                <span>{item.price}€ x{item.quantity}</span>
                                 <Button rightIcon={<DeleteIcon />} className="remove-button" onClick={() => removeFromCart(item.id)} colorScheme='red' variant='solid'>
                                     <span className='eliminar'>Eliminar</span>
 
@@ -295,12 +299,12 @@ export const Cart = ({ cart, removeFromCart, handleCloseCart }) => {
                     <br></br>
                     <br></br>
                     <button
-                            className={`close-cart-button ${waves ? 'waves' : ''}`}
-                            onClick={handleCloseCart}
-                            ref={buttonRef}
-                        >
-                            Seguir comprando
-                        </button> 
+                        className={`close-cart-button ${waves ? 'waves' : ''}`}
+                        onClick={handleCloseCart}
+                        ref={buttonRef}
+                    >
+                        Seguir comprando
+                    </button>
                 </div>
             )}
 

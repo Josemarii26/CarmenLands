@@ -31,7 +31,7 @@ export const ScrollToTopButton = () => {
       className={`scroll-to-top ${isVisible ? 'show' : ''}`}
       onClick={scrollToTop}
     >
-        <div className='emoji'>🙄</div>
+        <div className='emoji'>⬆️</div>
       
     </div>
   );
