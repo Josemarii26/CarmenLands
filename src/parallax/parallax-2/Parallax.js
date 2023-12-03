@@ -1,76 +1,88 @@
-import "./styles.css";
-
-
-import { MyComponent } from "./MyComponent";
-
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-
-import { useEffect, useRef, useState } from "react";
-import products from "./products.json";
-
-
-import { Overlay } from "./Overlay";
-import { Button, ButtonGroup } from '@chakra-ui/react'
-import { ArrowDownIcon } from '@chakra-ui/icons'
+import { Button } from "@chakra-ui/react";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 import ScrollToTopButton from "./ScrollToTopButton";
-
+import { MyComponent } from "./MyComponent";
+import products from "./products.json";
+import "./styles.css";
 
 export const Parallax = () => {
-
   const containerRef = useRef();
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    const container = containerRef.current;
     const sections = gsap.utils.toArray(".panel");
+
+    gsap.registerPlugin(ScrollTrigger);
+
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
       scrollTrigger: {
-        trigger: ".container",
+        trigger: container,
         pin: true,
-        scrub: 1,
+        scrub: 0.1,
         snap: 1 / (sections.length - 1),
         end: () => "+=" + containerRef.current.offsetWidth,
+        
       },
     });
-  }, []);
-  
 
+    let startTouchX;
+
+    const handleTouchStart = (e) => {
+      startTouchX = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+      
+      const touchX = e.touches[0].clientX;
+      const touchDeltaX = startTouchX - touchX;
+
+      // Ajusta este valor según tus preferencias para hacer que el scroll sea más "duro"
+      const scrollMultiplier = 20;
+
+      // Ajusta la lógica de scroll según tus necesidades
+      container.scrollLeft += touchDeltaX * scrollMultiplier;
+
+      startTouchX = touchX;
+    };
+
+    // Agrega los eventos de touch al contenedor
+    container.addEventListener("touchstart", handleTouchStart);
+    container.addEventListener("touchmove", handleTouchMove);
+
+    // Elimina los eventos de touch al desmontar el componente
+    return () => {
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+
+  
 
   return (
     <>
       <section className="banner">
         <div className="banner-content">
-          <h2>Hola, <br></br>soy Carmen!👋</h2>
+          <h2>Hola, <br />¡soy Carmen!👋</h2>
           <h3>🎨Artista creativa y curiosa👩🏻‍🎨</h3>
-          <br></br>
-          <Button rightIcon={<ArrowDownIcon />}  colorScheme='white' variant='outline'>
+          <br />
+          <Button rightIcon={<ArrowDownIcon />} id="buttonIntro" colorScheme="white" variant="outline">
             Desliza para ver mi arte
           </Button>
-          
         </div>
       </section>
       <div ref={containerRef} className="container">
         {products.products.map((product) => (
-          <section className="panel blue" key={product.id}>
+          <section className="panel blue" key={product.id} id={product.id}>
             <MyComponent {...product} />
           </section>
         ))}
-
-
       </div>
-
-      <section className="footer">
-        <h2>Contact</h2>
-        <form>
-          <input type="text" placeholder="Your email" />
-
-          <textarea rows={6} placeholder="Message" />
-          <button>SUBMIT</button>
-          
-        </form>
-      </section>
+      
       <ScrollToTopButton />
     </>
   );

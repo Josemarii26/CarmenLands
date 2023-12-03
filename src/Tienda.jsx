@@ -3,18 +3,14 @@ import { Navbar } from './navbar/Navbar';
 import { ProductCard } from './tienda/ProductCard';
 import { SearchBar } from './tienda/SearchBar';
 import { Cart } from './tienda/Cart';
-import { Fade, ScaleFade, Slide, SlideFade, Collapse } from '@chakra-ui/react'
+import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
 import {
-  Tag,
-  TagLabel,
-  TagLeftIcon,
-  TagRightIcon,
-  TagCloseButton,
+  Tag
 } from '@chakra-ui/react'
-import { ViewIcon, ViewOffIcon, EmailIcon, ArrowRightIcon } from '@chakra-ui/icons'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
+import { Button } from '@chakra-ui/react'
 
 
 import Aos from 'aos';

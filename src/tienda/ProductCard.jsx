@@ -3,19 +3,15 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProductCard.css';
 import {
-  Tag,
-  TagLabel,
-  TagLeftIcon,
-  TagRightIcon,
-  TagCloseButton,
+  Tag
 } from '@chakra-ui/react'
 
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 
 
-export const ProductCard = ({ product, addToCart, onToggle, handleToggleCart }) => {
+export const ProductCard = ({ product, addToCart, handleToggleCart }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToCart = () => {

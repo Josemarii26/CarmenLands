@@ -1,20 +1,12 @@
-import { Parallax } from "./parallax/parallax-2/Parallax";
 
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-
-import { WavyContainer, WavyLink } from "react-wavy-transitions";
-
-import { Navbar } from "./navbar/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { WavyContainer } from "react-wavy-transitions";
 import { PaginaPrincipal } from "./PaginaPrincipal";
 import { Tienda } from "./Tienda";
 import { FinalizarPedido } from "./tienda/FinalizarPedido";
 
 
 
-
-const Home = () => <div>Home</div>;
-const About = () => <div>About</div>;
-const Contact = () => <div>Contact</div>;
 
 function App() {
   return (

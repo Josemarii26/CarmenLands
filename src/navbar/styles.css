@@ -6,6 +6,7 @@ body {
 
 * {
   box-sizing: border-box;
+  
 }
 
 button,
@@ -74,6 +75,16 @@ a {
   cursor: pointer;
   padding: 0;
   
+}
+
+#nav-contact {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
 }
 
 .menu-toggle span {
@@ -146,6 +157,10 @@ section > p {
   .nav-items > a {
     height: auto;
   }
+  .navbar li {
+    padding: -10px 0;
+    width: 150px;
+  }
 }
 
 /* Estilos para el menú de navegación en pantallas pequeñas */
@@ -159,12 +174,13 @@ section > p {
     display: block;
     position: fixed;
     top: 20px;
-    right: -120px;
+    right: 25px;
     z-index: 1000;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
+    max-width: 40px;
   }
   
   .menu-toggle span {
@@ -195,5 +211,12 @@ section > p {
   
   .nav-items > a {
     height: auto;
+  }
+
+  li {
+    margin-top: 25px;
+  }
+  ul {
+    margin-top: -25px;
   }
 }

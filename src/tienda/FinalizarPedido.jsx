@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { Navbar } from '../navbar/Navbar';
-import Foto from "../parallax/parallax-2/Portada.jpeg";
-import { Input } from '@chakra-ui/react';
 
 export const FinalizarPedido = ({ Cart }) => {
     // Definir estados para los mensajes de error
@@ -67,7 +64,7 @@ export const FinalizarPedido = ({ Cart }) => {
                 </form>
 
                 <div className="imagen">
-                    <img src={Foto} alt="Producto" />
+                    <img src='https://i.ibb.co/hX48XyD/Whats-App-Image-2023-11-19-at-22-54-32-1.jpg' alt="Producto" />
                 </div>
             </div>
         </>

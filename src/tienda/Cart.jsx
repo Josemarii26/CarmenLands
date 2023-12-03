@@ -1,16 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FinalizarPedido } from './FinalizarPedido';
 import Foto from "../parallax/parallax-2/Portada.jpeg";
 import { useToast } from '@chakra-ui/react'
 import { DeleteIcon, ArrowLeftIcon, EmailIcon, ArrowRightIcon, WarningTwoIcon } from '@chakra-ui/icons'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button} from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 
 
 import {
     AlertDialog,
     AlertDialogBody,
-    AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogContent,
     AlertDialogOverlay,
@@ -218,7 +216,7 @@ export const Cart = ({ cart, setCart, removeFromCart, handleCloseCart }) => {
                         <ul style={{ overflowY: 'auto', maxHeight: '13vh', marginLeft: '-33px' }}>
                             {cart.map((item) => (
                                 <li key={item.id}>
-                                    <span className="item-name">{item.name}</span>
+                                    <span className="item-name">{item.name} </span>
                                     <span> {item.price}€ x{item.quantity}</span>
                                     <Button rightIcon={<DeleteIcon />} className="remove-button2" onClick={() => removeFromCart(item.id)} colorScheme='red' variant='solid'>
                                         <div className='eliminar'>Eliminar</div>
@@ -230,7 +228,7 @@ export const Cart = ({ cart, setCart, removeFromCart, handleCloseCart }) => {
                         </ul>
                         <br></br>
                         <p>Total: {total.toFixed(2)}€ </p>
-                        <p className='envios'>+ gastos de envio <span onClick={onOpen}><WarningTwoIcon></WarningTwoIcon></span></p>
+                        <p className='envios'>+ gastos de envío <span onClick={onOpen}><WarningTwoIcon></WarningTwoIcon></span></p>
 
 
                         <AlertDialog
@@ -243,11 +241,11 @@ export const Cart = ({ cart, setCart, removeFromCart, handleCloseCart }) => {
                             <AlertDialogOverlay />
 
                             <AlertDialogContent>
-                                <AlertDialogHeader><p>⚠️</p>Acerca de los gastos de envio </AlertDialogHeader>
+                                <AlertDialogHeader><p>⚠️</p>Acerca de los gastos de envío </AlertDialogHeader>
                                 <AlertDialogCloseButton />
                                 <AlertDialogBody>
-                                    Los gastos de envio vendran dictaminados por la empresa de transporte, la ubicacion a la que debe llegar el envio y el peso de este. <br></br>
-                                    La cifra sera confirmada por correo una vez que se solicite el envio.
+                                    Los gastos de envío vendrán dictaminados por la empresa de transporte, su domicilio y el peso de este. <br></br>
+                                    La cifra sera confirmada cuando se solicite el envío.
                                 </AlertDialogBody>
 
                             </AlertDialogContent>
@@ -284,7 +282,7 @@ export const Cart = ({ cart, setCart, removeFromCart, handleCloseCart }) => {
                         {cart.map((item) => (
                             <li key={item.id}>
                                 <span className="item-name">{item.name} </span>
-                                <span>{item.price}€ x{item.quantity}</span>
+                                <span> {item.price}€ x{item.quantity}</span>
                                 <Button rightIcon={<DeleteIcon />} className="remove-button" onClick={() => removeFromCart(item.id)} colorScheme='red' variant='solid'>
                                     <span className='eliminar'>Eliminar</span>
 

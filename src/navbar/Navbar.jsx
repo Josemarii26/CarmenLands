@@ -1,10 +1,6 @@
 import "./styles.css";
 import logo from "./CarmenLandsLogo.png";
-import image1 from "./1.svg";
-import image2 from "./2.svg";
-import image3 from "./3.svg";
 import { useEffect, useRef, useState } from "react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 
 import { WavyContainer, WavyLink } from "react-wavy-transitions";
 
@@ -24,7 +20,7 @@ export const Navbar = () => {
         setIsNavbarVisible(false);
       } else if (pageYOffset < lastScrollTop.current) {
         // upward scroll
-        setIsNavbarVisible(true);
+        setIsNavbarVisible(false);
       } // else was horizontal scroll
 
       lastScrollTop.current = pageYOffset <= 0 ? 0 : pageYOffset;
@@ -40,6 +36,8 @@ export const Navbar = () => {
       }
     };
 
+    
+
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     // Limpieza del efecto
@@ -50,6 +48,7 @@ export const Navbar = () => {
   }, []);
 
   const [isNavbarVisible2, setIsNavbarVisible2] = useState(false);
+
 
 
   const toggleNavbar = () => {
@@ -64,16 +63,24 @@ export const Navbar = () => {
     }
   };
 
+  const scrollToBottom = () => {
+    setIsNavbarVisible2(!isNavbarVisible2);
+    const totalHeight = document.body.scrollHeight;
+    window.scrollTo({
+      top: totalHeight,
+    });
+  };
+
   return (
     <nav className={`navbar ${isNavbarVisible ? 'visible' : ''}`}>
       <img src={logo} alt="Logo" />
       <button className="menu-toggle" onClick={toggleNavbar}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div className={`nav-items ${isNavbarVisible2 ? 'visible' : ''}`}>
-        
+
         <ul>
           <li onClick={handleHomeLinkClick}>
             <WavyLink to="/" color="#c4dd39" >
@@ -84,6 +91,15 @@ export const Navbar = () => {
             <WavyLink direction="up" to="/tienda" color="#45db52">
               Tienda
             </WavyLink>
+          </li>
+          <li>
+            <div onClick={scrollToBottom}>
+              <button id="nav-contact" >
+
+                Contacto
+
+              </button>
+            </div>
           </li>
         </ul>
       </div>
