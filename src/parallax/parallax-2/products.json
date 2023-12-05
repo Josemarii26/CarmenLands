@@ -14,7 +14,7 @@
         {
             "id": 2,
             "tituloH2": "CÓMODA FERIA 🎡",
-            "descripcionA": "Cómoda Feria es un principio una modesta cómoda que una abuela regala a su preciosa nieta, cuando se independiza con su novio. Cuando su abuela falta, es su mayor tesoro.",
+            "descripcionA": "Cómoda Feria es en principio una modesta cómoda que una abuela regala a su preciosa nieta, cuando se independiza con su novio. Cuando su abuela falta, es su mayor tesoro.",
             "descripcionB": "De ahí escogí un precioso papel de seda de la casa Mint by Michelle (de la cual soy distribuidora), para que siempre tenga la alegría  al contemplarla de una niña, y la variedad de verdes es por su amor por la naturaleza.",
             "imagenes": [
                 "https://i.ibb.co/M87v2qd/IMG-20211122-103839-463-2.jpg",
@@ -171,6 +171,9 @@
             "tituloH2": "MESITA ABRIL 🌸",
             "descripcionA": "Cuando gané el concurso de CasaTalentos 2021, tuve que crear un mueble original en directo, ¡en tan solo día y medio!",
             "descripcionB": "En la grabación del programa, con cámaras, luces y cinco personas en mi pequeño taller, se impusieron el color rosa y las flores de acuarela, con pequeñas texturas de perlas.",
+            "disponible": "✅ En stock ✅",
+            "ask": "Contacta personalmente conmigo para obtener mas detalles.",
+            "precio": "Precio: 295€",
             "imagenes": [
                 "https://i.ibb.co/fGZyX1k/Whats-App-Image-2023-11-19-at-20-28-52-2.jpg",
                 "https://i.ibb.co/5r8CC3J/Whats-App-Image-2023-11-19-at-20-27-28-1.jpg",
@@ -222,6 +225,7 @@
             "tituloH2": "💬 CONTACTA CONMIGO 📲",
             "descripcionA": "¿Tienes alguna duda? No dudes en contactar conmigo, estaré encantada de charlar contigo para resolverte todas las dudas 😊",
             "descripcionB": "🔎 Puedes encontrarme en:",
+            "legal": "  Aviso Legal ",
             "imagenes": [
                 "https://i.ibb.co/wB8LC5f/Whats-App-Image-2023-11-19-at-22-54-32-2.jpg"
                 

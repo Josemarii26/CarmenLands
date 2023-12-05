@@ -228,6 +228,7 @@ export const Cart = ({ cart, setCart, removeFromCart, handleCloseCart }) => {
                         </ul>
                         <br></br>
                         <p>Total: {total.toFixed(2)}€ </p>
+                        <p className='envios'>IVA incluido </p>
                         <p className='envios'>+ gastos de envío <span onClick={onOpen}><WarningTwoIcon></WarningTwoIcon></span></p>
 
 

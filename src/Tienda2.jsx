@@ -16,10 +16,7 @@ import { Button } from '@chakra-ui/react'
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Link } from 'react-router-dom';
 import { Navbar2 } from './navbar/Navbar2';
-import { WavyContainer, WavyLink } from "react-wavy-transitions";
-
 
 
 const initialProducts = [
@@ -2312,7 +2309,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 50;
 
-export const Tienda = () => {
+export const Tienda2 = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -2473,16 +2470,6 @@ export const Tienda = () => {
     handlePageChange(totalPages);
   };
 
-  const [showText, setShowText] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowText(false);
-    }, 10000); // Cambia este valor para ajustar la duración de la aparición antes de la desaparición
-
-    return () => clearTimeout(timeout);
-  }, []);
-
 
   return (
     <>
@@ -2494,40 +2481,63 @@ export const Tienda = () => {
 
         <div className="menu">
 
-          <h1>Tienda de productos para artistas🎨</h1>
+          <h1>Tienda de productos para artistas - Mint by Michelle🌿</h1>
 
-          <h3>Bienvenidos a la tienda de CarmenLands, aquí encontrareis una gran variedad de productos con los que yo personalmente trabajo y recomiendo. <br></br>Pulsa en <Link to="/tienda/mint-by-michelle"><span id='mint-text'>Mint by Michelle</span></Link>  o en <Link to="/tienda/cadence"><span id='cadence-text'>Cadence</span></Link> para ver sus productos </h3>
+          <h3>En esta sección de la tienda encontrareis multitud de productos especializados en papel para decoupage de diferentes tamaños de Mint by Michelle.</h3>
 
-          <div className="marcas">
-          <WavyLink direction="up" to="/tienda/mint-by-michelle" color="#6aee75">
-              <div className="mint">
+          <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='green' variant='solid'>
+            Filtrar Productos
+          </Button>
 
-              </div>
-            </WavyLink>
-            <WavyLink direction="up" to="/tienda/cadence" color="#4593db">
-              <div className="cadence">
-              </div>
-            </WavyLink>
-          </div>
+          <SearchBar onSearch={handleSearch} />
+
+
+          <button className="bn632-hover bn22" onClick={handleToggleCart}>Carrito🛒</button>
 
         </div>
 
-        <div className="pp">
-          <div className={`animated-text ${showText ? 'appear' : 'disappear'}`}>
-            💡Productos recomendados que quizás te interesen o te sean inspiradores para tus proyectos😉
-          </div>
-        </div>
-        <br></br>
+        {showFilters && (
+          <div data-aos="fade-right"><div className="filter">
 
+            {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
+              (selectedClass) => (
+                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='green' >
+                  <label key={selectedClass} className="filter-item" id='checkbox'>
+                    <input
+                      type="checkbox"
+                      checked={selectedClasses.includes(selectedClass)}
+                      onChange={() => toggleSelectedClass(selectedClass)} />
+                    {selectedClass}
+                  </label>
+                </Tag>
+              )
+            )}
 
+          </div><div className="price-slider">
 
+              <input
+                type="range"
+                min={precioMinimo}
+                max={precioMaximo}
+                value={priceRange[0]}
+                onChange={handlePriceChange} />
+              <p>Precio Mínimo: {priceRange[0]}€</p>
+              <input
+                type="range"
+                min={precioMinimo}
+                max={precioMaximo}
+                value={priceRange[1]}
+                onChange={handleMaxPriceChange} />
+              <p>Precio Máximo: {priceRange[1]}€</p>
+            </div></div>
+        )}
 
 
         <div className="product-list" >
           {showNoProducts ? (
             <p> <br></br> <br></br>No hay productos según su búsqueda.</p>
           ) : (
-            visibleProducts.sort(() => 0.5 - Math.random()).slice(0, 8).map((product) => (
+            visibleProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -2540,10 +2550,18 @@ export const Tienda = () => {
         </div>
         <br></br><br></br>
 
-
+        <div className='pagination'>
+          <button onClick={handleGoToFirstPage}>Inicio</button>
+          <button onClick={handlePrevPage}>Anterior</button>
+          <span>
+            Página {currentPage} de {totalPages}
+          </span>
+          <button onClick={handleNextPage}>Siguiente</button>
+          <button onClick={handleGoToLastPage}>Final</button>
+        </div>
 
         <br></br><br></br>
-
+        
 
 
 

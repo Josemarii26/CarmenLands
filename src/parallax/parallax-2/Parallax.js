@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Button } from "@chakra-ui/react";
@@ -6,6 +6,11 @@ import { ArrowDownIcon } from "@chakra-ui/icons";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { MyComponent } from "./MyComponent";
 import products from "./products.json";
+import CookieConsent from 'react-cookie-consent';
+import { useSpring, animated } from 'react-spring';
+
+
+
 import "./styles.css";
 
 export const Parallax = () => {
@@ -26,7 +31,7 @@ export const Parallax = () => {
         scrub: 0.1,
         snap: 1 / (sections.length - 1),
         end: () => "+=" + containerRef.current.offsetWidth,
-        
+
       },
     });
 
@@ -37,7 +42,7 @@ export const Parallax = () => {
     };
 
     const handleTouchMove = (e) => {
-      
+
       const touchX = e.touches[0].clientX;
       const touchDeltaX = startTouchX - touchX;
 
@@ -61,7 +66,24 @@ export const Parallax = () => {
     };
   }, []);
 
-  
+  const [visible, setVisible] = useState(true);
+
+  const props = useSpring({
+    opacity: visible ? 1 : 0,
+    transform: visible ? 'translateY(0%)' : 'translateY(100%)',
+  });
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setVisible(false);
+    }, 9000); // Ocultar después de 5 segundos
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+
+
+
 
   return (
     <>
@@ -70,9 +92,11 @@ export const Parallax = () => {
           <h2>Hola, <br />¡soy Carmen!👋</h2>
           <h3>🎨Artista creativa y curiosa👩🏻‍🎨</h3>
           <br />
-          <Button rightIcon={<ArrowDownIcon />} id="buttonIntro" colorScheme="white" variant="outline">
+          <a href="/#1" >
+          <Button rightIcon={<ArrowDownIcon />} id="buttonIntro" colorScheme="white" variant="outline" >
             Desliza para ver mi arte
           </Button>
+          </a>
         </div>
       </section>
       <div ref={containerRef} className="container">
@@ -82,8 +106,20 @@ export const Parallax = () => {
           </section>
         ))}
       </div>
+      <CookieConsent
+        location="bottom"
+        buttonText="Aceptar"
+        cookieName="miCookieConsent"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ backgroundColor: "#2c8b64", color: "#fff", fontSize: "13px" }}
+        expires={365}
+      >
+        🍪Este sitio web utiliza cookies para mejorar la experiencia del usuario, no se utilizan para recoger información sensible de carácter personal🔐
+      </CookieConsent>
       
+
       <ScrollToTopButton />
+      
     </>
   );
 };

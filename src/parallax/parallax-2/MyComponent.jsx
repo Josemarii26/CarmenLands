@@ -18,10 +18,11 @@ import '@fortawesome/fontawesome-free/css/fontawesome.css';
 import '@fortawesome/fontawesome-free/css/solid.css';
 import '@fortawesome/fontawesome-free/css/brands.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import { Link } from 'react-router-dom';
 
 
 
-export function MyComponent({ id, tituloH2, descripcionA, descripcionB, imagenes, curiosidad }) {
+export function MyComponent({ id, tituloH2, descripcionA, descripcionB, disponible, ask, legal, precio, imagenes, curiosidad }) {
 
 
 
@@ -94,12 +95,20 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, imagenes
   const handleTutorialButtonClick = () => {
 
     if (isMobileDevice()) {
+      
+
       driverObj.drive();
+      const btn = document.querySelector('.driver-popover-next-btn');
+      const btn2 = document.querySelector('.driver-popover-prev-btn');
+
+      // Cambiar el contenido del botón
+      btn.textContent = 'Siguiente';
+      btn2.textContent = 'Anterior';
     }
   };
 
   const sendEmail = () => {
-    
+
 
 
     const emailTo = 'josemarii2001@gmail.com'; // Correo de destino
@@ -111,7 +120,14 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, imagenes
     const emailLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
     window.open(emailLink);
-};
+  };
+
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
 
 
 
@@ -137,30 +153,11 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, imagenes
 
           {imagenes.map((imagen, index) => (
             <div className='imagenCarrusel' key={index}>
-              {index === 0 ? (
-                // La primera imagen se carga sin lazy loading
+              
                 <img
                   src={imagen}
-                  srcSet={`${imagen} 300w, ${imagen} 600w, ${imagen} 1200w`}
-                  sizes="(max-width: 320px) 280px,
-               (max-width: 600px) 540px,
-               800px"
                   alt={tituloH2}
                 />
-              ) : (
-                // A partir de la segunda imagen, se aplica lazy loading solo en dispositivos móviles
-                <LazyLoad offset={150} height={200} placeholder={<img src="placeholder.jpg" alt="placeholder" />}>
-                  {navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i) ? (
-                    <img
-                      src={imagen}
-                      alt={tituloH2}
-                    />
-                  ) : (
-                    // Si no es un dispositivo móvil, carga la imagen sin lazy loading
-                    <img src={imagen} alt={tituloH2} />
-                  )}
-                </LazyLoad>
-              )}
             </div>
           ))}
         </Carousel>
@@ -174,6 +171,23 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, imagenes
             <p data-aos="fade-left">
               {descripcionB}
             </p>
+
+            {disponible && (
+              <p data-aos="fade-right">
+                {disponible}
+              </p>
+            )}
+            {precio && (
+              <p data-aos="fade-left">
+                {precio}
+              </p>
+            )}
+
+
+
+
+            
+
           </div>
           <p data-aos="fade-up"> <button id='curiosidad' ref={bn22Ref} className="bn632-hover bn22" onClick={onToggle}>¡Curiosidad!</button></p>
           <div id="socialicons" data-aos="fade-up">
@@ -199,7 +213,23 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, imagenes
                 <i class="fas fa-envelope gmail icons"></i>
               </div>
             </div>
+            <div class="socialicon">
+              <a href="https://www.youtube.com/@CarmenLozanocreativa">
+                <div class="ytcolor socialiconcircle1"></div>
+                <div class="socialiconcircle2">
+                  <i class="fab fa-youtube-square yt icons"></i>
+                </div>
+              </a>
+            </div>
           </div>
+          {legal && (
+            <Link to='/aviso-legal' data-aos="fade-right">
+              <p data-aos="fade-right" onClick={scrollToTop}>
+                📝<span id='legal'>{legal}</span>  📝
+              </p>
+            </Link>
+          )}
+
           {isMobileDevice() && (
             <p data-aos="fade-up">
               <button id='tutorial' className="bn632-hover bn22" onClick={handleTutorialButtonClick}>
@@ -210,7 +240,7 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, imagenes
           <br></br>
         </div>
       </div>
-      <Slide direction='bottom' in={isOpen} style={{ zIndex: 10 }}>
+      <Slide direction='bottom' in={isOpen} style={{ zIndex: 100000 }}>
         <Box
           p='40px'
           color='white'

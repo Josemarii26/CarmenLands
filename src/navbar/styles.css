@@ -37,6 +37,10 @@ a {
   z-index: 999999;
 }
 
+#nav3 {
+  background: #3182ce !important;
+}
+
 /* Estilos para el menú de navegación visible */
 .navbar.visible {
   top: 0;

@@ -137,7 +137,6 @@ p {
 .scroll-to-top.show {
   opacity: 1;
   visibility: visible;
-  z-index: 8;
 }
 
 #buttonIntro {
@@ -466,6 +465,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 
 
+
+
+
 form {
   padding: 0;
   margin: 0;
@@ -594,6 +596,15 @@ button {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
+.bn632-hover.bn22b {
+  background-image: linear-gradient(to right,
+      #3484cc,
+      #3ca1ba,
+      #3484cc,
+      #3ca1ba);
+  box-shadow: 0 4px 15px 0 rgba(126, 178, 226, 0.75);
+}
+
 
 @media (min-width: 450px) and (max-width:1200px) {
   .imagenCarrusel {
@@ -632,7 +643,7 @@ button {
 
   .titulo p {
     font-size: 1.5vh;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
   }
 
   .titulo h2 {
@@ -704,6 +715,8 @@ button {
     transition: all .4s ease-in-out;
   }
 
+  
+
 }
 
 .css-efhinx {
@@ -713,6 +726,13 @@ button {
 
 }
 
+@media (max-width: 2200px) {
+  #socialicons {
+    transform: scale(0.8);
+  }
+}
+
+
 @media (max-width: 1200px) {
   #socialicons {
     transform: scale(0.8);
@@ -721,9 +741,14 @@ button {
 
 @media (max-width: 450px) {
   #socialicons {
-    transform: scale(0.7);
-    margin: -60px auto !important;
+    transform: scale(0.5);
+    margin: -100px auto !important;
   }
+  #legal {
+    margin-bottom: 30px !important;
+  }
+  
+  
 }
 
 #socialicons {
@@ -735,6 +760,12 @@ button {
   flex-direction: column;
 }
 
+.socialrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .socialicon {
   width: 100px;
   height: 100px;
@@ -742,14 +773,14 @@ button {
   overflow: hidden;
   background: #e4e4e4;
   position: relative;
-  float: left;
-  margin: 0px 0px 10px 10px;
+  margin: 0px 10px 10px 10px;
 }
 
 .socialiconcircle1 {
   width: 150px;
   height: 150px;
   position: absolute;
+  cursor: pointer;
   left: 0px;
   top: 100px;
   -webkit-animation: fill 2s infinite;
@@ -765,6 +796,7 @@ button {
   position: absolute;
   left: 3px;
   top: 3px;
+  cursor: pointer;
 }
 
 .icons {
@@ -794,12 +826,21 @@ button {
 }
 
 .gmailcolor {
-  background: rgb(207, 39, 39)
+  background: rgb(207, 129, 39)
 }
 
 .gmail {
+  color: rgb(207, 129, 39) !important
+}
+
+.ytcolor {
+  background: rgb(207, 39, 39)
+}
+
+.yt {
   color: rgb(207, 39, 39) !important
 }
+
 
 @-webkit-keyframes fill {
   0% {
@@ -909,3 +950,18 @@ button {
     top: 33px;
   }
 }
+
+
+
+@media (max-width: 500px) {
+  
+  .CookieConsent button {
+    width: 100%;
+
+  }
+}
+
+.css-17yz75s div {
+  z-index: 8;
+}
+
