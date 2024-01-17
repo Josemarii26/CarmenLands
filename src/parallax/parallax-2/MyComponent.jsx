@@ -111,7 +111,7 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, disponib
 
 
 
-    const emailTo = 'josemarii2001@gmail.com'; // Correo de destino
+    const emailTo = 'carmenlandsss@gmail.com'; // Correo de destino
     const emailSubject = 'Duda sobre ...'; // Asunto del correo
 
 
@@ -189,7 +189,7 @@ export function MyComponent({ id, tituloH2, descripcionA, descripcionB, disponib
             
 
           </div>
-          <p data-aos="fade-up"> <button id='curiosidad' ref={bn22Ref} className="bn632-hover bn22" onClick={onToggle}>¡Curiosidad!</button></p>
+          {curiosidad && (<p data-aos="fade-up"> <button id='curiosidad' ref={bn22Ref} className="bn632-hover bn22" onClick={onToggle}>¡Curiosidad!</button></p>)}
           <div id="socialicons" data-aos="fade-up">
             <div class="socialicon">
               <a href="https://www.facebook.com/carmen.lozano.182/">

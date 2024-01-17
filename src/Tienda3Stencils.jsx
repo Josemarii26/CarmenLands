@@ -23,7 +23,7 @@ import { WavyContainer, WavyLink } from "react-wavy-transitions";
 
 
 
-export const Tienda3 = () => {
+export const Tienda3Stencils = () => {
 
   const [cart, setCart] = useState([]);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -89,113 +89,68 @@ export const Tienda3 = () => {
 
         <div className="menu">
 
-          <h1>Tienda de productos para artistas - Cadence 📘</h1>
+          <h1>Stencils  - Cadence 📘</h1>
 
-          <h3>En esta sección de la tienda encontrareis multitud de productos especializados para artistas de la marca Cadence.</h3>
+          <h3>Stencils y plantillas de diversos estilos de la marca CADENCE. Para mix media, home decor, manualidades...</h3>
 
 
 
         </div>
 
         <div className="marcas2">
-          <WavyLink direction="up" to="/tienda/cadence/hybrid" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/home-decor" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/xJB592S/hybrid-cadence.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/nrK7nm7/stencil-cadence-home-decor-45x45.jpg' alt='cadence'></img>
               <br></br>
-              <p>Pintura Hybrid Cadence</p>
+              <p>Stencil Cadence Home Decor 45x45cm</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence/hybrid-metallic" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/home-decor-midi" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/Z2fyPhR/hybrid-metallic-cadence.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/YPyv02X/stencil-cadence-home-decor-midi.jpg' alt='cadence'></img>
               <br></br>
-              <p>Pintura Hybrid Metallic Cadence</p>
+              <p>Stencil Home Decor Midi 25x25cm</p>
             </div>
       
           </WavyLink>
-          <WavyLink direction="up" to="/tienda/cadence/barnices-craqueladores" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/serie-bn" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/fkd334b/craqueladores-barnices-y-foil.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/9bRcLkL/stencil-cadence-serie-bn.jpg' alt='cadence'></img>
               <br></br>
-              <p>Barnices y Craqueladores</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/pinturas-cosmos" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/YQqkx8X/cosmos-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Pinturas COSMOS Cadence</p>
+              <p>Stencil Cadence Serie BN 25x36cm</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence/pinturas-ambientes-humedos" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/private" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/s1RnGQJ/ambiante-cadence.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/4fZpqPK/stencils-cadence-private.jpg' alt='cadence'></img>
               <br></br>
-              <p>Pintura Ambientes Húmedos Cadence</p>
+              <p>Stencil Cadence Private 25x35cm</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence/stencils" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/miscellaneous" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/Hx7QkKS/cadence-stencils.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/Sc0P183/stencils-cadence-mix-media.jpg' alt='cadence'></img>
               <br></br>
-              <p>Stencil´s (plantillas) Cadence</p>
+              <p>Stencil Cadence Miscellaneous</p>
+            </div>
+      
+          </WavyLink>
+          <WavyLink direction="up" to="/tienda/cadence/stencils/cenefas" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/MhHc49Q/stencil-cadence-cenefas.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Stencil Cadence Cenefas</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence/transfers" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/MVyFh7M/transfers-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Transferencias Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/pastas" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/JsP2Hp9/pastas-de-relieve-y-gessos-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Pastas de Relieve Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/soportes-madera" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/ckD3p7q/madera-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Soportes de Madera Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/variados" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/JjfT1Zr/foil-y-pan-de-oro-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Materiales Variados Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/51krssD/Proximamente.png' alt='proximamente'></img>
-              <br></br>
-              <br></br>
-              <p>Proximamente...</p>
-            </div>
-      
-          </WavyLink>
+          
 
           
           

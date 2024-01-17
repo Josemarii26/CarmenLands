@@ -172,11 +172,10 @@
             "descripcionA": "Cuando gané el concurso de CasaTalentos 2021, tuve que crear un mueble original en directo, ¡en tan solo día y medio!",
             "descripcionB": "En la grabación del programa, con cámaras, luces y cinco personas en mi pequeño taller, se impusieron el color rosa y las flores de acuarela, con pequeñas texturas de perlas.",
             "disponible": "✅ En stock ✅",
-            "ask": "Contacta personalmente conmigo para obtener mas detalles.",
+            "ask": "¡Puedes comprarla ahora en la tienda!",
             "precio": "Precio: 295€",
             "imagenes": [
                 "https://i.ibb.co/fGZyX1k/Whats-App-Image-2023-11-19-at-20-28-52-2.jpg",
-                "https://i.ibb.co/5r8CC3J/Whats-App-Image-2023-11-19-at-20-27-28-1.jpg",
                 "https://i.ibb.co/5r8CC3J/Whats-App-Image-2023-11-19-at-20-27-28-1.jpg",
                 "https://i.ibb.co/Mc69D3D/Whats-App-Image-2023-11-19-at-20-27-29.jpg",
                 "https://i.ibb.co/1nFSCnb/Whats-App-Image-2023-11-19-at-20-27-28.jpg",
@@ -204,7 +203,11 @@
             "descripcionA": "Siempre con la necesidad de encontrar nuevas formas de utilizar diferentes muebles y dar otra visión a la idea de crear con papel y pintura.",
             "descripcionB": "Además de, por supuesto, salir de mi zona de confort: la aplicación de 'Papel de Oro'",
             "imagenes": [
-                "https://i.ibb.co/t3Js1YC/Whats-App-Image-2023-11-26-at-11-34-37.jpg"
+                "https://i.ibb.co/zR1pFPH/Whats-App-Image-2023-12-13-at-13-02-17.jpg",
+                "https://i.ibb.co/t3Js1YC/Whats-App-Image-2023-11-26-at-11-34-37.jpg",
+                "https://i.ibb.co/27Y19pJ/Whats-App-Image-2023-12-13-at-13-02-18.jpg",
+                "https://i.ibb.co/Yy41zj9/Whats-App-Image-2023-12-13-at-13-02-18-1.jpg",
+                "https://i.ibb.co/w4DwdB6/Whats-App-Image-2023-12-13-at-13-02-18-2.jpg"
             ],
             "curiosidad": "¡Creo que el oro y yo vamos a tener una amistad bonita y duradera!"
         },
@@ -223,8 +226,6 @@
         {
             "id": 17,
             "tituloH2": "💬 CONTACTA CONMIGO 📲",
-            "descripcionA": "¿Tienes alguna duda? No dudes en contactar conmigo, estaré encantada de charlar contigo para resolverte todas las dudas 😊",
-            "descripcionB": "🔎 Puedes encontrarme en:",
             "legal": "  Aviso Legal ",
             "imagenes": [
                 "https://i.ibb.co/wB8LC5f/Whats-App-Image-2023-11-19-at-22-54-32-2.jpg"

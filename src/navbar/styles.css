@@ -6,7 +6,7 @@ body {
 
 * {
   box-sizing: border-box;
-  
+
 }
 
 button,
@@ -41,13 +41,25 @@ a {
   background: #3182ce !important;
 }
 
+#nav3 .nav-items {
+  background: #3182ce !important;
+}
+
+#nav4 {
+  background: rgb(209, 89, 80) !important;
+}
+
+#nav4 .nav-items {
+  background: rgb(209, 89, 80) !important;
+}
+
 /* Estilos para el menú de navegación visible */
 .navbar.visible {
   top: 0;
   transform: translateY(0);
 }
 
-.navbar > img {
+.navbar>img {
   width: 150px;
   height: 70px;
 }
@@ -59,7 +71,7 @@ a {
 }
 
 /* Estilos para los enlaces de navegación */
-.nav-items > a {
+.nav-items>a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.96);
   height: 72px;
@@ -67,18 +79,19 @@ a {
   place-items: center;
 }
 
-.nav-items > a:hover {
+.nav-items>a:hover {
   color: rgba(255, 255, 255, 0.96);
 }
 
 /* Estilos para el botón de menú desplegable */
 .menu-toggle {
-  display: none; /* Ocultar el botón en pantallas grandes */
+  display: none;
+  /* Ocultar el botón en pantallas grandes */
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  
+
 }
 
 #nav-contact {
@@ -89,6 +102,7 @@ a {
   font-size: 1rem;
   cursor: pointer;
   padding: 0;
+  width: 200px;
 }
 
 .menu-toggle span {
@@ -98,6 +112,10 @@ a {
   background: #fff;
   margin: 5px auto;
   transition: 0.4s;
+}
+
+nav .react-wavy-transitions__wavy-link {
+  width: 220px;
 }
 
 /* Estilos para las secciones */
@@ -123,7 +141,7 @@ section.shaded {
   background: #f9f9ff;
 }
 
-section > img {
+section>img {
   width: 200px;
   height: 200px;
   object-fit: contain;
@@ -131,49 +149,48 @@ section > img {
   background: #f9f9ff;
 }
 
-section.shaded > img {
+section.shaded>img {
   padding: 20px;
 }
 
-section > p {
+section>p {
   line-height: 1.7;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1408px) {
   .navbar {
     display: flex;
   }
-  
+
   .menu-toggle {
     display: none;
   }
-  
+
   .nav-items {
     flex: 1;
     justify-content: flex-start;
   }
-  
+
   .nav-items ul {
     display: flex;
-    gap: 16px;
+    gap: 8px;
+    /* Ajusta este valor según tus necesidades */
   }
-  
-  .nav-items > a {
+
+  .nav-items>a {
     height: auto;
-  }
-  .navbar li {
-    padding: -10px 0;
-    width: 150px;
+    width: auto;
+    /* Puedes cambiar esto según tus necesidades */
   }
 }
 
 /* Estilos para el menú de navegación en pantallas pequeñas */
-@media (max-width: 767px) {
+@media (max-width: 1407px) {
   .navbar {
     display: block;
     text-align: center;
   }
-  
+
   .menu-toggle {
     display: block;
     position: fixed;
@@ -186,7 +203,7 @@ section > p {
     padding: 0;
     max-width: 40px;
   }
-  
+
   .menu-toggle span {
     display: block;
     width: 25px;
@@ -195,7 +212,7 @@ section > p {
     margin: 5px auto;
     transition: 0.4s;
   }
-  
+
   .nav-items {
     display: none;
     background: #2c8b64;
@@ -207,20 +224,37 @@ section > p {
     padding: 10px 0;
     list-style: none;
   }
-  
+
   .nav-items.visible {
     display: flex;
     flex-direction: column;
   }
-  
-  .nav-items > a {
+
+  .nav-items>a {
     height: auto;
   }
 
   li {
     margin-top: 25px;
   }
+
   ul {
     margin-top: -25px;
+    
+    padding-right: 8px;
+    margin-top: 8px;
+  }
+
+  .cart ul {
+    overflow-y: auto;
+    max-height: 250px ;
+  }
+
+}
+
+@media (min-width: 1407px) {
+  .cart ul {
+    overflow-y: auto;
+    max-height: 300px ;
   }
 }

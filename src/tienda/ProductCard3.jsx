@@ -11,7 +11,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 
 
-export const ProductCard2 = ({ product, addToCart, handleToggleCart }) => {
+export const ProductCard3 = ({ product, addToCart, handleToggleCart }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToCart = () => {
@@ -48,7 +48,7 @@ export const ProductCard2 = ({ product, addToCart, handleToggleCart }) => {
                 infiniteLoop={false}
                 showThumbs={false}
                 showStatus={false}
-                showIndicators={false}
+                showIndicators={true}
                 centerMode={false}
                 swipeable={true}
                 emulateTouch={true}
@@ -69,7 +69,7 @@ export const ProductCard2 = ({ product, addToCart, handleToggleCart }) => {
                 infiniteLoop={false}
                 showThumbs={false}
                 showStatus={false}
-                showIndicators={false}
+                showIndicators={true}
                 centerMode={false}
                 swipeable={true}
                 emulateTouch={true}
@@ -86,10 +86,10 @@ export const ProductCard2 = ({ product, addToCart, handleToggleCart }) => {
           <h4>{product.name}</h4>
           <p>✅En Stock✅</p>
           <p id='description'>{product.description}</p>
-          <Tag size={'md'} key={'md'} variant='solid' colorScheme='blue' >{product.label}</Tag>
+          <Tag size={'md'} key={'md'} variant='solid' colorScheme='red' bg='red.700' >{product.label}</Tag>
 
           <h3>{product.price} €</h3>
-          <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='blue' variant='solid'>
+          <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='red' bg='red.700' variant='solid'>
             Añadir al carrito 
           </Button>
 
@@ -99,7 +99,7 @@ export const ProductCard2 = ({ product, addToCart, handleToggleCart }) => {
           <img src={product.images[0]} alt={product.name} />
           <h3>{product.name}</h3>
           <h4>{product.price} €</h4>
-          <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='blue' variant='solid'>
+          <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='red' bg='red.700' variant='solid'>
             Añadir al carrito
           </Button>
         </>

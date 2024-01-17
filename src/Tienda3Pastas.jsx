@@ -23,7 +23,7 @@ import { WavyContainer, WavyLink } from "react-wavy-transitions";
 
 
 
-export const Tienda3 = () => {
+export const Tienda3Pastas = () => {
 
   const [cart, setCart] = useState([]);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -89,113 +89,89 @@ export const Tienda3 = () => {
 
         <div className="menu">
 
-          <h1>Tienda de productos para artistas - Cadence 📘</h1>
+          <h1>Pastas de Relieve  - Cadence 📘</h1>
 
-          <h3>En esta sección de la tienda encontrareis multitud de productos especializados para artistas de la marca Cadence.</h3>
+          <h3>Pinturas Cadence de fabulosos efectos metalizados, chalky, marmoleados, espejo, granito, distress.. y productos para manualidades, home decor, mix media, Bellas Artes... </h3>
 
 
 
         </div>
 
         <div className="marcas2">
-          <WavyLink direction="up" to="/tienda/cadence/hybrid" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/pastas/relieve" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/xJB592S/hybrid-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Pintura Hybrid Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/hybrid-metallic" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/Z2fyPhR/hybrid-metallic-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Pintura Hybrid Metallic Cadence</p>
-            </div>
-      
-          </WavyLink>
-          <WavyLink direction="up" to="/tienda/cadence/barnices-craqueladores" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/fkd334b/craqueladores-barnices-y-foil.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Barnices y Craqueladores</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/pinturas-cosmos" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/YQqkx8X/cosmos-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Pinturas COSMOS Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/pinturas-ambientes-humedos" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/s1RnGQJ/ambiante-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Pintura Ambientes Húmedos Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/stencils" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/Hx7QkKS/cadence-stencils.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Stencil´s (plantillas) Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/transfers" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/MVyFh7M/transfers-cadence.jpg' alt='cadence'></img>
-              <br></br>
-              <p>Transferencias Cadence</p>
-            </div>
-      
-          </WavyLink>
-
-          <WavyLink direction="up" to="/tienda/cadence/pastas" color="#4593db">
-            <div className="cadence-card">
-              <img src='https://i.ibb.co/JsP2Hp9/pastas-de-relieve-y-gessos-cadence.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/2vypH6b/pastas-de-relieve-y-gessos-cadence-1.jpg' alt='cadence'></img>
               <br></br>
               <p>Pastas de Relieve Cadence</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence/soportes-madera" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/pastas/mixtion" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/ckD3p7q/madera-cadence.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/MVyFh7M/transfers-cadence.jpg' alt='cadence'></img>
               <br></br>
-              <p>Soportes de Madera Cadence</p>
+              <p>MIXTION Adhesivo Cadence</p>
+            </div>
+      
+          </WavyLink>
+          <WavyLink direction="up" to="/tienda/cadence/pastas/patina-imprimacion" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/Wcw4f9t/mediums-y-limpieza-cadence.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Patina e imprimación Cadence</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence/variados" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/pastas/shabby" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/JjfT1Zr/foil-y-pan-de-oro-cadence.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/cYjv81n/pasta-shabby-chic-cadence.jpg' alt='cadence'></img>
               <br></br>
-              <p>Materiales Variados Cadence</p>
+              <p>Pasta SHABBY CHIC Cadence</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/pastas/zeugma" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/51krssD/Proximamente.png' alt='proximamente'></img>
+              <img src='https://i.ibb.co/dk9X25t/pasta-relieve-beton-zeugma-cadence.jpg' alt='cadence'></img>
               <br></br>
-              <br></br>
-              <p>Proximamente...</p>
+              <p>Pasta ZEUGMA Cadence</p>
             </div>
       
           </WavyLink>
+
+          <WavyLink direction="up" to="/tienda/cadence/pastas/distress" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/Yfnsj85/disstress-paste.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Pasta DISSTRESS Cadence</p>
+            </div>
+      
+          </WavyLink>
+
+          <WavyLink direction="up" to="/tienda/cadence/pastas/flexible-metalica" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/dGwPmdh/pasta-flexible-metalizada-cadence.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Pasta Flexible Metálica Cadence</p>
+            </div>
+      
+          </WavyLink>
+
+          <WavyLink direction="up" to="/tienda/cadence/pastas/vintage-legend" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/HFYg8wh/vintage-legend-cadence-12.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Patina VINTAGE LEGEND Cadence</p>
+            </div>
+      
+          </WavyLink>
+
+          
+
+          
 
           
           

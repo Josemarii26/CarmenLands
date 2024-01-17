@@ -2329,18 +2329,6 @@ export const Tienda2 = () => {
 
 
 
-  useEffect(() => {
-    // Guarda el carrito en localStorage cada vez que cambie
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
-
-  useEffect(() => {
-    // Recupera el carrito desde localStorage al cargar la página
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, [setCart]);
 
 
 
@@ -2358,6 +2346,10 @@ export const Tienda2 = () => {
     setShowNoProducts(filteredProducts.length === 0);
   };
 
+  const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
   const handleSearch = (searchText) => {
     // No filtrar directamente por nombre al buscar
     // en su lugar, ajustar los productos existentes según los filtros
@@ -2365,7 +2357,7 @@ export const Tienda2 = () => {
 
     if (searchText !== '') {
       const filteredProducts = products.filter((product) =>
-        product.name.toLowerCase().includes(searchText.toLowerCase())
+        removeAccents(product.name).toLowerCase().includes(searchText.toLowerCase())
       );
       setProducts(filteredProducts);
       setShowNoProducts(filteredProducts.length === 0);
@@ -2470,7 +2462,31 @@ export const Tienda2 = () => {
     handlePageChange(totalPages);
   };
 
+  
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Recupera el carrito desde localStorage al cargar la página
+    const data = window.localStorage.getItem('cart');
+    if (data !== null) {
+      setCart(JSON.parse(data));
+    }
+    setIsLoading(false); // <- Mueve esto aquí para indicar que la carga se ha completado
+  }, []);
+
+  useEffect(() => {
+    // Guarda el carrito en localStorage cada vez que cambie
+    window.localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  if (isLoading) {
+    // You can render a loading indicator here if needed
+    return <p>Loading...</p>;
+  }
+
+
+  console.log(cart);
   return (
     <>
       <Navbar2 />
@@ -2501,7 +2517,7 @@ export const Tienda2 = () => {
 
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
-                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='green' >
+                <Tag  key={'lg'} variant='solid' colorScheme='green' >
                   <label key={selectedClass} className="filter-item" id='checkbox'>
                     <input
                       type="checkbox"
@@ -2561,7 +2577,7 @@ export const Tienda2 = () => {
         </div>
 
         <br></br><br></br>
-        
+
 
 
 

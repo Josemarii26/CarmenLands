@@ -36,7 +36,7 @@ export const Navbar3 = () => {
       }
     };
 
-    
+
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -82,22 +82,38 @@ export const Navbar3 = () => {
       <div className={`nav-items ${isNavbarVisible2 ? 'visible' : ''}`}>
 
         <ul>
-          <li onClick={handleHomeLinkClick}>
-            <WavyLink to="/" color="#c4dd39" >
-              Soy Carmen!
-            </WavyLink>
+          <li>
+            <div >
+              <button id="nav-contact" >
+                <a href="/">
+                  ¡Soy Carmen!
+                </a>
+              </button>
+            </div>
           </li>
           <li>
             <WavyLink direction="up" to="/tienda" color="#45db52">
               Tienda
             </WavyLink>
           </li>
+
           <li>
             <WavyLink direction="up" to="/tienda/mint-by-michelle" color="#6aee75">
               Mint by Michelle
             </WavyLink>
           </li>
-          
+          <li>
+            <WavyLink direction="up" to="/tienda/cadence" color="#4593db">
+              Cadence
+            </WavyLink>
+          </li>
+          <li>
+            <WavyLink direction="up" to="/tienda/muebles-ornamentos" color="#db4545">
+              Muebles y Ornamentos
+            </WavyLink>
+          </li>
+
+
         </ul>
       </div>
     </nav>

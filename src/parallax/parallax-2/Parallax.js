@@ -2,16 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Button } from "@chakra-ui/react";
-import { ArrowDownIcon } from "@chakra-ui/icons";
+import { ArrowUpIcon } from "@chakra-ui/icons";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { MyComponent } from "./MyComponent";
 import products from "./products.json";
 import CookieConsent from 'react-cookie-consent';
 import { useSpring, animated } from 'react-spring';
+import { WavyContainer, WavyLink } from "react-wavy-transitions";
+
 
 
 
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 export const Parallax = () => {
   const containerRef = useRef();
@@ -92,11 +95,12 @@ export const Parallax = () => {
           <h2>Hola, <br />¡soy Carmen!👋</h2>
           <h3>🎨Artista creativa y curiosa👩🏻‍🎨</h3>
           <br />
-          <a href="/#1" >
-          <Button rightIcon={<ArrowDownIcon />} id="buttonIntro" colorScheme="white" variant="outline" >
-            Desliza para ver mi arte
-          </Button>
-          </a>
+          <WavyLink direction="up" to="/tienda" color="#45db52">
+            <Button id="buttonIntro" colorScheme="white" variant="outline" >
+              👉🏻Accede a mi Tienda👈🏻
+            </Button>
+          </WavyLink>
+
         </div>
       </section>
       <div ref={containerRef} className="container">
@@ -116,10 +120,10 @@ export const Parallax = () => {
       >
         🍪Este sitio web utiliza cookies para mejorar la experiencia del usuario, no se utilizan para recoger información sensible de carácter personal🔐
       </CookieConsent>
-      
+
 
       <ScrollToTopButton />
-      
+
     </>
   );
 };

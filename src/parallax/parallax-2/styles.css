@@ -121,6 +121,7 @@ p {
 .emoji {
   transform: scale(1.6);
   transition: 0.5s ease-in-out;
+  z-index: 1;
 }
 
 .scroll-to-top:hover {
@@ -137,6 +138,20 @@ p {
 .scroll-to-top.show {
   opacity: 1;
   visibility: visible;
+  z-index: 1;
+}
+
+@keyframes scaleAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+#buttonIntro {
+  animation: scaleAnimation 4s infinite;
 }
 
 #buttonIntro {
@@ -527,6 +542,13 @@ button {
   border-radius: 30px;
   transition: all 0.5s ease-in-out;
   max-width: 1000px;
+  
+}
+
+@media (max-width: 1400px) and (min-width: 1200px){
+  .carousel-root {
+    max-height: 764px;
+  }
 }
 
 .carousel-root:hover {
@@ -602,6 +624,15 @@ button {
       #3ca1ba,
       #3484cc,
       #3ca1ba);
+  box-shadow: 0 4px 15px 0 rgba(126, 178, 226, 0.75);
+}
+
+.bn632-hover.bn22c {
+  background-image: linear-gradient(to right,
+      #ec4949,
+      #ba3c3c,
+      #973434,
+      #ba3c3c);
   box-shadow: 0 4px 15px 0 rgba(126, 178, 226, 0.75);
 }
 
@@ -728,7 +759,8 @@ button {
 
 @media (max-width: 2200px) {
   #socialicons {
-    transform: scale(0.8);
+    transform: scale(0.7);
+    margin: -50px auto !important;
   }
 }
 
