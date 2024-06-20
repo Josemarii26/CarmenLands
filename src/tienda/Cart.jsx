@@ -339,7 +339,7 @@ export const Cart = ({ cart, setCart, removeFromCart, handleCloseCart }) => {
                                     <AlertDialogCloseButton />
                                     <AlertDialogBody>
                                         Los gastos de envío vendrán dictaminados por la empresa de transporte, su domicilio y el peso de este. <br></br>
-                                        La cifra sera confirmada cuando se solicite el envío.
+                                        La cifra será confirmada cuando se solicite el envío.
                                     </AlertDialogBody>
 
                                 </AlertDialogContent>

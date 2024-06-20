@@ -90,7 +90,7 @@ const initialProducts = [
   },
   {
     id: 367,
-    name: 'Molde VerdeCOSMOS MATT CERAMIC EFFECT 150ml.',
+    name: 'Molde Verde COSMOS MATT CERAMIC EFFECT 150ml.',
     price: '8.10',
     images: [
       'https://i.ibb.co/kXdX7q4/cosmos-matt-ceramic-effect-mould-green-150-ml.jpg',

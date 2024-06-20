@@ -137,7 +137,7 @@ const initialProducts = [
     name: 'Pongotodo II 21x17x20cm',
     price: '20.60',
     images: [
-      '',
+      'https://i.ibb.co/4gGsJD1/Pongotodo-2-divisiones.jpg',
     ],
     label: '21x17x20',
     description: 'Soporte fabricado en madera de DM  Listo para pintar o decorar con las pinturas y productos CADENCE.',

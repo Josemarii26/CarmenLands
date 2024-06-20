@@ -953,7 +953,7 @@ const initialProducts = [
     name: 'Golden Bloom 2 - Papel para decoupage - A1',
     price: 29.95,
     images: [
-      'https://i.ibb.co/pfPx9V7/366058725-661542446010118-8595553839926230971-n-1.jpg',
+      'https://i.ibb.co/WzXTXxv/366072301-661542366010126-1622565532908994108-n-1.jpg',
       'https://mintbymichelle.eu/pub/media/catalog/product/cache/fac465f6786493349529901840f5f3e4/3/6/366685604_663444695819893_1334297716913599544_n.jpg',
     ],
     label: 'A1',
@@ -965,7 +965,7 @@ const initialProducts = [
     name: 'Golden Bloom 2 - Papel para decoupage - A3',
     price: 19.95,
     images: [
-      'https://i.ibb.co/pfPx9V7/366058725-661542446010118-8595553839926230971-n-1.jpg',
+      'https://i.ibb.co/WzXTXxv/366072301-661542366010126-1622565532908994108-n-1.jpg',
       'https://mintbymichelle.eu/pub/media/catalog/product/cache/fac465f6786493349529901840f5f3e4/3/6/366685604_663444695819893_1334297716913599544_n.jpg',
     ],
     label: 'A3',

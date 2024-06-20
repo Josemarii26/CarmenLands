@@ -24,7 +24,7 @@ import { Navbar3 } from './navbar/Navbar3';
 const initialProducts = [
   {
     id: 377,
-    name: 'Blanco AMBIANTE WATER RESIST 250ml. ',
+    name: 'Blanco AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/rfjYSMj/ambiente-water-resist-white-250ml-cat.jpg',
@@ -35,7 +35,7 @@ const initialProducts = [
   },
   {
     id: 378,
-    name: 'Blanco Antiguo AMBIANTE WATER RESIST 250ml. ',
+    name: 'Blanco Antiguo AMBIANTE WATER RESIST 250ml. + CATALIZADOR ',
     price: '13.25',
     images: [
       'https://i.ibb.co/8gj9YMC/ambiente-water-resist-ancient-white-250ml-cat.jpg',
@@ -46,7 +46,7 @@ const initialProducts = [
   },
   {
     id: 379,
-    name: 'Piedra AMBIANTE WATER RESIST 250ml. ',
+    name: 'Piedra AMBIANTE WATER RESIST 250ml. + CATALIZADOR ',
     price: '13.25',
     images: [
       'https://i.ibb.co/ZHv8bt7/ambiente-water-resist-sandstone-250ml-cat.jpg',
@@ -57,7 +57,7 @@ const initialProducts = [
   },
   {
     id: 380,
-    name: 'Marfil AMBIANTE WATER RESIST 250ml. ',
+    name: 'Marfil AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/1fjVp5V/ambiente-water-resist-ivory-coast-250ml-cat.jpg',
@@ -68,7 +68,7 @@ const initialProducts = [
   },
   {
     id: 381,
-    name: 'Cartón AMBIANTE WATER RESIST 250ml. ',
+    name: 'Cartón AMBIANTE WATER RESIST 250ml. + CATALIZADOR ',
     price: '13.25',
     images: [
       'https://i.ibb.co/KwnkdyS/ambiente-water-resist-cardboard-250ml-cat.jpg',
@@ -79,7 +79,7 @@ const initialProducts = [
   },
   {
     id: 382,
-    name: 'Verde Linden AMBIANTE WATER RESIST 250ml. ',
+    name: 'Verde Linden AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/r7D0871/ambiente-water-resist-linden-green-250ml-cat.jpg',
@@ -90,7 +90,7 @@ const initialProducts = [
   },
   {
     id: 383,
-    name: 'Verde Esmeralda AMBIANTE WATER RESIST 250ml. ',
+    name: 'Verde Esmeralda AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/mH01gbW/ambiente-water-resist-emerald-green-250ml-cat.jpg',
@@ -101,7 +101,7 @@ const initialProducts = [
   },
   {
     id: 384,
-    name: 'Nuez AMBIANTE WATER RESIST 250ml. ',
+    name: 'Nuez AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/4FvBrRF/ambiente-water-resist-walnut-250ml-cat.jpg',
@@ -112,7 +112,7 @@ const initialProducts = [
   },
   {
     id: 385,
-    name: 'Azul Océano AMBIANTE WATER RESIST 250ml. ',
+    name: 'Azul Océano AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/rZWChk2/ambiente-water-resist-ocean-250ml-cat.jpg',
@@ -123,7 +123,7 @@ const initialProducts = [
   },
   {
     id: 386,
-    name: 'Azul Fresco AMBIANTE WATER RESIST 250ml. ',
+    name: 'Azul Fresco AMBIANTE WATER RESIST 250ml. + CATALIZADOR ',
     price: '13.25',
     images: [
       'https://i.ibb.co/3Yrr8FQ/ambiente-water-resist-fresco-250ml-cat.jpg',
@@ -134,7 +134,7 @@ const initialProducts = [
   },
   {
     id: 387,
-    name: 'Azul Medianoche AMBIANTE WATER RESIST 250ml. ',
+    name: 'Azul Medianoche AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/VMFNFmG/ambiente-water-resist-midnight-blue-250ml-cat.jpg',
@@ -145,7 +145,7 @@ const initialProducts = [
   },
   {
     id: 388,
-    name: 'Gris Pizarra AMBIANTE WATER RESIST 250ml. ',
+    name: 'Gris Pizarra AMBIANTE WATER RESIST 250ml. + CATALIZADOR ',
     price: '13.25',
     images: [
       'https://i.ibb.co/h8cTqKZ/ambiente-water-resist-dark-slate-gray-250ml-cat.jpg',
@@ -156,7 +156,7 @@ const initialProducts = [
   },
   {
     id: 389,
-    name: 'Gris Oscuro AMBIANTE WATER RESIST 250ml. ',
+    name: 'Gris Oscuro AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/R20SG6R/ambiente-water-resist-dark-gray-250ml-cat.jpg',
@@ -167,7 +167,7 @@ const initialProducts = [
   },
   {
     id: 390,
-    name: 'Gris Antracita AMBIANTE WATER RESIST 250ml. ',
+    name: 'Gris Antracita AMBIANTE WATER RESIST 250ml. + CATALIZADOR',
     price: '13.25',
     images: [
       'https://i.ibb.co/MR8D4mL/ambiente-water-resist-anthracite-black-250ml-cat.jpg',
@@ -178,7 +178,7 @@ const initialProducts = [
   },
   {
     id: 391,
-    name: 'Gris Grafitti AMBIANTE WATER RESIST 250ml. ',
+    name: 'Gris Grafitti AMBIANTE WATER RESIST 250ml. + CATALIZADOR ',
     price: '13.25',
     images: [
       'https://i.ibb.co/YLxs1Xv/ambiente-water-resist-grafitti-gray-250ml-cat.jpg',
@@ -189,7 +189,7 @@ const initialProducts = [
   },
   {
     id: 392,
-    name: 'Moka AMBIANTE WATER RESIST 250ml. ',
+    name: 'Moka AMBIANTE WATER RESIST 250ml. + CATALIZADOR ',
     price: '13.25',
     images: [
       'https://i.ibb.co/Gn6h3m4/ambiente-water-resist-mink-250ml-cat.jpg',
@@ -403,7 +403,7 @@ export const Tienda3Ambientes = () => {
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
           <h2>Pinturas para ambientes húmedos Cadence🎨</h2>
 
-          <h3>Fórmula avanzada con nanotecnología, pintura acrílica mate a base de agua con excelente adherencia a superficies en sitios húmedos o inorgánicas como <br></br><span id='materiales'>vidrio, cerámica, porcelana, azulejos, metal, aluminio, etc.</span> <br></br>Larga duración, no amarillea ni se desvanece, resistente a las manchas, cobertura perfecta, sin marcas de pincel , producto de resistencia al impacto.
+          <h3>Fórmula avanzada con nanotecnología, pintura acrílica mate a base de agua con excelente adherencia a superficies en sitios húmedos o inorgánicas como <br></br><span id='materiales'>vidrio, cerámica, porcelana, azulejos, metal, aluminio, etc.</span> <br></br> VIENEN CON CATALIZADOR INCLUIDO <br></br> Larga duración, no amarillea ni se desvanece, resistente a las manchas, cobertura perfecta, sin marcas de pincel , producto de resistencia al impacto.
             <br></br>La resistencia al agua se puede aumentar agregando  Paint and Varnish Catalyst para superficies extra resbaladizas como vidrio y cerámica. <br></br>Se recomiendan 10 gr de Catalizador para 250 ml de Pintura Acrílica Mate Resistente al Agua Ambiente. <br></br>No tóxico. <br></br>
 
 Certificado por la EN71 CE</h3>

@@ -82,7 +82,7 @@ const initialProducts = [
     name: 'Stencil RELIEVE METÁLICO 21x30cm ',
     price: '4.15',
     images: [
-      '',
+      'https://i.ibb.co/Vp8N5kb/stencil-textura-floral-6.jpg',
     ],
     label: '21x30cm',
     description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',

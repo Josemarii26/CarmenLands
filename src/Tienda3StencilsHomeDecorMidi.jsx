@@ -168,7 +168,7 @@ const initialProducts = [
   },
   {
     id: 418,
-    name: 'Stencil HOME DECOR 45x45cm HDM197',
+    name: 'Stencil CADENCE 25x25cm HDM197',
     price: '6.80',
     images: [
       'https://i.ibb.co/k51VwSg/stencil-cadence-25x25-cm-hdm197.png',

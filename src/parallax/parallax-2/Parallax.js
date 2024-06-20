@@ -19,8 +19,10 @@ import { Link } from "react-router-dom";
 export const Parallax = () => {
   const containerRef = useRef();
 
+  
   useEffect(() => {
     const container = containerRef.current;
+
     const sections = gsap.utils.toArray(".panel");
 
     gsap.registerPlugin(ScrollTrigger);
@@ -33,8 +35,7 @@ export const Parallax = () => {
         pin: true,
         scrub: 0.1,
         snap: 1 / (sections.length - 1),
-        end: () => "+=" + containerRef.current.offsetWidth,
-
+        end: () => "+=" + container.offsetWidth, // <-- Aquí estás usando container directamente
       },
     });
 
@@ -45,29 +46,21 @@ export const Parallax = () => {
     };
 
     const handleTouchMove = (e) => {
-
       const touchX = e.touches[0].clientX;
       const touchDeltaX = startTouchX - touchX;
-
-      // Ajusta este valor según tus preferencias para hacer que el scroll sea más "duro"
       const scrollMultiplier = 20;
-
-      // Ajusta la lógica de scroll según tus necesidades
       container.scrollLeft += touchDeltaX * scrollMultiplier;
-
       startTouchX = touchX;
     };
 
-    // Agrega los eventos de touch al contenedor
     container.addEventListener("touchstart", handleTouchStart);
     container.addEventListener("touchmove", handleTouchMove);
 
-    // Elimina los eventos de touch al desmontar el componente
     return () => {
       container.removeEventListener("touchstart", handleTouchStart);
       container.removeEventListener("touchmove", handleTouchMove);
     };
-  }, []);
+  }, [containerRef]);
 
   const [visible, setVisible] = useState(true);
 
@@ -84,6 +77,12 @@ export const Parallax = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  const scrollToBottom = () => {
+    const totalHeight = document.body.scrollHeight;
+    window.scrollTo({
+      top: totalHeight,
+    });
+  };
 
 
 
@@ -100,6 +99,14 @@ export const Parallax = () => {
               👉🏻Accede a mi Tienda👈🏻
             </Button>
           </WavyLink>
+          <br />
+          <div onClick={scrollToBottom}>
+            <Button id="buttonIntro" colorScheme="white" variant="outline" >
+              📲Contacta conmigo📲
+            </Button>
+
+          </div>
+
 
         </div>
       </section>

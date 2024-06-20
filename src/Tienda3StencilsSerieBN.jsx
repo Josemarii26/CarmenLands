@@ -27,7 +27,7 @@ const initialProducts = [
     name: 'Stencil DETALLE Cadence BN98',
     price: '5.90',
     images: [
-      'https://i.ibb.co/V3n9GDJ/stencil-cadence-25x25-cm.jpg',
+      'https://i.ibb.co/6JgYqx8/stencils-cadence-25x36cm-bn098.jpg',
     ],
     label: '25x36cm',
     description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
@@ -38,7 +38,7 @@ const initialProducts = [
     name: 'Stencil DETALLE Cadence BN88',
     price: '5.90',
     images: [
-      'https://i.ibb.co/V3n9GDJ/stencil-cadence-25x25-cm.jpg',
+      'https://i.ibb.co/YptW3M6/stencils-cadence-25x36cm-bn088.jpg',
     ],
     label: '25x36cm',
     description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
@@ -50,7 +50,7 @@ const initialProducts = [
     name: 'Stencil VEGETAL Cadence BN175',
     price: '5.90',
     images: [
-      'https://i.ibb.co/V3n9GDJ/stencil-cadence-25x25-cm.jpg',
+      'https://i.ibb.co/94jRPw1/stencil-vegetal-cadence.jpg',
     ],
     label: '25x36cm',
     description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
@@ -62,7 +62,7 @@ const initialProducts = [
     name: 'Stencil FONDO Cadence',
     price: '5.90',
     images: [
-      'https://i.ibb.co/V3n9GDJ/stencil-cadence-25x25-cm.jpg',
+      'https://i.ibb.co/V9Z7yws/stencil-vegetal-cadence-1.jpg',
     ],
     label: '25x36cm',
     description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
@@ -74,7 +74,7 @@ const initialProducts = [
     name: 'Stencil VEGETAL Cadence BN160',
     price: '5.90',
     images: [
-      'https://i.ibb.co/V3n9GDJ/stencil-cadence-25x25-cm.jpg',
+      'https://i.ibb.co/XXWDZgL/stencil-vegetal-cadence-2.jpg',
     ],
     label: '25x36cm',
     description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',

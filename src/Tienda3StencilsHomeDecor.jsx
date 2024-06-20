@@ -24,7 +24,7 @@ import { Navbar3 } from './navbar/Navbar3';
 const initialProducts = [
   {
     id: 393,
-    name: 'Stencil HOME DECOR 45x45cm',
+    name: 'Stencil HOME DECOR 45x45cm HD146',
     price: '12.60',
     images: [
       'https://i.ibb.co/qy8Mrbt/stencil-cadence-45x45cm.jpg',
@@ -35,7 +35,7 @@ const initialProducts = [
   },
   {
     id: 394,
-    name: 'Stencil HOME DECOR 45x45cm',
+    name: 'Stencil HOME DECOR 45x45cm HD69',
     price: '12.60',
     images: [
       'https://i.ibb.co/ZYfn2bq/stencil-cadence-45x45cm-1.jpg',
@@ -46,7 +46,7 @@ const initialProducts = [
   },
   {
     id: 395,
-    name: 'Stencil HOME DECOR 45x45cm',
+    name: 'Stencil HOME DECOR 45x45cm HD158',
     price: '12.60',
     images: [
       'https://i.ibb.co/7KsKD0J/stencil-cadence-45x45cm-2.jpg',
@@ -57,7 +57,7 @@ const initialProducts = [
   },
   {
     id: 396,
-    name: 'Stencil HOME DECOR 45x45cm',
+    name: 'Stencil HOME DECOR 45x45cm HD156',
     price: '12.60',
     images: [
       'https://i.ibb.co/fkhgwmr/stencil-cadence-45x45cm-3.jpg',
@@ -68,7 +68,7 @@ const initialProducts = [
   },
   {
     id: 397,
-    name: 'Stencil HOME DECOR 45x45cm',
+    name: 'Stencil HOME DECOR 45x45cm HD121',
     price: '12.60',
     images: [
       'https://i.ibb.co/F50cN0S/stencil-cadence-45x45cm-4.jpg',
