@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,244 +15,190 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 348,
-    name: 'Barníz MATE 120ml.',
-    price: '5.20',
+    id: 361,
+    name: 'Negro COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/jgPtpKV/barniz-cadence-mate-250.jpg',
+      'https://i.ibb.co/GP3zXsY/cosmos-matt-ceramic-effect-black-150-ml.jpg',
     ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 349,
-    name: 'Barníz MATE 250ml.',
-    price: '9.40',
+    id: 362,
+    name: 'Marrón COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/jgPtpKV/barniz-cadence-mate-250.jpg',
+      'https://i.ibb.co/bQKtGrr/cosmos-matt-ceramic-effect-brown-150-ml.jpg',
     ],
-    label: '250 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 350,
-    name: 'Barníz MATE 500ml.', 
-    price: '16.40',
+    id: 363,
+    name: 'Marrón Oxidado COSMOS MATT CERAMIC EFFECT 150ml.', 
+    price: '8.10',
     images: [
-      'https://i.ibb.co/m8j29ng/barniz-cadence-mate-500.jpg',
+      'https://i.ibb.co/k5V3pjQ/cosmos-matt-ceramic-effect-rusty-brown-150-ml.jpg',
     ],
-    label: '500 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 351,
-    name: 'Barníz SATINADO 120ml.',
-    price: '5.20',
+    id: 364,
+    name: 'Cashmere COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/nmRfCfJ/barniz-cadence-satinado-120.jpg',
+      'https://i.ibb.co/5xXZYnn/cosmos-matt-ceramic-effect-cashmere-150-ml.jpg',
     ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 352,
-    name: 'Barníz SATINADO 250ml.',
-    price: '9.40',
+    id: 365,
+    name: 'Verde Esmeralda COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/syMvyBP/barniz-cadence-satinado-250.jpg',
+      'https://i.ibb.co/rwpsXYT/cosmos-matt-ceramic-effect-emerald-green-150-ml.jpg',
     ],
-    label: '250 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 353,
-    name: 'Barníz SATINADO 500ml.', 
-    price: '16.40',
+    id: 366,
+    name: 'Gris Humo COSMOS MATT CERAMIC EFFECT 150ml.', 
+    price: '8.10',
     images: [
-      'https://i.ibb.co/v1sZ2nF/barniz-cadence-500-ml-satin.jpg',
+      'https://i.ibb.co/WVG4drW/cosmos-matt-ceramic-effect-smoke-gray-150-ml.jpg',
     ],
-    label: '500 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 354,
-    name: 'Barníz BRILLO 120ml.',
-    price: '5.20',
+    id: 367,
+    name: 'Molde Verde COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/Z8qj4CV/barniz-cadence-brillo-120.jpg',
+      'https://i.ibb.co/kXdX7q4/cosmos-matt-ceramic-effect-mould-green-150-ml.jpg',
     ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 355,
-    name: 'Barníz BRILLO 250ml.',
-    price: '9.40',
+    id: 368,
+    name: 'Verde Menta COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/bFpwSjd/barniz-cadence-brillo-250.jpg',
+      'https://i.ibb.co/2jkZvB8/cosmos-matt-ceramic-effect-mint-green-150-ml.jpg',
     ],
-    label: '250 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 356,
-    name: 'Barníz BRILLO 500ml.', 
-    price: '16.40',
+    id: 369,
+    name: 'Azul Claro COSMOS MATT CERAMIC EFFECT 150ml.', 
+    price: '8.10',
     images: [
-      'https://i.ibb.co/7KxSbSc/barniz-cadence-brillo-500.jpg',
+      'https://i.ibb.co/R30ttNw/cosmos-matt-ceramic-effect-light-blue-150-ml.jpg',
     ],
-    label: '500 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 357,
-    name: 'Barníz CUERO 120ml.', 
-    price: '8.40',
+    id: 370,
+    name: 'Azul Ultramarino COSMOS MATT CERAMIC EFFECT 150ml.', 
+    price: '8.10',
     images: [
-      'https://i.ibb.co/x2ZCrkK/barniz-cadence-cuero-120.jpg',
+      'https://i.ibb.co/GFWQx8T/cosmos-matt-ceramic-effect-ultramarine-blue-150-ml.jpg',
     ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 358,
-    name: 'Barníz ULTIMATE GLAZE MATE 120ml.', 
-    price: '5.85',
+    id: 371,
+    name: 'Azul Real COSMOS MATT CERAMIC EFFECT 150ml.', 
+    price: '8.10',
     images: [
-      'https://i.ibb.co/wWm6SGL/barniz-ultimate-mate-120-ml.jpg',
+      'https://i.ibb.co/hDVPhvy/cosmos-matt-ceramic-effect-royal-blue-150-ml.jpg',
     ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 354,
-    name: 'Barníz Aqua Stone MATE 120ml.',
-    price: '8.40',
+    id: 372,
+    name: 'Manzana Caramelizada COSMOS MATT CERAMIC EFFECT  150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/sFWZ9xY/barniz-exterior-aqua-stone-mate-120-ml.jpg',
+      'https://i.ibb.co/SmXWn07/cosmos-matt-ceramic-effect-candy-apple-150-ml.jpg',
     ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 355,
-    name: 'Barníz Aqua Stone MATE 250ml.',
-    price: '14.40',
+    id: 373,
+    name: 'Naranja COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/tQYgXTL/barniz-exterior-aqua-stone-mate-250-ml.jpg',
+      'https://i.ibb.co/ByDzPm3/cosmos-matt-ceramic-effect-orange-150-ml.jpg',
     ],
-    label: '250 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 356,
-    name: 'Barníz Aqua Stone MATE 500ml.', 
-    price: '20.95',
+    id: 374,
+    name: 'Amarillo COSMOS MATT CERAMIC EFFECT 150ml.', 
+    price: '8.10',
     images: [
-      'https://i.ibb.co/thxvv9C/barniz-exterior-aqua-stone-mate-500-ml.jpg',
+      'https://i.ibb.co/THY6zB5/cosmos-matt-ceramic-effect-yellow-150-ml.jpg',
     ],
-    label: '500 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 354,
-    name: 'Barníz Aqua Stone BRILLO 120ml.',
-    price: '8.40',
+    id: 375,
+    name: 'Ecru COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/cy5GS72/barniz-cadence-aqua-stone-120ml.jpg',
+      'https://i.ibb.co/7XjPG8C/cosmos-matt-ceramic-effect-ecru-150-ml.jpg',
     ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
   {
-    id: 355,
-    name: 'Barníz Aqua Stone BRILLO 250ml.',
-    price: '14.40',
+    id: 376,
+    name: 'Blanco COSMOS MATT CERAMIC EFFECT 150ml.',
+    price: '8.10',
     images: [
-      'https://i.ibb.co/dQKsDBH/barniz-cadence-aqua-stone-250ml.jpg',
+      'https://i.ibb.co/Vmbb74n/cosmos-matt-ceramic-effect-white-150-ml.jpg',
     ],
-    label: '250 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    label: '150 ml.',
+    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
     selected: false,
   },
-  {
-    id: 356,
-    name: 'Barníz Aqua Stone BRILLO 500ml.', 
-    price: '20.95',
-    images: [
-      'https://i.ibb.co/qjkYLQR/barniz-cadence-aqua-stone-500ml.jpg',
-    ],
-    label: '500 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
-    selected: false,
-  },
-  {
-    id: 357,
-    name: 'Barníz Craquelador UN PASO Cadence ', 
-    price: '3.00',
-    images: [
-      'https://i.ibb.co/6D1Hr0V/craquelador-de-1-paso-cadence.jpg',
-    ],
-    label: '500 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
-    selected: false,
-  },
-  {
-    id: 358,
-    name: 'Barníz Craquelador DOS PASOS Cadence ', 
-    price: '5.80',
-    images: [
-      'https://i.ibb.co/S7fYSTJ/craquelador-de-2-pasos-cadence.jpg',
-    ],
-    label: '500 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
-    selected: false,
-  },
-  {
-    id: 359,
-    name: 'Decoupage Textil Cadence 120ml.', 
-    price: '5.50',
-    images: [
-      'https://i.ibb.co/ZBpy1YX/decoupage-textil-cadence.jpg',
-    ],
-    label: '120 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
-    selected: false,
-  },
-  {
-    id: 360,
-    name: 'Decoupage Plus MATT Cadence 250ml.', 
-    price: '7.90',
-    images: [
-      'https://i.ibb.co/K7dhw0R/decoupage-plus-cadence.jpg',
-    ],
-    label: '250 ml.',
-    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
-    selected: false,
-  },
+  
 
 
 
@@ -268,7 +214,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3Barnices = () => {
+export const Tienda3Cosmos = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -455,9 +401,12 @@ export const Tienda3Barnices = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Barnices y Craqueladores Cadence🎨</h2>
+          <h2>Pinturas COSMOS Cadence🎨</h2>
 
-          <h3>Amplia selección de barnices en spray o para brocha, con acabados mate, satinados, alto brillo de 2 componentes...  Además de craqueladores de 1 paso o 2 pasos de la marca CADENCE</h3>
+          <h3>Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes.
+            <br></br>Fácil de aplicar con un pincel o esponja. <br></br>No tóxico. <br></br>
+
+Certificado por la EN71 CE</h3>
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,197 +15,158 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 361,
-    name: 'Negro COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
+    id: 515,
+    name: 'Patina ASFALTO 100ml.',
+    price: '3.40',
     images: [
-      'https://i.ibb.co/GP3zXsY/cosmos-matt-ceramic-effect-black-150-ml.jpg',
+      'https://i.ibb.co/sCxNk0h/patina-asfalto-cadence.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '100ml',
+    description: 'Medium o pátina de asfalto de la marca CADENCE usada para técnicas de envejecido sobre pan de oro o plata. Tambien se usa para oscurecer pinturas y como pátina de envejecido.',
     selected: false,
   },
   {
-    id: 362,
-    name: 'Marrón COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
+    id: 516,
+    name: 'Imprimación Multiadherente MONTEJO 750ml.',
+    price: '19.50',
     images: [
-      'https://i.ibb.co/bQKtGrr/cosmos-matt-ceramic-effect-brown-150-ml.jpg',
+      'https://i.ibb.co/zXhdMd3/imprimacion-multiadherente-montejo-750ml.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '750ml',
+    description: 'Imprimación antioxidante que actúa como preparación y/o selladora para pintar todo tipo de superficies. Permite el posterior esmaltado o barnizado, con productos al agua, de metales tales como hierro, zinc, chapa galvanizada, etc. Pintura de fondo para aplicar sobre PVC rígido y materiales plásticos. Fondo sobre azulejo, cerámica y vidrio. Sellado de superficies porosas de yeso, cemento, cartón yeso, superficies pintadas, etc. Revolver bien el contenido del envase. Superficies nuevas: Lijado previo (lija de grano fino) para conseguir cierta rugosidad y abrir poro. Eliminar restos de polvo, grasa, óxido o suciedad en general. Superficies viejas pintadas: Eliminar cualquier resto de pintura en mal estado. Limpiar la superficie de cualquier tipo de polvo, grasa o suciedad que pueda afectar al anclaje. Lijar (grano fino). Recomendado aplicar dos manos finas de IMPRIMACIÓN MULTIUSOS, respetando siempre los intervalos de repintado. Dureza total tras 3-5 días, dependiendo de la temperatura y del espesor de capa, por tanto se debe evitar el contacto con agua u otros elementos que pudieran remover la película antes de su endurecimiento. Dilución: con agua. Diluir entre 10-15% según aplicación.',
     selected: false,
   },
   {
-    id: 363,
-    name: 'Marrón Oxidado COSMOS MATT CERAMIC EFFECT 150ml.', 
-    price: '8.10',
+    id: 616,
+    name: 'RUSTY PATINA Verde',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/k5V3pjQ/cosmos-matt-ceramic-effect-rusty-brown-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-verde.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 364,
-    name: 'Cashmere COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
+    id: 617,
+    name: 'RUSTY PATINA Gris',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/5xXZYnn/cosmos-matt-ceramic-effect-cashmere-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13210-15765-large_default/rusty-patina-gris.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 365,
-    name: 'Verde Esmeralda COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
+    id: 618,
+    name: 'RUSTY PATINA Verde',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/rwpsXYT/cosmos-matt-ceramic-effect-emerald-green-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-verde.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 366,
-    name: 'Gris Humo COSMOS MATT CERAMIC EFFECT 150ml.', 
-    price: '8.10',
+    id: 619,
+    name: 'RUSTY PATINA Crudo',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/WVG4drW/cosmos-matt-ceramic-effect-smoke-gray-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13211-15767-large_default/rusty-patina-crudo.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 367,
-    name: 'Molde Verde COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
+    id: 620,
+    name: 'RUSTY PATINA Óxido Amarillo',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/kXdX7q4/cosmos-matt-ceramic-effect-mould-green-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13212-15769-large_default/rusty-patina-oxido-amarillo.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 368,
-    name: 'Verde Menta COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
+    id: 621,
+    name: 'RUSTY PATINA Verde Moho',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/2jkZvB8/cosmos-matt-ceramic-effect-mint-green-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-verde-moho.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 369,
-    name: 'Azul Claro COSMOS MATT CERAMIC EFFECT 150ml.', 
-    price: '8.10',
+    id: 622,
+    name: 'RUSTY PATINA Marrón',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/R30ttNw/cosmos-matt-ceramic-effect-light-blue-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-marron.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 370,
-    name: 'Azul Ultramarino COSMOS MATT CERAMIC EFFECT 150ml.', 
-    price: '8.10',
+    id: 623,
+    name: 'RUSTY PATINA Azul Lapislázuli',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/GFWQx8T/cosmos-matt-ceramic-effect-ultramarine-blue-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-azul-lapislazuli.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 371,
-    name: 'Azul Real COSMOS MATT CERAMIC EFFECT 150ml.', 
-    price: '8.10',
+    id: 624,
+    name: 'RUSTY PATINA Naranja',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/hDVPhvy/cosmos-matt-ceramic-effect-royal-blue-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-naranja.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 372,
-    name: 'Manzana Caramelizada COSMOS MATT CERAMIC EFFECT  150ml.',
-    price: '8.10',
+    id: 625,
+    name: 'RUSTY PATINA Gris Antracita',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/SmXWn07/cosmos-matt-ceramic-effect-candy-apple-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-gris-antracita.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
   {
-    id: 373,
-    name: 'Naranja COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
+    id: 626,
+    name: 'RUSTY PATINA Blanco',
+    price: '8.20',
     images: [
-      'https://i.ibb.co/ByDzPm3/cosmos-matt-ceramic-effect-orange-150-ml.jpg',
+      'https://www.artesaniasmontejo.com/13209-15763-large_default/rusty-patina-blanco.jpg',
     ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas rústicas u oxidadas. Con base de agua y lista para su uso sobre multiples superficies. ',
     selected: false,
   },
-  {
-    id: 374,
-    name: 'Amarillo COSMOS MATT CERAMIC EFFECT 150ml.', 
-    price: '8.10',
-    images: [
-      'https://i.ibb.co/THY6zB5/cosmos-matt-ceramic-effect-yellow-150-ml.jpg',
-    ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
-    selected: false,
-  },
-  {
-    id: 375,
-    name: 'Ecru COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
-    images: [
-      'https://i.ibb.co/7XjPG8C/cosmos-matt-ceramic-effect-ecru-150-ml.jpg',
-    ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
-    selected: false,
-  },
-  {
-    id: 376,
-    name: 'Blanco COSMOS MATT CERAMIC EFFECT 150ml.',
-    price: '8.10',
-    images: [
-      'https://i.ibb.co/Vmbb74n/cosmos-matt-ceramic-effect-white-150-ml.jpg',
-    ],
-    label: '150 ml.',
-    description: 'Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes. Fácil de aplicar con un pincel o esponja.',
-    selected: false,
-  },
-  
-
-
 
   
-
-
-
 
 
 ];
@@ -214,7 +175,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3Cosmos = () => {
+export const Tienda3PastasPatinaImprimacion = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -401,12 +362,10 @@ export const Tienda3Cosmos = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Pinturas COSMOS Cadence🎨</h2>
+          <h2>Patina e imprimación🎨</h2>
 
-          <h3>Pintura con base de agua, muy cubriente, que crea un efecto cerámico mate natural al aplicar en una superficie. Listo para su uso, sin disolventes.
-            <br></br>Fácil de aplicar con un pincel o esponja. <br></br>No tóxico. <br></br>
+          <h3>Selección de diferentes productos para limpieza y productos auxiliares. </h3>
 
-Certificado por la EN71 CE</h3>
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos
@@ -421,7 +380,7 @@ Certificado por la EN71 CE</h3>
 
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
-            
+
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
                 <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
@@ -435,7 +394,7 @@ Certificado por la EN71 CE</h3>
                 </Tag>
               )
             )}
-                
+
           </div> <div className="price-slider">
 
               <input
@@ -484,7 +443,7 @@ Certificado por la EN71 CE</h3>
         </div>
 
         <br></br><br></br>
-        
+
 
 
 

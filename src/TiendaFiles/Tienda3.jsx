@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,10 +15,10 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 import { WavyContainer, WavyLink } from "react-wavy-transitions";
 
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,90 +15,100 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
+import { ProductCard3 } from '../tienda/ProductCard3';
+import { Navbar4 } from '../navbar/Navbar4';
 
 
 const initialProducts = [
   {
-    id: 529,
-    name: 'IKAROS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
-    price: '4.25',
+    id: 348,
+    name: 'MESITA ABRIL 🌸',
+    price: 295,
     images: [
-      'https://i.ibb.co/q1ZXV5F/zeugma-pasta-relieve-efecto-piedra.jpg',
+      "https://i.ibb.co/fGZyX1k/Whats-App-Image-2023-11-19-at-20-28-52-2.jpg",
+      "https://i.ibb.co/5r8CC3J/Whats-App-Image-2023-11-19-at-20-27-28-1.jpg",
+      "https://i.ibb.co/Mc69D3D/Whats-App-Image-2023-11-19-at-20-27-29.jpg",
+      "https://i.ibb.co/1nFSCnb/Whats-App-Image-2023-11-19-at-20-27-28.jpg",
+      "https://i.ibb.co/VWNgKG2/Whats-App-Image-2023-11-19-at-20-28-52.jpg"
     ],
-    label: '150ml',
-    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
+    label: 'Mesas',
+    description: 'Cuando gané el concurso de CasaTalentos 2021, tuve que crear un mueble original en directo, ¡en tan solo día y medio! En la grabación del programa, con cámaras, luces y cinco personas en mi pequeño taller, se impusieron el color rosa y las flores de acuarela, con pequeñas texturas de perlas.',
     selected: false,
   },
   {
-    id: 530,
-    name: 'MINOS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
-    price: '4.25',
+    id: 627,
+    name: 'MESA LUZ ✨ ',
+    price: 190,
     images: [
-      'https://i.ibb.co/XFtjj3t/zeugma-pasta-relieve-efecto-piedra-1.jpg',
+      "https://i.ibb.co/W3L5fb3/mesaLuz1.jpg",
+      "https://i.ibb.co/7jL4Dkw/mesaLuz2.jpg",
+      "https://i.ibb.co/0rkprYB/mesaLuz3.jpg"
+      
     ],
-    label: '150ml',
-    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
+    label: 'Mesas',
+    description: 'Es la necesidad de atrapar las sensaciones de las vetas de una piedra marmoleada en la madera, con el tacto en relieve de  delicadas flores de muguet doradas y preciosos tiradores de libélulas.',
     selected: false,
   },
   {
-    id: 531,
-    name: 'SILENOS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
-    price: '4.25',
+    id: 627,
+    name: 'CUADRO SILLA ISABELINA SERIE 1 75x50 🪑⭐ ',
+    price: 125,
     images: [
-      'https://i.ibb.co/QQHGphm/zeugma-pasta-relieve-efecto-piedra-2.jpg',
+      "https://i.ibb.co/4J59S1s/cuadro-Silla-Isabelina-Serie1.jpg",
+      "https://i.ibb.co/RBpNv9t/cuadro-Silla-Isabelina-Serie1-2.jpg",
+      "https://i.ibb.co/f2JYvPL/cuadro-Silla-Isabelina-Serie1-3.jpg"
+      
     ],
-    label: '150ml',
-    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
+    label: 'Cuadros',
+    description: 'Puros relieves. Craquelados en oro. Tiempos pasados reconvertidos, en colores de naturaleza. ¡Azules, turquesas, verdes!',
     selected: false,
   },
   {
-    id: 532,
-    name: 'TRITON ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
-    price: '4.25',
+    id: 628,
+    name: 'CUADRO SILLA ISABELINA SERIE 2 75x50 🪑🌑 ',
+    price: 125,
     images: [
-      'https://i.ibb.co/t3pTynD/zeugma-pasta-relieve-efecto-piedra-3.jpg',
+      "https://i.ibb.co/zHVzCrc/cuadro-Silla-Isabelina-Serie2.jpg",
+      "https://i.ibb.co/1v4JVY8/cuadro-Silla-Isabelina-Serie2-3.jpg",
+      "https://i.ibb.co/cYShwkr/cuadro-Silla-Isabelina-Serie2-2.jpg"
+      
     ],
-    label: '150ml',
-    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
+    label: 'Cuadros',
+    description: 'La calidez y la nobleza de puro terciopelo negro en un cuadro, utilizando un clásico y actualizándolo con un radical aspecto ¡La idea melliza del contrario!',
     selected: false,
   },
   {
-    id: 533,
-    name: 'ASIA ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
-    price: '4.25',
+    id: 630,
+    name: 'BALINESA SERIE 1 🗝️ ',
+    price: 65,
     images: [
-      'https://i.ibb.co/0nW9Qsc/zeugma-pasta-relieve-efecto-piedra-4.jpg',
+      "https://i.ibb.co/C6xNv1D/Balinesa-Serie1.jpg",
+      "https://i.ibb.co/jHxZc9T/Balinesa-Serie1-3.jpg",
+      "https://i.ibb.co/xShp4HZ/Balinesa-Serie1-2.jpg"
+      
     ],
-    label: '150ml',
-    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
+    label: 'Cuadros',
+    description: 'El deseo de encontrar una pieza en el fondo de mar hace de esta pequeña escultura, una pieza seudoarqueologica. La textura y el relieve recrean incrustaciones marinas y la oxidación de metal.',
     selected: false,
   },
-  {
-    id: 534,
-    name: 'ADONIS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
-    price: '4.25',
-    images: [
-      'https://i.ibb.co/X309VBx/zeugma-pasta-relieve-efecto-piedra-5.jpg',
-    ],
-    label: '150ml',
-    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
-    selected: false,
-  },
-
   
+
+
+
+
 
 
 ];
 
 // Define el rango de precios mínimo y máximo de tus productos
 const precioMinimo = 0;
-const precioMaximo = 20;
+const precioMaximo = 300;
 
-export const Tienda3PastasZeugma = () => {
+export const Tienda3Muebles = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -136,10 +146,6 @@ export const Tienda3PastasZeugma = () => {
     setShowNoProducts(filteredProducts.length === 0);
   };
 
-  const removeAccents = (str) => {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  };
-
   const handleSearch = (searchText) => {
     // No filtrar directamente por nombre al buscar
     // en su lugar, ajustar los productos existentes según los filtros
@@ -147,7 +153,7 @@ export const Tienda3PastasZeugma = () => {
 
     if (searchText !== '') {
       const filteredProducts = products.filter((product) =>
-        removeAccents(product.name).toLowerCase().includes(searchText.toLowerCase())
+        product.name.toLowerCase().includes(searchText.toLowerCase())
       );
       setProducts(filteredProducts);
       setShowNoProducts(filteredProducts.length === 0);
@@ -276,28 +282,29 @@ export const Tienda3PastasZeugma = () => {
 
   return (
     <>
-      <Navbar3 />
+      <Navbar4 />
 
       {showOverlay && <div className="overlay"></div>}
-      <div className="tienda" id='tienda3'>
+      <div className="tienda" id='tienda4'>
         <br></br>
 
         <div className="menu">
 
-          <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Pastas Zeugma🎨</h2>
+          <h1>Tienda de productos para artistas - Muebles y Ornamentos 🎀</h1>
 
-          <h3>Pastas de relieve CADENCE que imitan el efecto piedra (zeugma) en diferentes tonos de color. </h3>
+          <h2>Muebles y Ornamentos ⚖️</h2>
 
 
-          <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
+          <h3>Aquí se encuentran los productos más exclusivos de toda la tienda, todos echos a mano por mí, siendo piezas únicas.</h3>
+
+          <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='red' variant='solid' bg='red.700'>
             Filtrar Productos
           </Button>
 
           <SearchBar onSearch={handleSearch} />
 
 
-          <button className="bn632-hover bn22b" onClick={handleToggleCart}>Carrito🛒</button>
+          <button className="bn632-hover bn22c" onClick={handleToggleCart}>Carrito🛒</button>
 
         </div>
 
@@ -306,7 +313,7 @@ export const Tienda3PastasZeugma = () => {
 
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
-                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
+                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='red' bg='red.700'>
                   <label key={selectedClass} className="filter-item" id='checkbox'>
                     <input
                       type="checkbox"
@@ -318,7 +325,7 @@ export const Tienda3PastasZeugma = () => {
               )
             )}
 
-          </div> <div className="price-slider">
+          </div><div className="price-slider">
 
               <input
                 type="range"
@@ -343,7 +350,7 @@ export const Tienda3PastasZeugma = () => {
             <p> <br></br> <br></br>No hay productos según su búsqueda.</p>
           ) : (
             visibleProducts.map((product) => (
-              <ProductCard2
+              <ProductCard3
                 key={product.id}
                 product={product}
                 addToCart={addToCart}

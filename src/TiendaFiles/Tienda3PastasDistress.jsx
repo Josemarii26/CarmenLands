@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,111 +15,80 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 575,
-    name: 'Ácido Magic Glass 70ml.',
-    price: '5.80',
+    id: 535,
+    name: 'Marrón DISTRESS PASTE 150ml.',
+    price: '5.85',
     images: [
-      'https://i.ibb.co/P5tNyKY/acido-magic-glass-cadence.jpg',
+      'https://i.ibb.co/vjN7Rpt/distress-paste-negro-hollin.jpg',
     ],
-    label: '70ml',
-    description: 'Ácido en crema para esmerilar vidrio y sus derivados, espejos, ventanas, copas... Ideal para usar con cualquier tipo de Stencil o plantilla, ya que no las estropea. Modo de uso: Limpiar la superficie de vidrio, colocar una plantilla o stencil, aplicar una capa gruesa con un pincel o una espátula, dejar actuar unos 2 minutos y aclarar con agua.',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas vintage, distress, envejecido... Con base de agua y lista para hacer efectos envejecidos sobre papel, fotos, madera, fibras decorativas... Muy facil de usar con pincel o esponja y stencils. Limpieza con agua y jabón',
     selected: false,
   },
   {
-    id: 576,
-    name: 'Aqua Block Coat Repellent Oil 250ml.',
-    price: '12.10',
+    id: 536,
+    name: 'Negro Hollín DISTRESS PASTE 150ml.',
+    price: '5.85',
     images: [
-      'https://i.ibb.co/prh6t27/aqua-block-coat-repellent-oil-250-ml.jpg',
+      'https://i.ibb.co/DYN557M/distress-paste-negro-hollin-1.jpg',
     ],
-    label: '250ml',
-    description: 'Gel a base de agua que transforma el tejido en un tejido recubierto, impermeable y lavable a máquina. Cuando se seca, crea una sensación de hule, con una capa hidrofóbica y hace que la tela sea resistente al agua. Planchar en modo satén, sin vapor, por el lado interior. Una vez tratada, la tela se puede coser, cortar y limpiar. Posee una gran resistencia al desgaste y es lavable a máquina a 30ºC. Es ideal para manteles de mesa, sombrillas, carteras, delantales, manteles individuales y bolsos de mano. El recubrimiento de gel repele el agua, el barro y el aceite. ',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas vintage, distress, envejecido... Con base de agua y lista para hacer efectos envejecidos sobre papel, fotos, madera, fibras decorativas... Muy facil de usar con pincel o esponja y stencils. Limpieza con agua y jabón',
     selected: false,
   },
   {
-    id: 577,
-    name: 'Gel Enmascarador 100ml.',
-    price: '3.20',
+    id: 537,
+    name: 'Burdeos Antiguo DISTRESS PASTE 150ml.',
+    price: '5.85',
     images: [
-      'https://i.ibb.co/4dG6wkZ/gel-enmascarador-cadence.jpg',
+      'https://i.ibb.co/2k65Qv8/distress-paste-burdeos-antiguo.jpg',
     ],
-    label: '100ml',
-    description: 'Gel para proteger superficies de trabajo impidiendo que las pinturas penetren a través de él, por lo que la superficie enmascarada permanece intacta. Después de secar, se quita con un borrador normal o se enrolla con los dedos. Úsalo para proteger detalles en decoupage, scrap y mix media. Se limpia fácilmente con agua y jabón. ',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas vintage, distress, envejecido... Con base de agua y lista para hacer efectos envejecidos sobre papel, fotos, madera, fibras decorativas... Muy facil de usar con pincel o esponja y stencils. Limpieza con agua y jabón',
     selected: false,
   },
   {
-    id: 578,
-    name: 'Pan de Oro Cadence',
-    price: '23.60',
+    id: 538,
+    name: 'Verde Pino DISTRESS PASTE 150ml.',
+    price: '5.85',
     images: [
-      'https://i.ibb.co/TwGyHfh/pan-de-oro-cadence.jpg',
+      'https://i.ibb.co/Qbw4tDC/distress-paste-verde-pino-1.jpg',
     ],
-    label: '100 hojas',
-    description: 'Blister con 4 librillos de 25 hojas de 16x16cm sobre papel encerado para un fácil manejo de la marca CADENCE. Para decoración, manualidades, scrap, mixmedia....',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas vintage, distress, envejecido... Con base de agua y lista para hacer efectos envejecidos sobre papel, fotos, madera, fibras decorativas... Muy facil de usar con pincel o esponja y stencils. Limpieza con agua y jabón',
     selected: false,
   },
   {
-    id: 579,
-    name: 'Foil Cobre 8cm x 120m',
-    price: '22.85',
+    id: 539,
+    name: 'Café Espresso DISTRESS PASTE 150ml.',
+    price: '5.85',
     images: [
-      'https://i.ibb.co/wd2JbJS/foil-cobre-cadence.jpg',
+      'https://i.ibb.co/mJxBtXf/distress-paste-verde-pino.jpg',
     ],
-    label: '120m',
-    description: 'Rollo de 120 metros por 8cm de ancho de foil metálizado de la marca CADENCE. Para decoración, manualidades, scrap, mixmedia....',
+    label: '150ml',
+    description: 'Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas vintage, distress, envejecido... Con base de agua y lista para hacer efectos envejecidos sobre papel, fotos, madera, fibras decorativas... Muy facil de usar con pincel o esponja y stencils. Limpieza con agua y jabón',
     selected: false,
   },
-  {
-    id: 580,
-    name: 'Foil Plata 8cm x 120m',
-    price: '22.85',
-    images: [
-      'https://i.ibb.co/Jt18Rrz/foil-plata-cadence.jpg',
-    ],
-    label: '120m',
-    description: 'Rollo de 120 metros por 8cm de ancho de foil metálizado de la marca CADENCE. Para decoración, manualidades, scrap, mixmedia....',
-    selected: false,
-  },
-  {
-    id: 581,
-    name: 'Foil Oro 8cm x 120m',
-    price: '22.85',
-    images: [
-      'https://i.ibb.co/Hq11Mdx/foil-oro-cadence.jpg',
-    ],
-    label: '120m',
-    description: 'Rollo de 120 metros por 8cm de ancho de foil metálizado de la marca CADENCE. Para decoración, manualidades, scrap, mixmedia....',
-    selected: false,
-  },
-  {
-    id: 582,
-    name: 'Barniz PLUS+ para pan de oro 100ml.',
-    price: '5.20',
-    images: [
-      'https://i.ibb.co/Stv2fTn/barniz-plus-para-pan-de-oro-cadence.jpg',
-    ],
-    label: '120ml',
-    description: 'Barniz Plus + de CADENCE puede ser usado de una manera sencilla sobre trabajos de imitación de metal, sobre en pan de oro o foil metalizado. Es un barniz listo para usar con pincel, muy brillante y que no se deslustra.',
-    selected: false,
-  },
-  
+
+
+
 
 
 ];
 
 // Define el rango de precios mínimo y máximo de tus productos
 const precioMinimo = 0;
-const precioMaximo = 50;
+const precioMaximo = 20;
 
-export const Tienda3Variado= () => {
+export const Tienda3PastasDistress = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -306,9 +275,11 @@ export const Tienda3Variado= () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Materiales Variados Cadence🎨</h2>
+          <h2>Pastas Distress🎨</h2>
 
-          <h3> Una lista de materiales variados con los que poder decorar a tu gusto aquello que estés creando ahora mnismo. </h3>
+          <h3>Pasta de relieve de alta calidad CADENCE, para crear texturas con efectos de patinas antiguas o vintage.
+
+            Con base de agua y lista para su uso sobre multiples superficies. </h3>
 
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
@@ -325,7 +296,19 @@ export const Tienda3Variado= () => {
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
 
-            
+            {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
+              (selectedClass) => (
+                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
+                  <label key={selectedClass} className="filter-item" id='checkbox'>
+                    <input
+                      type="checkbox"
+                      checked={selectedClasses.includes(selectedClass)}
+                      onChange={() => toggleSelectedClass(selectedClass)} />
+                    {selectedClass}
+                  </label>
+                </Tag>
+              )
+            )}
 
           </div> <div className="price-slider">
 

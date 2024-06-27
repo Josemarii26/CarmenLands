@@ -172,7 +172,7 @@
             "descripcionA": "Cuando gané el concurso de CasaTalentos 2021, tuve que crear un mueble original en directo, ¡en tan solo día y medio!",
             "descripcionB": "En la grabación del programa, con cámaras, luces y cinco personas en mi pequeño taller, se impusieron el color rosa y las flores de acuarela, con pequeñas texturas de perlas.",
             "disponible": "✅ En stock ✅",
-            "ask": "¡Puedes comprarla ahora en la tienda!",
+            "ask": "¡Compra aquí!",
             "precio": "Precio: 295€",
             "imagenes": [
                 "https://i.ibb.co/fGZyX1k/Whats-App-Image-2023-11-19-at-20-28-52-2.jpg",
@@ -213,6 +213,66 @@
         },
         {
             "id": 16,
+            "tituloH2": "MESA LUZ ✨",
+            "descripcionA": "Es la necesidad de atrapar las sensaciones de las vetas de una piedra marmoleada en la madera. ",
+            "descripcionB": "Con el tacto en relieve de delicadas flores de muguet doradas y preciosos tiradores de libélulas.",
+            "disponible": "✅ En stock ✅",
+            "ask": "¡Compra aquí!",
+            "precio": "Precio: 190€",
+            "imagenes": [
+                "https://i.ibb.co/W3L5fb3/mesaLuz1.jpg",
+                "https://i.ibb.co/7jL4Dkw/mesaLuz2.jpg",
+                "https://i.ibb.co/0rkprYB/mesaLuz3.jpg"
+            ],
+            "curiosidad": "¡Crean el perfecto jardín para cualquier estancia!"
+        },
+        {
+            "id": 17,
+            "tituloH2": "CUADRO SILLA ISABELINA SERIE 1 75x50 🪑⭐",
+            "descripcionA": "Puros relieves. Craquelados en oro. ",
+            "descripcionB": "Tiempos pasados reconvertidos, en colores de naturaleza. ¡Azules, turquesas, verdes!",
+            "disponible": "✅ En stock ✅",
+            "ask": "¡Compra aquí!",
+            "precio": "Precio: 125€",
+            "imagenes": [
+                "https://i.ibb.co/4J59S1s/cuadro-Silla-Isabelina-Serie1.jpg",
+                "https://i.ibb.co/RBpNv9t/cuadro-Silla-Isabelina-Serie1-2.jpg",
+                "https://i.ibb.co/f2JYvPL/cuadro-Silla-Isabelina-Serie1-3.jpg"
+            ],
+            "curiosidad": "¡Serie de sólo 10 cuadros!"
+        },
+        {
+            "id": 18,
+            "tituloH2": "CUADRO SILLA ISABELINA SERIE 2 75x50 🪑🌑",
+            "descripcionA": "La calidez y la nobleza de puro terciopelo negro en un cuadro, utilizando un clásico y actualizándolo con un radical aspecto.",
+            "descripcionB": "¡La idea melliza del contrario!",
+            "disponible": "✅ En stock ✅",
+            "ask": "¡Compra aquí!",
+            "precio": "Precio: 125€",
+            "imagenes": [
+                "https://i.ibb.co/zHVzCrc/cuadro-Silla-Isabelina-Serie2.jpg",
+                "https://i.ibb.co/1v4JVY8/cuadro-Silla-Isabelina-Serie2-3.jpg",
+                "https://i.ibb.co/cYShwkr/cuadro-Silla-Isabelina-Serie2-2.jpg"
+            ],
+            "curiosidad": "¡Una idea que parte de mi profesora!"
+        },
+        {
+            "id": 19,
+            "tituloH2": "BALINESA SERIE 1 🗝️",
+            "descripcionA": "El deseo de encontrar una pieza en el fondo de mar hace de esta pequeña escultura, una pieza seudoarqueologica. ",
+            "descripcionB": "La textura y el relieve recrean incrustaciones marinas y la oxidación de metal.",
+            "disponible": "✅ En stock ✅ ",
+            "ask": "¡Compra aquí!",
+            "precio": "Precio: 65€",
+            "imagenes": [
+                "https://i.ibb.co/C6xNv1D/Balinesa-Serie1.jpg",
+                "https://i.ibb.co/jHxZc9T/Balinesa-Serie1-3.jpg",
+                "https://i.ibb.co/xShp4HZ/Balinesa-Serie1-2.jpg"
+            ],
+            "curiosidad": "¡Adoro recrear auténtica piedra marina!"
+        },
+        {
+            "id": 20,
             "tituloH2": "🚧 SEGUIMOS TRABAJANDO EN ELLO ⚒️",
             "descripcionA": "Terminar un proyecto de este tipo requiere mucha paciencia y dedicación, por lo que estamos trabajando en ello para poder ofrecerte más productos lo antes posible.",
             "descripcionB": "Echa un vistazo de vez en cuando para ver las novedades.",
@@ -224,7 +284,7 @@
            
         },
         {
-            "id": 17,
+            "id": 21,
             "tituloH2": "💬 CONTACTA CONMIGO 📲",
             "legal": "  Aviso Legal ",
             "imagenes": [

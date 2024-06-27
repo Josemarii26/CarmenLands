@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,15 +15,15 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 import { WavyContainer, WavyLink } from "react-wavy-transitions";
 
 
 
-export const Tienda3Transfers = () => {
+export const Tienda3Stencils = () => {
 
   const [cart, setCart] = useState([]);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -89,7 +89,7 @@ export const Tienda3Transfers = () => {
 
         <div className="menu">
 
-          <h1>Transfers  - Cadence 📘</h1>
+          <h1>Stencils  - Cadence 📘</h1>
 
           <h3>Stencils y plantillas de diversos estilos de la marca CADENCE. Para mix media, home decor, manualidades...</h3>
 
@@ -98,33 +98,57 @@ export const Tienda3Transfers = () => {
         </div>
 
         <div className="marcas2">
-          <WavyLink direction="up" to="/tienda/cadence/transfers/folex" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/home-decor" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/zRXMt5b/folex-transferencia.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/nrK7nm7/stencil-cadence-home-decor-45x45.jpg' alt='cadence'></img>
               <br></br>
-              <p>Transfers FOLEX Cadence</p>
+              <p>Stencil Cadence Home Decor 45x45cm</p>
             </div>
       
           </WavyLink>
 
-          <WavyLink direction="up" to="/tienda/cadence/transfers/home-decor" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/home-decor-midi" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/tQtmJYG/transfers-home-decor-cadence-14.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/YPyv02X/stencil-cadence-home-decor-midi.jpg' alt='cadence'></img>
               <br></br>
-              <p>Transfers HOME DECOR</p>
+              <p>Stencil Home Decor Midi 25x25cm</p>
             </div>
       
           </WavyLink>
-          <WavyLink direction="up" to="/tienda/cadence/transfers/textil" color="#4593db">
+          <WavyLink direction="up" to="/tienda/cadence/stencils/serie-bn" color="#4593db">
             <div className="cadence-card">
-              <img src='https://i.ibb.co/C6s5fwX/transfers-para-tela-cadence.jpg' alt='cadence'></img>
+              <img src='https://i.ibb.co/9bRcLkL/stencil-cadence-serie-bn.jpg' alt='cadence'></img>
               <br></br>
-              <p>Transfers PARA TEXTIL</p>
+              <p>Stencil Cadence Serie BN 25x36cm</p>
             </div>
       
           </WavyLink>
 
-          
+          <WavyLink direction="up" to="/tienda/cadence/stencils/private" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/4fZpqPK/stencils-cadence-private.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Stencil Cadence Private 25x35cm</p>
+            </div>
+      
+          </WavyLink>
+
+          <WavyLink direction="up" to="/tienda/cadence/stencils/miscellaneous" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/Sc0P183/stencils-cadence-mix-media.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Stencil Cadence Miscellaneous</p>
+            </div>
+      
+          </WavyLink>
+          <WavyLink direction="up" to="/tienda/cadence/stencils/cenefas" color="#4593db">
+            <div className="cadence-card">
+              <img src='https://i.ibb.co/MhHc49Q/stencil-cadence-cenefas.jpg' alt='cadence'></img>
+              <br></br>
+              <p>Stencil Cadence Cenefas</p>
+            </div>
+      
+          </WavyLink>
 
           
 

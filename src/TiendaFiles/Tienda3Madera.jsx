@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,36 +15,211 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 515,
-    name: 'Patina ASFALTO 100ml.',
-    price: '3.25',
+    id: 557,
+    name: 'Caja DM Asa 14x12x20cm',
+    price: '16.80',
     images: [
-      'https://i.ibb.co/sCxNk0h/patina-asfalto-cadence.jpg',
+      'https://i.ibb.co/SK9dGrZ/caja-dm-asa-14x12x20-cms.jpg',
     ],
-    label: '100ml',
-    description: 'Medium o pátina de asfalto de la marca CADENCE usada para técnicas de envejecido sobre pan de oro o plata. Tambien se usa para oscurecer pinturas y como pátina de envejecido.',
+    label: '14x12x20',
+    description: 'Caja DM con asa de cuerda y tapa con bisagras y cierre.',
     selected: false,
   },
   {
-    id: 516,
-    name: 'Imprimación Multiadherente MONTEJO 750ml.',
-    price: '19.50',
+    id: 558,
+    name: 'Jaula DM 45x27x20cm',
+    price: '47.50',
     images: [
-      'https://i.ibb.co/zXhdMd3/imprimacion-multiadherente-montejo-750ml.jpg',
+      'https://i.ibb.co/9TTQsww/jaula-dm.jpg',
     ],
-    label: '750ml',
-    description: 'Imprimación antioxidante que actúa como preparación y/o selladora para pintar todo tipo de superficies. Permite el posterior esmaltado o barnizado, con productos al agua, de metales tales como hierro, zinc, chapa galvanizada, etc. Pintura de fondo para aplicar sobre PVC rígido y materiales plásticos. Fondo sobre azulejo, cerámica y vidrio. Sellado de superficies porosas de yeso, cemento, cartón yeso, superficies pintadas, etc. Revolver bien el contenido del envase. Superficies nuevas: Lijado previo (lija de grano fino) para conseguir cierta rugosidad y abrir poro. Eliminar restos de polvo, grasa, óxido o suciedad en general. Superficies viejas pintadas: Eliminar cualquier resto de pintura en mal estado. Limpiar la superficie de cualquier tipo de polvo, grasa o suciedad que pueda afectar al anclaje. Lijar (grano fino). Recomendado aplicar dos manos finas de IMPRIMACIÓN MULTIUSOS, respetando siempre los intervalos de repintado. Dureza total tras 3-5 días, dependiendo de la temperatura y del espesor de capa, por tanto se debe evitar el contacto con agua u otros elementos que pudieran remover la película antes de su endurecimiento. Dilución: con agua. Diluir entre 10-15% según aplicación.',
+    label: '45x27x20',
+    description: 'Jaula de madera estilo vintage para decorar y pintar con productos CADENCE',
     selected: false,
   },
-
+  {
+    id: 559,
+    name: 'Joyero 9 cajones 37.5x15.5x20cm',
+    price: '39.90',
+    images: [
+      'https://i.ibb.co/71mhGrc/joyero-9-cajones-375x155x20-cm.jpg',
+    ],
+    label: '37.5x15.5x20',
+    description: 'Joyero con 9 cajones fabricado en madera de DM',
+    selected: false,
+  },
+  {
+    id: 560,
+    name: 'Caja con patas 28x18x21cm',
+    price: '20.90',
+    images: [
+      'https://i.ibb.co/WV5QjCv/caja-patas-28x18x21-cm.jpg',
+    ],
+    label: '28x18x21',
+    description: 'Caja con patas fabricada en madera de DM ',
+    selected: false,
+  },
+  {
+    id: 561,
+    name: 'Mueble 3 cajones Silvia 34x15x28cm',
+    price: '39.90',
+    images: [
+      'https://i.ibb.co/GxkxbWn/mueble-3-cajones-silvia.jpg',
+    ],
+    label: '28x18x21',
+    description: 'Cajonera en madera de DM con 3 alturas y tiradores',
+    selected: false,
+  },
+  {
+    id: 562,
+    name: 'Mueblecito Multifuncional 34x21x19cm',
+    price: '39.90',
+    images: [
+      'https://i.ibb.co/zR3gPB5/mueblecito-multifuncional.jpg',
+    ],
+    label: '234x21x19',
+    description: 'Mueblecito DM multifuncional con 2 cajones, huecos laterales y parte superior con minicompartimentos',
+    selected: false,
+  },
+  {
+    id: 563,
+    name: 'Caja libro 21x17x5.3cm',
+    price: '8.50',
+    images: [
+      'https://i.ibb.co/rFSmZxV/caja-libro-21x17x53-cms.jpg',
+    ],
+    label: '234x21x19',
+    description: 'Caja con forma de libro, fabricada en madera de DM',
+    selected: false,
+  },
+  {
+    id: 564,
+    name: 'Revistero 2 Espacios DM 38x41x18.5cm',
+    price: '27.10',
+    images: [
+      'https://i.ibb.co/rFNY155/revistero-2-espacios-dm.jpg',
+    ],
+    label: '38x41x18.5',
+    description: 'Revistero 2 espacios, realizado en madera de DM ',
+    selected: false,
+  },
+  {
+    id: 565,
+    name: 'Huevera DM 12 unidades 25x13x34cm',
+    price: '19.90',
+    images: [
+      'https://i.ibb.co/wzXRNvC/huevera-dm-12-unid.jpg',
+    ],
+    label: '25x13x34',
+    description: 'Soporte fabricado en madera de DM  Listo para pintar o decorar con las pinturas y productos CADENCE.',
+    selected: false,
+  },
+  {
+    id: 566,
+    name: 'Pongotodo III 19x15x18cm',
+    price: '17.10',
+    images: [
+      'https://i.ibb.co/8cg2s9Y/Pongotodo-III.jpg',
+    ],
+    label: '19x15x18',
+    description: 'Soporte fabricado en madera de DM  Listo para pintar o decorar con las pinturas y productos CADENCE.',
+    selected: false,
+  },
+  {
+    id: 567,
+    name: 'Pongotodo II 21x17x20cm',
+    price: '20.60',
+    images: [
+      'https://i.ibb.co/4gGsJD1/Pongotodo-2-divisiones.jpg',
+    ],
+    label: '21x17x20',
+    description: 'Soporte fabricado en madera de DM  Listo para pintar o decorar con las pinturas y productos CADENCE.',
+    selected: false,
+  },
+  {
+    id: 568,
+    name: 'Archivador Con Cajón 22x21x36cm',
+    price: '29.50',
+    images: [
+      'https://i.ibb.co/xFNqStZ/Archivador-con-cajon.jpg',
+    ],
+    label: '22x21x36',
+    description: 'Soporte fabricado en madera de DM  Listo para pintar o decorar con las pinturas y productos CADENCE.',
+    selected: false,
+  },
+  {
+    id: 569,
+    name: 'Portacubos con Patas 13x23x13cm',
+    price: '16.80',
+    images: [
+      'https://i.ibb.co/b5B9Hmg/portacubos-con-pastas.jpg',
+    ],
+    label: '13x23x13',
+    description: 'Soporte fabricado en madera de DM  Listo para pintar o decorar con las pinturas y productos CADENCE.',
+    selected: false,
+  },
+  {
+    id: 570,
+    name: 'Organizador Giratorio 22x26x22cm',
+    price: '32.50',
+    images: [
+      'https://i.ibb.co/ZHwQbp5/madera-cadence-1.jpg',
+    ],
+    label: '22x26x22',
+    description: 'Organizador giratorio fabricado en madera de DM ',
+    selected: false,
+  },
+  {
+    id: 571,
+    name: 'Caja Combada 18x18x12cm',
+    price: '17.10',
+    images: [
+      'https://i.ibb.co/p0fDdSX/madera-cadence-2.jpg',
+    ],
+    label: '18x18x12',
+    description: 'Caja combada estilo bombonera, fabricada en madera de DM',
+    selected: false,
+  },
+  {
+    id: 572,
+    name: 'Set Bandejas DM 45x34x5.5cm',
+    price: '24.80',
+    images: [
+      'https://i.ibb.co/0C0scpC/madera-dm-cadence.jpg',
+    ],
+    label: '45x34x5.5',
+    description: 'Set de 2 bandejas con los cantos redondeados.',
+    selected: false,
+  },
+  {
+    id: 573,
+    name: 'Set 2 Bandejas DM 43x30x7cm 34x25x7cm',
+    price: '15.00',
+    images: [
+      'https://i.ibb.co/vvzz30n/set-3-bandejas-dm-cadence.jpg',
+    ],
+    label: '43x30x7 34x25x7',
+    description: 'Set de 2 bandejas con los cantos redondeados.',
+    selected: false,
+  },
+  {
+    id: 574,
+    name: 'Set 3 Bandejas DM 30x40x3cm 25x35x2.5cm 20x30x2.5cm',
+    price: '20.10',
+    images: [
+      'https://i.ibb.co/k4k9P5T/set-3-bandejas-dm-cadence-1.jpg',
+    ],
+    label: '30x40x3 25x35x2.5 20x30x2.5',
+    description: 'Set de 3 bandejas, fabricada en madera de DM ',
+    selected: false,
+  },
   
 
 
@@ -52,9 +227,9 @@ const initialProducts = [
 
 // Define el rango de precios mínimo y máximo de tus productos
 const precioMinimo = 0;
-const precioMaximo = 20;
+const precioMaximo = 50;
 
-export const Tienda3PastasPatinaImprimacion = () => {
+export const Tienda3Madera = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -241,9 +416,9 @@ export const Tienda3PastasPatinaImprimacion = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Patina e imprimación🎨</h2>
+          <h2>Soportes de Madera🎨</h2>
 
-          <h3>Selección de diferentes productos para limpieza y productos auxiliares. </h3>
+          <h3>Pintura CADENCE de gesso con base de agua, especialmente formulada con partículas de diferentes tamaños y colores en su interior para crear una superficie antigua vintage rota. </h3>
 
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
@@ -260,19 +435,7 @@ export const Tienda3PastasPatinaImprimacion = () => {
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
 
-            {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
-              (selectedClass) => (
-                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
-                  <label key={selectedClass} className="filter-item" id='checkbox'>
-                    <input
-                      type="checkbox"
-                      checked={selectedClasses.includes(selectedClass)}
-                      onChange={() => toggleSelectedClass(selectedClass)} />
-                    {selectedClass}
-                  </label>
-                </Tag>
-              )
-            )}
+            
 
           </div> <div className="price-slider">
 

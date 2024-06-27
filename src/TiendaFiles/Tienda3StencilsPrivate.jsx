@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,31 +15,56 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
-import { ProductCard3 } from './tienda/ProductCard3';
-import { Navbar4 } from './navbar/Navbar4';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 348,
-    name: 'MESITA ABRIL 🌸',
-    price: 295,
+    id: 425,
+    name: 'Stencil PRIVATE 25x35cm OS45',
+    price: '6.35',
     images: [
-      "https://i.ibb.co/fGZyX1k/Whats-App-Image-2023-11-19-at-20-28-52-2.jpg",
-      "https://i.ibb.co/5r8CC3J/Whats-App-Image-2023-11-19-at-20-27-28-1.jpg",
-      "https://i.ibb.co/Mc69D3D/Whats-App-Image-2023-11-19-at-20-27-29.jpg",
-      "https://i.ibb.co/1nFSCnb/Whats-App-Image-2023-11-19-at-20-27-28.jpg",
-      "https://i.ibb.co/VWNgKG2/Whats-App-Image-2023-11-19-at-20-28-52.jpg"
+      'https://i.ibb.co/GkWQhwV/private-stencils-cadence-25x35cm-0s45.jpg',
     ],
-    label: 'Mesita',
-    description: 'Cuando gané el concurso de CasaTalentos 2021, tuve que crear un mueble original en directo, ¡en tan solo día y medio! En la grabación del programa, con cámaras, luces y cinco personas en mi pequeño taller, se impusieron el color rosa y las flores de acuarela, con pequeñas texturas de perlas.',
+    label: '25x35cm',
+    description: 'Stencils CADENCE para home decor de formato MEDIANO 25x35cm; ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
     selected: false,
   },
+  {
+    id: 426,
+    name: 'Stencil PRIVATE 25x35cm OS43',
+    price: '6.35',
+    images: [
+      'https://i.ibb.co/vsBcxDx/private-stencils-cadence-25x35cm-0s43.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Stencils CADENCE para home decor de formato MEDIANO 25x35cm; ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    selected: false,
+  },
+  {
+    id: 427,
+    name: 'Stencil PRIVATE 25x35cm OS54',
+    price: '6.35',
+    images: [
+      'https://i.ibb.co/t22KkX9/private-stencils-cadence-25x35cm-0s54.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Stencils CADENCE para home decor de formato MEDIANO 25x35cm; ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    selected: false,
+  },
+  
+  
+  
+  
+  
+  
 
+
+
+  
 
 
 
@@ -49,9 +74,9 @@ const initialProducts = [
 
 // Define el rango de precios mínimo y máximo de tus productos
 const precioMinimo = 0;
-const precioMaximo = 300;
+const precioMaximo = 20;
 
-export const Tienda3Muebles = () => {
+export const Tienda3StencilsPrivate = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -89,6 +114,10 @@ export const Tienda3Muebles = () => {
     setShowNoProducts(filteredProducts.length === 0);
   };
 
+  const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
   const handleSearch = (searchText) => {
     // No filtrar directamente por nombre al buscar
     // en su lugar, ajustar los productos existentes según los filtros
@@ -96,7 +125,7 @@ export const Tienda3Muebles = () => {
 
     if (searchText !== '') {
       const filteredProducts = products.filter((product) =>
-        product.name.toLowerCase().includes(searchText.toLowerCase())
+        removeAccents(product.name).toLowerCase().includes(searchText.toLowerCase())
       );
       setProducts(filteredProducts);
       setShowNoProducts(filteredProducts.length === 0);
@@ -225,38 +254,36 @@ export const Tienda3Muebles = () => {
 
   return (
     <>
-      <Navbar4 />
+      <Navbar3 />
 
       {showOverlay && <div className="overlay"></div>}
-      <div className="tienda" id='tienda4'>
+      <div className="tienda" id='tienda3'>
         <br></br>
 
         <div className="menu">
 
-          <h1>Tienda de productos para artistas - Muebles y Ornamentos 🎀</h1>
+          <h1>Tienda de productos para artistas - Cadence 📘</h1>
+          <h2>Stencil Cadence Private🎨</h2>
 
-          <h2>Muebles y Ornamentos ⚖️</h2>
+          <h3>Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor...</h3>
 
-
-          <h3>Aquí se encuentran los productos más exclusivos de toda la tienda, todos echos a mano por mí, siendo piezas únicas.</h3>
-
-          <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='red' variant='solid' bg='red.700'>
+          <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos
           </Button>
 
           <SearchBar onSearch={handleSearch} />
 
 
-          <button className="bn632-hover bn22c" onClick={handleToggleCart}>Carrito🛒</button>
+          <button className="bn632-hover bn22b" onClick={handleToggleCart}>Carrito🛒</button>
 
         </div>
 
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
-
+            
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
-                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='red' bg='red.700'>
+                <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
                   <label key={selectedClass} className="filter-item" id='checkbox'>
                     <input
                       type="checkbox"
@@ -267,8 +294,8 @@ export const Tienda3Muebles = () => {
                 </Tag>
               )
             )}
-
-          </div><div className="price-slider">
+                
+          </div> <div className="price-slider">
 
               <input
                 type="range"
@@ -293,7 +320,7 @@ export const Tienda3Muebles = () => {
             <p> <br></br> <br></br>No hay productos según su búsqueda.</p>
           ) : (
             visibleProducts.map((product) => (
-              <ProductCard3
+              <ProductCard2
                 key={product.id}
                 product={product}
                 addToCart={addToCart}
@@ -316,7 +343,7 @@ export const Tienda3Muebles = () => {
         </div>
 
         <br></br><br></br>
-
+        
 
 
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,17 +15,17 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
     id: 320,
     name: 'Hybrid Metallic NUEZ 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/nQFPpWD/hybrid-metallic-cadence-nuez.jpg',
     ],
@@ -36,7 +36,7 @@ const initialProducts = [
   {
     id: 321,
     name: 'Hybrid Metallic LILA 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/KztLKZj/hybrid-metallic-cadence-lila.jpg',
     ],
@@ -47,7 +47,7 @@ const initialProducts = [
   {
     id: 322,
     name: 'Hybrid Metallic AZUL BEBÉ 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/CsShLvH/hybrid-metallic-cadence-azulbebe.jpg',
     ],
@@ -58,7 +58,7 @@ const initialProducts = [
   {
     id: 323,
     name: 'Hybrid Metallic ROSA BEBÉ 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/smGx6qt/hybrid-metallic-cadence-rosabebe.jpg',
     ],
@@ -69,7 +69,7 @@ const initialProducts = [
   {
     id: 324,
     name: 'Hybrid Metallic PLATINO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/4FsbKpC/hybrid-metallic-cadence-platino.jpg',
     ],
@@ -80,7 +80,7 @@ const initialProducts = [
   {
     id: 325,
     name: 'Hybrid Metallic BRONCE 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/D9gW253/hybrid-metallic-cadence-bronce.jpg',
     ],
@@ -91,7 +91,7 @@ const initialProducts = [
   {
     id: 326,
     name: 'Hybrid Metallic PLATA 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/kSry39d/hybrid-metallic-cadence-plata.jpg',
     ],
@@ -102,7 +102,7 @@ const initialProducts = [
   {
     id: 327,
     name: 'Hybrid Metallic CHAMPÁN 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/JRDtW6g/hybrid-metallic-cadence-champan.jpg',
     ],
@@ -113,7 +113,7 @@ const initialProducts = [
   {
     id: 328,
     name: 'Hybrid Metallic PERLA 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/TH9Lvh4/hybrid-metallic-cadence-perla.jpg',
     ],
@@ -124,7 +124,7 @@ const initialProducts = [
   {
     id: 329,
     name: 'Hybrid Metallic ORO VIEJO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/JKB45bp/hybrid-metallic-cadence-oroviejo.jpg',
     ],
@@ -135,7 +135,7 @@ const initialProducts = [
   {
     id: 330,
     name: 'Hybrid Metallic ORO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/VxCK6Kt/hybrid-metallic-cadence-oro.jpg',
     ],
@@ -146,7 +146,7 @@ const initialProducts = [
   {
     id: 331,
     name: 'Hybrid Metallic TOPACIO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/Tt6hzMW/hybrid-metallic-cadence-topacio-70.jpg',
     ],
@@ -157,7 +157,7 @@ const initialProducts = [
   {
     id: 332,
     name: 'Hybrid Metallic COBRE ANTIGUO OSCURO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/FqRKcmz/hybrid-metallic-cadence-cobreantiguo-70.jpg',
     ],
@@ -168,7 +168,7 @@ const initialProducts = [
   {
     id: 333,
     name: 'Hybrid Metallic MORADO ANTIGUO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/3vP1zZs/hybrid-metallic-cadence-moradoantiguo-70.jpg',
     ],
@@ -179,7 +179,7 @@ const initialProducts = [
   {
     id: 334,
     name: 'Hybrid Metallic ROJO ANTIGUO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/1MTTw8f/hybrid-metallic-cadence-rojoantiguo-70.jpg',
     ],
@@ -190,7 +190,7 @@ const initialProducts = [
   {
     id: 335,
     name: 'Hybrid Metallic ANTRACITA ANTIGUA 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/r02CHbS/hybrid-metallic-cadence-antracitantigua-70.jpg',
     ],
@@ -201,7 +201,7 @@ const initialProducts = [
   {
     id: 336,
     name: 'Hybrid Metallic ORO OSCURO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/LCvYVpC/hybrid-metallic-cadence-oroscuro-70.jpg',
     ],
@@ -212,7 +212,7 @@ const initialProducts = [
   {
     id: 337,
     name: 'Hybrid Metallic NEGRO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/GQ50vyv/hybrid-metallic-cadence-negro-70.jpg',
     ],
@@ -223,7 +223,7 @@ const initialProducts = [
   {
     id: 338,
     name: 'Hybrid Metallic ZAFIRO 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/TPgb1h6/hybrid-metallic-cadence-zafiro-70.jpg',
     ],
@@ -234,7 +234,7 @@ const initialProducts = [
   {
     id: 339,
     name: 'Hybrid Metallic TURQUESA 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/C8s00wk/hybrid-metallic-cadence-turquesa-70.jpg',
     ],
@@ -245,7 +245,7 @@ const initialProducts = [
   {
     id: 340,
     name: 'Hybrid Metallic COBRE 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/ky006ZM/hybrid-metallic-cadence-cobre-70.jpg',
     ],

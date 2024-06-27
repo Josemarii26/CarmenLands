@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,147 +15,273 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 517,
-    name: 'Pasta SHABBY CHIC Salvia 150ml.',
-    price: '6.15',
+    id: 348,
+    name: 'Barníz MATE 120ml.',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/Qr6X6bh/pasta-shabby-chic.jpg',
+      'https://i.ibb.co/jgPtpKV/barniz-cadence-mate-250.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 518,
-    name: 'Pasta SHABBY CHIC Menta Claro 150ml.',
-    price: '6.15',
+    id: 349,
+    name: 'Barníz MATE 250ml.',
+    price: '9.40',
     images: [
-      'https://i.ibb.co/j87nDPd/pasta-shabby-chic-1.jpg',
+      'https://i.ibb.co/jgPtpKV/barniz-cadence-mate-250.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '250 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 519,
-    name: 'Pasta SHABBY CHIC Azul Bebé 150ml.',
-    price: '6.15',
+    id: 350,
+    name: 'Barníz MATE 500ml.', 
+    price: '16.40',
     images: [
-      'https://i.ibb.co/P9ZHR49/pasta-shabby-chic-2.jpg',
+      'https://i.ibb.co/m8j29ng/barniz-cadence-mate-500.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '500 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 520,
-    name: 'Pasta SHABBY CHIC Lavanda 150ml.',
-    price: '6.15',
+    id: 351,
+    name: 'Barníz SATINADO 120ml.',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/st4vrNm/pasta-shabby-chic-3.jpg',
+      'https://i.ibb.co/nmRfCfJ/barniz-cadence-satinado-120.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 521,
-    name: 'Pasta SHABBY CHIC Rosa Bebé 150ml.',
-    price: '6.15',
+    id: 352,
+    name: 'Barníz SATINADO 250ml.',
+    price: '9.40',
     images: [
-      'https://i.ibb.co/YTkc7L4/pasta-shabby-chic-4.jpg',
+      'https://i.ibb.co/syMvyBP/barniz-cadence-satinado-250.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '250 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 522,
-    name: 'Pasta SHABBY CHIC Rosa Ceniza 150ml.',
-    price: '6.15',
+    id: 353,
+    name: 'Barníz SATINADO 500ml.', 
+    price: '16.40',
     images: [
-      'https://i.ibb.co/YfR1HpZ/pasta-shabby-chic-5.jpg',
+      'https://i.ibb.co/v1sZ2nF/barniz-cadence-500-ml-satin.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '500 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 523,
-    name: 'Pasta SHABBY CHIC Coral Claro 150ml.',
-    price: '6.15',
+    id: 354,
+    name: 'Barníz BRILLO 120ml.',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/6tgfdt6/pasta-shabby-chic-6.jpg',
+      'https://i.ibb.co/Z8qj4CV/barniz-cadence-brillo-120.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 524,
-    name: 'Pasta SHABBY CHIC Chocolate 150ml.',
-    price: '6.15',
+    id: 355,
+    name: 'Barníz BRILLO 250ml.',
+    price: '9.40',
     images: [
-      'https://i.ibb.co/C15JfT6/pasta-shabby-chic-7.jpg',
+      'https://i.ibb.co/bFpwSjd/barniz-cadence-brillo-250.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '250 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 525,
-    name: 'Pasta SHABBY CHIC Beige Barroco 150ml.',
-    price: '6.15',
+    id: 356,
+    name: 'Barníz BRILLO 500ml.', 
+    price: '16.40',
     images: [
-      'https://i.ibb.co/W6zqwB0/pasta-shabby-chic-8.jpg',
+      'https://i.ibb.co/7KxSbSc/barniz-cadence-brillo-500.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '500 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 526,
-    name: 'Pasta SHABBY CHIC Lino 150ml.',
-    price: '6.15',
+    id: 357,
+    name: 'Barníz CUERO 120ml.', 
+    price: '8.40',
     images: [
-      'https://i.ibb.co/QvfNjch/pasta-shabby-chic-9.jpg',
+      'https://i.ibb.co/x2ZCrkK/barniz-cadence-cuero-120.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 527,
-    name: 'Pasta SHABBY CHIC Amarillo Claro 150ml.',
-    price: '6.15',
+    id: 358,
+    name: 'Barníz ULTIMATE GLAZE MATE 120ml.', 
+    price: '5.85',
     images: [
-      'https://i.ibb.co/6vz4sSW/pasta-shabby-chic-10.jpg',
+      'https://i.ibb.co/wWm6SGL/barniz-ultimate-mate-120-ml.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
     selected: false,
   },
   {
-    id: 528,
-    name: 'Pasta SHABBY CHIC Taffy 150ml.',
-    price: '6.15',
+    id: 354,
+    name: 'Barníz Aqua Stone MATE 120ml.',
+    price: '8.40',
     images: [
-      'https://i.ibb.co/Kj8cy6M/pasta-shabby-chic-11.jpg',
+      'https://i.ibb.co/sFWZ9xY/barniz-exterior-aqua-stone-mate-120-ml.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 355,
+    name: 'Barníz Aqua Stone MATE 250ml.',
+    price: '14.40',
+    images: [
+      'https://i.ibb.co/tQYgXTL/barniz-exterior-aqua-stone-mate-250-ml.jpg',
+    ],
+    label: '250 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 356,
+    name: 'Barníz Aqua Stone MATE 500ml.', 
+    price: '20.95',
+    images: [
+      'https://i.ibb.co/thxvv9C/barniz-exterior-aqua-stone-mate-500-ml.jpg',
+    ],
+    label: '500 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 354,
+    name: 'Barníz Aqua Stone BRILLO 120ml.',
+    price: '8.40',
+    images: [
+      'https://i.ibb.co/cy5GS72/barniz-cadence-aqua-stone-120ml.jpg',
+    ],
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 355,
+    name: 'Barníz Aqua Stone BRILLO 250ml.',
+    price: '14.40',
+    images: [
+      'https://i.ibb.co/dQKsDBH/barniz-cadence-aqua-stone-250ml.jpg',
+    ],
+    label: '250 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 356,
+    name: 'Barníz Aqua Stone BRILLO 500ml.', 
+    price: '20.95',
+    images: [
+      'https://i.ibb.co/qjkYLQR/barniz-cadence-aqua-stone-500ml.jpg',
+    ],
+    label: '500 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 357,
+    name: 'Barníz Craquelador UN PASO Cadence ', 
+    price: '3.25',
+    images: [
+      'https://i.ibb.co/6D1Hr0V/craquelador-de-1-paso-cadence.jpg',
+    ],
+    label: '500 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 358,
+    name: 'Barníz Craquelador DOS PASOS Cadence ', 
+    price: '5.80',
+    images: [
+      'https://i.ibb.co/S7fYSTJ/craquelador-de-2-pasos-cadence.jpg',
+    ],
+    label: '500 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 359,
+    name: 'Decoupage Textil Cadence 120ml.', 
+    price: '5.50',
+    images: [
+      'https://i.ibb.co/ZBpy1YX/decoupage-textil-cadence.jpg',
+    ],
+    label: '120 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 360,
+    name: 'Decoupage Plus MATT Cadence 250ml.', 
+    price: '7.90',
+    images: [
+      'https://i.ibb.co/K7dhw0R/decoupage-plus-cadence.jpg',
+    ],
+    label: '250 ml.',
+    description: 'Pintura acrílica Multisuperficie a base de agua con una formula de última generación de la marca CADENCE. METALIZADA',
+    selected: false,
+  },
+  {
+    id: 605,
+    name: 'Spray Adhesivo Stencils CADENCE', 
+    price: '6.40',
+    images: [
+      'https://www.artesaniasmontejo.com/13938-16822-large_default/spray-adhesivo-stencils-cadence.jpg',
+    ],
+    label: '150 ml.',
+    description: 'Protege su adhesión en baja y alta temperatura, no se transere a la supercie utilizada, permite una limpieza fácil y el uso múltiple. Se despega y se pega otra vez, permanezca pegajoso por un largo tiempo, y el color no mancha y no se arruga.',
+    selected: false,
+  },
+  {
+    id: 606,
+    name: 'ACRILEX Barniz Cristal 100ml', 
+    price: '7.85',
+    images: [
+      'https://www.artesaniasmontejo.com/8563-9442-large_default/pelicula-de-transferencia-pebeo.jpg',
+    ],
+    label: '100 ml.',
+    description: 'ACRILEX Barniz Cristal, 250ml Barniz efecto cristal de un solo componente. Aplicar a pincel o directamente del frasco si queremos cubrir una superficie grande.',
     selected: false,
   },
 
+
+
   
+
+
+
 
 
 ];
@@ -164,7 +290,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3PastasShabby = () => {
+export const Tienda3Barnices = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -351,10 +477,9 @@ export const Tienda3PastasShabby = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Pastas Shabby🎨</h2>
+          <h2>Barnices y Craqueladores Cadence🎨</h2>
 
-          <h3>Pasta de relieve al agua CADENCE con acabado MATE para dar efectos de relieve a tus proyectos de estilo Shabby Chic</h3>
-
+          <h3>Amplia selección de barnices en spray o para brocha, con acabados mate, satinados, alto brillo de 2 componentes...  Además de craqueladores de 1 paso o 2 pasos de la marca CADENCE</h3>
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos
@@ -369,7 +494,7 @@ export const Tienda3PastasShabby = () => {
 
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
-
+            
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
                 <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
@@ -383,7 +508,7 @@ export const Tienda3PastasShabby = () => {
                 </Tag>
               )
             )}
-
+                
           </div> <div className="price-slider">
 
               <input
@@ -432,7 +557,7 @@ export const Tienda3PastasShabby = () => {
         </div>
 
         <br></br><br></br>
-
+        
 
 
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,17 +15,17 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
     id: 545,
     name: 'Negro Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/VgK0c0y/vintage-legend-cadence.jpg',
     ],
@@ -36,7 +36,7 @@ const initialProducts = [
   {
     id: 546,
     name: 'Marrón Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/cvnLMCQ/vintage-legend-cadence-1.jpg',
     ],
@@ -47,7 +47,7 @@ const initialProducts = [
   {
     id: 547,
     name: 'Visón Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/92p3YZt/vintage-legend-cadence-2.jpg',
     ],
@@ -58,7 +58,7 @@ const initialProducts = [
   {
     id: 548,
     name: 'Gris Pizarra Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/y4c1g1K/vintage-legend-cadence-3.jpg',
     ],
@@ -69,7 +69,7 @@ const initialProducts = [
   {
     id: 549,
     name: 'Gris Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/ZfT50Wb/vintage-legend-cadence-4.jpg',
     ],
@@ -80,7 +80,7 @@ const initialProducts = [
   {
     id: 550,
     name: 'Fresco Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/nmhPgCv/vintage-legend-cadence-5.jpg',
     ],
@@ -91,7 +91,7 @@ const initialProducts = [
   {
     id: 551,
     name: 'Verde Hoja Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/qNz92n9/vintage-legend-cadence-6.jpg',
     ],
@@ -102,7 +102,7 @@ const initialProducts = [
   {
     id: 552,
     name: 'Verde Moho Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/wr38Sk6/vintage-legend-cadence-7.jpg',
     ],
@@ -113,7 +113,7 @@ const initialProducts = [
   {
     id: 553,
     name: 'Nurdeos Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/cw2PF6Z/vintage-legend-cadence-8.jpg',
     ],
@@ -124,7 +124,7 @@ const initialProducts = [
   {
     id: 554,
     name: 'Amarillo Óxido Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/TbFpbvs/vintage-legend-cadence-9.jpg',
     ],
@@ -135,7 +135,7 @@ const initialProducts = [
   {
     id: 555,
     name: 'Crudo VintageLegend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/YhH3Xfm/vintage-legend-cadence-10.jpg',
     ],
@@ -146,7 +146,7 @@ const initialProducts = [
   {
     id: 556,
     name: 'Blanco Vintage Legend 150ml.',
-    price: '4.45',
+    price: '4.50',
     images: [
       'https://i.ibb.co/25XSR82/vintage-legend-cadence-11.jpg',
     ],

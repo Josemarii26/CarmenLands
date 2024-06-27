@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,191 +15,147 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 405,
-    name: 'Stencil HOME DECOR MIDI 25x25cm HDM73',
-    price: '6.80',
+    id: 517,
+    name: 'Pasta SHABBY CHIC Salvia 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/V3n9GDJ/stencil-cadence-25x25-cm.jpg',
+      'https://i.ibb.co/Qr6X6bh/pasta-shabby-chic.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 406,
-    name: 'Stencil HOME DECOR MIDI 25x25cm HDM67',
-    price: '6.80',
+    id: 518,
+    name: 'Pasta SHABBY CHIC Menta Claro 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/kX6sx9F/stencil-cadence-25x25cm.jpg',
+      'https://i.ibb.co/j87nDPd/pasta-shabby-chic-1.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 407,
-    name: 'Stencil FONDO CIRCULOS 25x25cm',
-    price: '6.80',
+    id: 519,
+    name: 'Pasta SHABBY CHIC Azul Bebé 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/G00YJHg/stencil-cadence-25x25cm-1.jpg',
+      'https://i.ibb.co/P9ZHR49/pasta-shabby-chic-2.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 408,
-    name: 'Stencil FONDO 2 TAMAÑOS 25x25cm',
-    price: '6.80',
+    id: 520,
+    name: 'Pasta SHABBY CHIC Lavanda 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/P4z7GkJ/stencil-cadence-25x25cm-2.jpg',
+      'https://i.ibb.co/st4vrNm/pasta-shabby-chic-3.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 409,
-    name: 'Stencil HOME MIDI 25x25cm HDM70',
-    price: '6.80',
+    id: 521,
+    name: 'Pasta SHABBY CHIC Rosa Bebé 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/mc9djSx/stencil-cadence-25x25cm-3.jpg',
+      'https://i.ibb.co/YTkc7L4/pasta-shabby-chic-4.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 410,
-    
-    name: 'Stencil FONDO PUNTITOS 25x25cm',
-    price: '6.80',
+    id: 522,
+    name: 'Pasta SHABBY CHIC Rosa Ceniza 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/Vw2xGSg/stencil-cadence-25x25cm-4.jpg',
+      'https://i.ibb.co/YfR1HpZ/pasta-shabby-chic-5.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 411,
-    name: 'Stencil SELLOS POSTALES 25x25cm',
-    price: '6.80',
+    id: 523,
+    name: 'Pasta SHABBY CHIC Coral Claro 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/kKLzqKp/stencil-cadence-25x25cm-5.jpg',
+      'https://i.ibb.co/6tgfdt6/pasta-shabby-chic-6.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 412,
-    name: 'Stencil DAMERO 25x25cm',
-    price: '6.80',
+    id: 524,
+    name: 'Pasta SHABBY CHIC Chocolate 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/Pm5jRh7/stencil-cadence-25x25cm-6.jpg',
+      'https://i.ibb.co/C15JfT6/pasta-shabby-chic-7.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 413,
-    name: 'Stencil FLEURA 25x25cm',
-    price: '6.80',
+    id: 525,
+    name: 'Pasta SHABBY CHIC Beige Barroco 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/F5JZP8Y/stencil-cadence-25x25cm-7.jpg',
+      'https://i.ibb.co/W6zqwB0/pasta-shabby-chic-8.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 414,
-    name: 'Stencil BALDOSAS 25x25cm',
-    price: '6.80',
+    id: 526,
+    name: 'Pasta SHABBY CHIC Lino 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/rsSb3g1/stencil-cadence-25x25cm-8.jpg',
+      'https://i.ibb.co/QvfNjch/pasta-shabby-chic-9.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 415,
-    name: 'Stencil BALDOSA GRANDE 25x25cm',
-    price: '6.80',
+    id: 527,
+    name: 'Pasta SHABBY CHIC Amarillo Claro 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/nMJHMPz/stencil-cadence-25x25cm-9.jpg',
+      'https://i.ibb.co/6vz4sSW/pasta-shabby-chic-10.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
   {
-    id: 416,
-    name: 'Stencil ADAMASCO 25x25cm',
-    price: '6.80',
+    id: 528,
+    name: 'Pasta SHABBY CHIC Taffy 150ml.',
+    price: '6.15',
     images: [
-      'https://i.ibb.co/f1fj1rK/stencil-cadence-25x25cm-10.jpg',
+      'https://i.ibb.co/Kj8cy6M/pasta-shabby-chic-11.jpg',
     ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Pasta de relieve al agua CADENCE con acabado MATE para dar preciosos efectos de relieve o volumen a tus proyectos de estilo Shabby Chic. Aplicar sobre superficies rígidas usando stencils, espatula, pincel o esponja. Limpieza de utensilios con agua y jabón',
     selected: false,
   },
-  {
-    id: 417,
-    name: 'Stencil NÚMEROS 25x25cm',
-    price: '6.80',
-    images: [
-      'https://i.ibb.co/dWgscdf/stencil-cadence-25x25cm-11.jpg',
-    ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
-    selected: false,
-  },
-  {
-    id: 418,
-    name: 'Stencil CADENCE 25x25cm HDM197',
-    price: '6.80',
-    images: [
-      'https://i.ibb.co/k51VwSg/stencil-cadence-25x25-cm-hdm197.png',
-    ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
-    selected: false,
-  },
-  {
-    id: 419,
-    name: 'Stencil CADENCE 25x25cm HDM196',
-    price: '6.80',
-    images: [
-      'https://i.ibb.co/mRr5FGJ/stencil-cadence-25x25-cm-hdm196.png',
-    ],
-    label: '25x25cm',
-    description: 'Stencils o Plantillas CADENCE home decor MIDI de formato MEDIANO 25x25cm con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
-    selected: false,
-  },
-  
-  
-  
-  
-  
-
-
 
   
-
-
-
 
 
 ];
@@ -208,7 +164,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3StencilsHomeDecorMidi = () => {
+export const Tienda3PastasShabby = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -395,9 +351,10 @@ export const Tienda3StencilsHomeDecorMidi = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Stencil Cadence Home Decor Midi🎨</h2>
+          <h2>Pastas Shabby🎨</h2>
 
-          <h3>Plantillas de gran formato CADENCE de 45x45cm ideales para decoración. Úsalas sobre muebles, cajas, paredes...</h3>
+          <h3>Pasta de relieve al agua CADENCE con acabado MATE para dar efectos de relieve a tus proyectos de estilo Shabby Chic</h3>
+
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos
@@ -412,7 +369,7 @@ export const Tienda3StencilsHomeDecorMidi = () => {
 
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
-            
+
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
                 <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
@@ -426,7 +383,7 @@ export const Tienda3StencilsHomeDecorMidi = () => {
                 </Tag>
               )
             )}
-                
+
           </div> <div className="price-slider">
 
               <input
@@ -475,7 +432,7 @@ export const Tienda3StencilsHomeDecorMidi = () => {
         </div>
 
         <br></br><br></br>
-        
+
 
 
 

@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProductCard.css';
-import {
-  Tag
-} from '@chakra-ui/react'
-
-import { Button } from '@chakra-ui/react'
-import { ArrowForwardIcon } from '@chakra-ui/icons'
-
-
+import { Tag, Button, Spinner } from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 export const ProductCard = ({ product, addToCart, handleToggleCart }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [imageUrls, setImageUrls] = useState(product.images);
+
+  useEffect(() => {
+    // Reset loading and error states when imageUrls change
+    setLoading(true);
+    setError(false);
+  }, [imageUrls]);
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -27,17 +30,47 @@ export const ProductCard = ({ product, addToCart, handleToggleCart }) => {
     setIsHovered(false);
   };
 
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
+
+  const handleImageError = (index) => {
+    setError(true);
+    setTimeout(() => {
+      setError(false);
+      setLoading(true); // Mostrar el loader nuevamente
+      setImageUrls(prevUrls => {
+        const newUrls = [...prevUrls];
+        newUrls[index] = `${newUrls[index]}?timestamp=${new Date().getTime()}`; // Añadir timestamp para forzar recarga
+        return newUrls;
+      });
+    }, 2000); // Reintentar después de 2 segundos
+  };
+
   const isMobile = window.innerWidth < 1050;
 
-  
+  const renderImage = (imagen, index) => (
+    <>
+      {loading && <Spinner />}
+      {error ? (
+        <div>Reintentando...</div>
+      ) : (
+        <img
+          src={imagen}
+          alt='imagen'
+          onLoad={handleImageLoad}
+          onError={() => handleImageError(index)}
+          style={{ display: loading ? 'none' : '' }}
+        />
+      )}
+    </>
+  );
 
   return (
-    
     <div
       className={`product-card ${isHovered ? 'hovered' : ''}`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
-      
     >
       {isHovered || isMobile ? (
         <>
@@ -54,9 +87,9 @@ export const ProductCard = ({ product, addToCart, handleToggleCart }) => {
                 emulateTouch={true}
                 showArrows={false}
               >
-                {product.images.map((imagen, index) => (
-                  <div key={index}>
-                    <img src={imagen} alt='imagen' />
+                {imageUrls.map((imagen, index) => (
+                  <div key={index} className="image-container">
+                    {renderImage(imagen, index)}
                   </div>
                 ))}
               </Carousel>
@@ -75,9 +108,9 @@ export const ProductCard = ({ product, addToCart, handleToggleCart }) => {
                 emulateTouch={true}
                 showArrows={false}
               >
-                {product.images.map((imagen, index) => (
-                  <div key={index}>
-                    <img src={imagen} alt='imagen' />
+                {imageUrls.map((imagen, index) => (
+                  <div key={index} className="image-container">
+                    {renderImage(imagen, index)}
                   </div>
                 ))}
               </Carousel>
@@ -86,17 +119,20 @@ export const ProductCard = ({ product, addToCart, handleToggleCart }) => {
           <h4>{product.name}</h4>
           <p>✅En Stock✅</p>
           <p id='description'>{product.description}</p>
-          <Tag size={'md'} key={'md'} variant='solid' colorScheme='green' >{product.label}</Tag>
+          <Tag size={'md'} key={'md'} variant='solid' colorScheme='green'>
+            {product.label}
+          </Tag>
 
           <h3>{product.price} €</h3>
           <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='green' variant='solid'>
-            Añadir al carrito 
+            Añadir al carrito
           </Button>
-
         </>
       ) : (
         <>
-          <img src={product.images[0]} alt={product.name} />
+          <div className="image-container">
+            {renderImage(`${imageUrls[0]}?timestamp=${new Date().getTime()}`, 0)}
+          </div>
           <h3>{product.name}</h3>
           <h4>{product.price} €</h4>
           <Button rightIcon={<ArrowForwardIcon />} onClick={handleAddToCart} colorScheme='green' variant='solid'>

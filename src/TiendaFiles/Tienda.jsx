@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,9 +15,9 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
 import { Link } from 'react-router-dom';
-import { Navbar2 } from './navbar/Navbar2';
+import { Navbar2 } from '../navbar/Navbar2';
 import { WavyContainer, WavyLink } from "react-wavy-transitions";
 
 
@@ -194,7 +194,7 @@ const initialProducts = [
   },{
     id: 363,
     name: 'Hybrid VERDE ESMERALDA 70ml.',
-    price: '2.50',
+    price: '2.60',
     images: [
       'https://i.ibb.co/5rPYbqb/hybrid-emerald-green-70ml.jpg',
     ],
@@ -205,7 +205,7 @@ const initialProducts = [
   {
     id: 364,
     name: 'Hybrid VERDE HOJA 70ml.',
-    price: '2.50',
+    price: '2.60',
     images: [
       'https://i.ibb.co/m9v6Ldm/hybrid-verde-hoja-70ml.jpg',
     ],
@@ -216,7 +216,7 @@ const initialProducts = [
   {
     id: 365,
     name: 'Hybrid APPLE CANDY 70ml.',
-    price: '2.50',
+    price: '2.60',
     images: [
       'https://i.ibb.co/GdxQjHF/hybrid-apple-candy-70ml.jpg',
     ],
@@ -227,7 +227,7 @@ const initialProducts = [
   {
     id: 366,
     name: 'Hybrid OCÉANO 70ml.',
-    price: '2.50',
+    price: '2.60',
     images: [
       'https://i.ibb.co/84kgmXM/hybrid-oceano-70ml.jpg',
     ],
@@ -238,7 +238,7 @@ const initialProducts = [
   {
     id: 367,
     name: 'Hybrid AMARILLO SOL 70ml.',
-    price: '2.50',
+    price: '2.60',
     images: [
       'https://i.ibb.co/FgW3HxX/hybrid-sun-yellow-70ml.jpg',
     ],
@@ -249,7 +249,7 @@ const initialProducts = [
   {
     id: 368,
     name: 'Hybrid Metallic TURQUESA 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/C8s00wk/hybrid-metallic-cadence-turquesa-70.jpg',
     ],
@@ -260,7 +260,7 @@ const initialProducts = [
   {
     id: 369,
     name: 'Hybrid Metallic COBRE 70ml.',
-    price: '3.20',
+    price: '3.30',
     images: [
       'https://i.ibb.co/ky006ZM/hybrid-metallic-cadence-cobre-70.jpg',
     ],

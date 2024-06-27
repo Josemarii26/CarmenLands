@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,68 +15,190 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 540,
-    name: 'PEARL Pasta Flexible Metálica 150ml.',
-    price: '5.70',
+    id: 482,
+    name: 'Transfer TELA W&B 21x30cm KTS05',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/gDWC2cY/pasta-flexible-metalica-150ml-cadence.jpg',
+      'https://i.ibb.co/PrxxhZw/transfer-tela-cadence.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
+    label: '21x30cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
     selected: false,
   },
   {
-    id: 541,
-    name: 'SILVER Pasta Flexible Metálica 150ml.',
-    price: '5.70',
+    id: 483,
+    name: 'Transfer TELA W&B 21x30cm KTS06',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/bP4KFSv/pasta-flexible-metalica-150ml-cadence-1.jpg',
+      'https://i.ibb.co/Cb3CdZH/transfer-tela-cadence-1.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
+    label: '21x30cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
     selected: false,
   },
   {
-    id: 542,
-    name: 'CHAMPAGNE Pasta Flexible Metálica 150ml.',
-    price: '5.70',
+    id: 484,
+    name: 'Transfer TELA Animal Portrait 25x35cm PAFT08',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/FKN7wvk/pasta-flexible-metalica-150ml-cadence-2.jpg',
+      'https://i.ibb.co/hYKDLdQ/transfer-tela-cadence-2.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
     selected: false,
   },
   {
-    id: 543,
-    name: 'ROSE GOLD Pasta Flexible Metálica 150ml.',
-    price: '5.70',
+    id: 485,
+    name: 'Transfer TELA Animal Portrait 25x35cm PAFT07',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/ph5FSTt/pasta-flexible-metalica-150ml-cadence-3.jpg',
+      'https://i.ibb.co/vsRSpv8/transfer-tela-cadence-3.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
     selected: false,
   },
   {
-    id: 544,
-    name: 'GOLD Pasta Flexible Metálica 150ml.',
-    price: '5.70',
+    id: 486,
+    name: 'Transfer TELA Animal Portrait 25x35cm PAFT06',
+    price: '5.20',
     images: [
-      'https://i.ibb.co/6J0cmq2/pasta-flexible-metalica-150ml-cadence-4.jpg',
+      'https://i.ibb.co/vk5JRn2/transfer-tela-cadence-4.jpg',
     ],
-    label: '150ml',
-    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
     selected: false,
   },
+  {
+    id: 487,
+    name: 'Transfer TELA Animal Portrait 25x35cm PAFT05',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/BZc23m2/transfer-tela-cadence-5.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 488,
+    name: 'Transfer TELA Animal Portrait 25x35cm PAFT03',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/zZVrVrt/transfer-tela-cadence-6.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 489,
+    name: 'Transfer TELA Siluetas 25x35cm FT069',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/jrTN5QQ/transfer-tela-cadence-7.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 490,
+    name: 'Transfer TELA Siluetas 25x35cm FT068',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/zfkRqmn/transfer-tela-cadence-8.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 491,
+    name: 'Transfer TELA Siluetas 25x35cm FT067',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/xg5jsYF/transfer-tela-cadence-9.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 492,
+    name: 'Transfer TELA Siluetas 25x35cm FT064',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/dMN0tsf/transfer-tela-cadence-10.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 493,
+    name: 'Transfer TELA Siluetas 25x35cm FT065',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/L0zXdk5/transfer-tela-cadence-11.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 494,
+    name: 'Transfer TELA Siluetas 25x35cm FT063',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/Vp8Bj96/transfer-tela-cadence-12.jpg',
+    ],
+    label: '25x35cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 495,
+    name: 'Transfer TELA W&B 21x30cm KTS13',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/wzTSDNm/transfer-tela-cadence-14.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+  {
+    id: 496,
+    name: 'Transfer TELA W&B 21x30cm KTS14',
+    price: '5.20',
+    images: [
+      'https://i.ibb.co/Chzb73x/transfer-tela-cadence-13.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto.',
+    selected: false,
+  },
+
+  
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,7 +211,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3PastasFlexibleMetalica = () => {
+export const Tienda3TransfersTextil = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -276,12 +398,11 @@ export const Tienda3PastasFlexibleMetalica = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Pastas Flexible Metálica</h2>
+          <h2>Transfers para Tela🎨</h2>
 
-          <h3>Pasta de relieve Cadence FLEXIBLE, METALIZADA y suave con base de agua.
-
-            Se puede aplicar en moldes decorativos blandos y se puede usar fácilmente sobre superficies curvas.</h3>
-
+          <h3>Transfers CADENCE para aplicar sobre telas de algodón. Diseños actuales con multitud de pequeños detalles. Acabado de alta calidad y flexible al tacto. <br></br>
+          <span id='materiales'>MODO DE EMPLEO</span> <br></br> Coloca el transfer sobre la tela, pasa una plancha caliente (sin vapor) durante unos 3 minutos para fijar el transfer a la tela, dejar que transfer y tela se enfrien antes de retirar el papel protector.
+          </h3>
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos

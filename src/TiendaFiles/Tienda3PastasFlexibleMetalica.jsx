@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,153 +15,69 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 393,
-    name: 'Stencil HOME DECOR 45x45cm HD146',
-    price: '12.60',
+    id: 540,
+    name: 'PEARL Pasta Flexible Metálica 150ml.',
+    price: '5.70',
     images: [
-      'https://i.ibb.co/qy8Mrbt/stencil-cadence-45x45cm.jpg',
+      'https://i.ibb.co/gDWC2cY/pasta-flexible-metalica-150ml-cadence.jpg',
     ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '150ml',
+    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
     selected: false,
   },
   {
-    id: 394,
-    name: 'Stencil HOME DECOR 45x45cm HD69',
-    price: '12.60',
+    id: 541,
+    name: 'SILVER Pasta Flexible Metálica 150ml.',
+    price: '5.70',
     images: [
-      'https://i.ibb.co/ZYfn2bq/stencil-cadence-45x45cm-1.jpg',
+      'https://i.ibb.co/bP4KFSv/pasta-flexible-metalica-150ml-cadence-1.jpg',
     ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '150ml',
+    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
     selected: false,
   },
   {
-    id: 395,
-    name: 'Stencil HOME DECOR 45x45cm HD158',
-    price: '12.60',
+    id: 542,
+    name: 'CHAMPAGNE Pasta Flexible Metálica 150ml.',
+    price: '5.70',
     images: [
-      'https://i.ibb.co/7KsKD0J/stencil-cadence-45x45cm-2.jpg',
+      'https://i.ibb.co/FKN7wvk/pasta-flexible-metalica-150ml-cadence-2.jpg',
     ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '150ml',
+    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
     selected: false,
   },
   {
-    id: 396,
-    name: 'Stencil HOME DECOR 45x45cm HD156',
-    price: '12.60',
+    id: 543,
+    name: 'ROSE GOLD Pasta Flexible Metálica 150ml.',
+    price: '5.70',
     images: [
-      'https://i.ibb.co/fkhgwmr/stencil-cadence-45x45cm-3.jpg',
+      'https://i.ibb.co/ph5FSTt/pasta-flexible-metalica-150ml-cadence-3.jpg',
     ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '150ml',
+    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
     selected: false,
   },
   {
-    id: 397,
-    name: 'Stencil HOME DECOR 45x45cm HD121',
-    price: '12.60',
+    id: 544,
+    name: 'GOLD Pasta Flexible Metálica 150ml.',
+    price: '5.70',
     images: [
-      'https://i.ibb.co/F50cN0S/stencil-cadence-45x45cm-4.jpg',
+      'https://i.ibb.co/6J0cmq2/pasta-flexible-metalica-150ml-cadence-4.jpg',
     ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '150ml',
+    description: 'Pasta de relieve Cadence metalizada FLEXIBLE y ligera a base de agua. Se puede trabajar en moldes blandos decorativos y se puede aplicar fácilmente sobre superficies curvas. Colores mezclables entre si.',
     selected: false,
   },
-  {
-    id: 398,
-    name: 'Stencil MANDALA 2 45x45cm',
-    price: '12.60',
-    images: [
-      'https://i.ibb.co/PYC4J5j/stencil-cadence-45x45cm-5.png',
-    ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
-    selected: false,
-  },
-  {
-    id: 399,
-    name: 'Stencil ART NOUVEAU 45x45cm',
-    price: '12.60',
-    images: [
-      'https://i.ibb.co/Z2KxzN0/stencil-cadence-45x45cm-6.png',
-    ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
-    selected: false,
-  },
-  {
-    id: 400,
-    name: 'Stencil ADAMASCADO 2 45x45cm',
-    price: '12.60',
-    images: [
-      'https://i.ibb.co/6RCtFCL/stencil-cadence-45x45cm-7.png',
-    ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
-    selected: false,
-  },
-  {
-    id: 401,
-    name: 'Stencil ADAMASCADO 45x45cm',
-    price: '12.60',
-    images: [
-      'https://i.ibb.co/YDTyxyc/stencil-cadence-45x45cm-8.png',
-    ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
-    selected: false,
-  },
-  {
-    id: 402,
-    name: 'Stencil DECO5 45x45cm',
-    price: '12.60',
-    images: [
-      'https://i.ibb.co/3k7s6rk/stencil-cadence-45x45cm-9.jpg',
-    ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
-    selected: false,
-  },
-  {
-    id: 403,
-    name: 'Stencil MANDALA 3 45x45cm',
-    price: '12.60',
-    images: [
-      'https://i.ibb.co/X8sRgW7/stencil-cadence-45x45cm-10.png',
-    ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
-    selected: false,
-  },
-  {
-    id: 404,
-    name: 'Stencil VEGETAL 2 45x45cm',
-    price: '12.60',
-    images: [
-      'https://i.ibb.co/k5w4nBK/stencil-cadence-45x45cm-11.png',
-    ],
-    label: '45x45cm',
-    description: 'Stencils CADENCE para home decor de gran formato 45x45cm. ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
-    selected: false,
-  },
-  
-  
-  
-  
 
-
-
-  
 
 
 
@@ -173,7 +89,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3StencilsHomeDecor = () => {
+export const Tienda3PastasFlexibleMetalica = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -360,9 +276,12 @@ export const Tienda3StencilsHomeDecor = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Stencil Cadence Home Decor🎨</h2>
+          <h2>Pastas Flexible Metálica</h2>
 
-          <h3>Plantillas de gran formato CADENCE de 45x45cm ideales para decoración. Úsalas sobre muebles, cajas, paredes...</h3>
+          <h3>Pasta de relieve Cadence FLEXIBLE, METALIZADA y suave con base de agua.
+
+            Se puede aplicar en moldes decorativos blandos y se puede usar fácilmente sobre superficies curvas.</h3>
+
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos
@@ -377,7 +296,7 @@ export const Tienda3StencilsHomeDecor = () => {
 
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
-            
+
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
                 <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
@@ -391,7 +310,7 @@ export const Tienda3StencilsHomeDecor = () => {
                 </Tag>
               )
             )}
-                
+
           </div> <div className="price-slider">
 
               <input
@@ -440,7 +359,7 @@ export const Tienda3StencilsHomeDecor = () => {
         </div>
 
         <br></br><br></br>
-        
+
 
 
 

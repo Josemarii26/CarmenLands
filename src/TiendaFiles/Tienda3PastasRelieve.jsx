@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,10 +15,10 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
@@ -36,7 +36,7 @@ const initialProducts = [
   {
     id: 498,
     name: 'Orquídea Oscuro DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/QpWQFjP/dora-paste-relief-oro-antiguo.jpg',
     ],
@@ -47,7 +47,7 @@ const initialProducts = [
   {
     id: 499,
     name: 'Plata DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/3pzGsM9/dora-paste-relief-oro-antiguo-1.jpg',
     ],
@@ -58,7 +58,7 @@ const initialProducts = [
   {
     id: 500,
     name: 'Antracita DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/QXk7Wrt/dora-paste-relief-oro-antiguo-2.jpg',
     ],
@@ -69,7 +69,7 @@ const initialProducts = [
   {
     id: 501,
     name: 'Platino DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/KG7yqw1/dora-paste-relief-oro-antiguo-3.jpg',
     ],
@@ -80,7 +80,7 @@ const initialProducts = [
   {
     id: 502,
     name: 'Naranja DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/2Scq6Rv/dora-paste-relief-oxido-naranja.jpg',
     ],
@@ -91,7 +91,7 @@ const initialProducts = [
   {
     id: 503,
     name: 'Negro DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/NNRRf01/dora-paste-relief-negro.jpg',
     ],
@@ -102,7 +102,7 @@ const initialProducts = [
   {
     id: 504,
     name: 'Anquerita Oscuro DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/pJj7wJL/dora-paste-relief-oro.jpg',
     ],
@@ -113,7 +113,7 @@ const initialProducts = [
   {
     id: 505,
     name: 'Oro DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/gM8JMpp/dora-paste-relief-oro-1.jpg',
     ],
@@ -124,7 +124,7 @@ const initialProducts = [
   {
     id: 506,
     name: 'Diamante DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/ynQDkRf/dora-paste-relief-diamante.jpg',
     ],
@@ -135,7 +135,7 @@ const initialProducts = [
   {
     id: 507,
     name: 'Petróleo DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/HDfvVMS/dora-paste-relief-petroleo.jpg',
     ],
@@ -146,7 +146,7 @@ const initialProducts = [
   {
     id: 508,
     name: 'Malaquita DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/wz20s70/dora-paste-relief-malaquita.jpg',
     ],
@@ -157,7 +157,7 @@ const initialProducts = [
   {
     id: 509,
     name: 'Oro Antiguo DORA PASTE RELIEF 150ml.',
-    price: '8.10',
+    price: '9.10',
     images: [
       'https://i.ibb.co/M6rWRxF/dora-paste-relief-oro-antiguo-4.jpg',
     ],

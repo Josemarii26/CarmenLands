@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,46 +15,146 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 425,
-    name: 'Stencil PRIVATE 25x35cm OS45',
-    price: '6.35',
+    id: 428,
+    name: 'Stencil ZEPPELIN 21x30cm ',
+    price: '4.15',
     images: [
-      'https://i.ibb.co/GkWQhwV/private-stencils-cadence-25x35cm-0s45.jpg',
+      'https://i.ibb.co/2kdjnPv/stencil-cadence.jpg',
     ],
-    label: '25x35cm',
-    description: 'Stencils CADENCE para home decor de formato MEDIANO 25x35cm; ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
     selected: false,
   },
   {
-    id: 426,
-    name: 'Stencil PRIVATE 25x35cm OS43',
-    price: '6.35',
+    id: 429,
+    name: 'Stencil GEOMÉTRICOS 21x30cm ',
+    price: '4.15',
     images: [
-      'https://i.ibb.co/vsBcxDx/private-stencils-cadence-25x35cm-0s43.jpg',
+      'https://i.ibb.co/Lngxbr8/stencil-cadence-1.jpg',
     ],
-    label: '25x35cm',
-    description: 'Stencils CADENCE para home decor de formato MEDIANO 25x35cm; ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
     selected: false,
   },
   {
-    id: 427,
-    name: 'Stencil PRIVATE 25x35cm OS54',
-    price: '6.35',
+    id: 430,
+    name: 'Stencil FILIGRANAS GRANDE 21x30cm ',
+    price: '4.15',
     images: [
-      'https://i.ibb.co/t22KkX9/private-stencils-cadence-25x35cm-0s54.jpg',
+      'https://i.ibb.co/zRd3dDn/stencil-textura-floral.jpg',
     ],
-    label: '25x35cm',
-    description: 'Stencils CADENCE para home decor de formato MEDIANO 25x35cm; ideal para decoración de paredes, cuadros de gran formato, muebles como comodas, mesillas, butacas, cajas... ',
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
     selected: false,
   },
+  {
+    id: 431,
+    name: 'Stencil FONDOS FLORES 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/NT4xpHc/stencil-textura-floral-2.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 432,
+    name: 'Stencil MARIPOSAS Y ESTRELLAS 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/D9XxbzW/stencil-textura-floral-1.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 433,
+    name: 'Stencil RELIEVE METÁLICO 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/Vp8N5kb/stencil-textura-floral-6.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 434,
+    name: 'Stencil MOTHER 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/5Y0dDLH/stencil-textura-floral-4.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 435,
+    name: 'Stencil TIJERAS VINTAGE 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/PrwB9nC/stencil-textura-floral-5.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 436,
+    name: 'Stencil ROSA DE LOS VIENTOS 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/ZXNKpYh/stencil-lavande.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 437,
+    name: 'Stencil FILIGRANA 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/ZXNKpYh/stencil-lavande.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 438,
+    name: 'Stencil 3 ROSAS 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/jWJS9t0/stencil-lavande-2.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  {
+    id: 439,
+    name: 'Stencil LÁMPARAS 21x30cm ',
+    price: '4.15',
+    images: [
+      'https://i.ibb.co/wMd7Xq2/stencil-lamparas.jpg',
+    ],
+    label: '21x30cm',
+    description: 'Stencils CADENCE para decoración, manualidades, scrapbook, home decor...',
+    selected: false,
+  },
+  
   
   
   
@@ -76,7 +176,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3StencilsPrivate = () => {
+export const Tienda3StencilsMiscellaneous = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -263,7 +363,7 @@ export const Tienda3StencilsPrivate = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Stencil Cadence Private🎨</h2>
+          <h2>Stencil Cadence Miscellaneous🎨</h2>
 
           <h3>Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor...</h3>
 

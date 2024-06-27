@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,84 +15,81 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 420,
-    name: 'Stencil DETALLE Cadence BN98',
-    price: '5.90',
+    id: 529,
+    name: 'IKAROS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
+    price: '4.25',
     images: [
-      'https://i.ibb.co/6JgYqx8/stencils-cadence-25x36cm-bn098.jpg',
+      'https://i.ibb.co/q1ZXV5F/zeugma-pasta-relieve-efecto-piedra.jpg',
     ],
-    label: '25x36cm',
-    description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
+    label: '150ml',
+    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
     selected: false,
   },
   {
-    id: 421,
-    name: 'Stencil DETALLE Cadence BN88',
-    price: '5.90',
+    id: 530,
+    name: 'MINOS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
+    price: '4.25',
     images: [
-      'https://i.ibb.co/YptW3M6/stencils-cadence-25x36cm-bn088.jpg',
+      'https://i.ibb.co/XFtjj3t/zeugma-pasta-relieve-efecto-piedra-1.jpg',
     ],
-    label: '25x36cm',
-    description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
+    label: '150ml',
+    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
     selected: false,
   },
-  
   {
-    id: 422,
-    name: 'Stencil VEGETAL Cadence BN175',
-    price: '5.90',
+    id: 531,
+    name: 'SILENOS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
+    price: '4.25',
     images: [
-      'https://i.ibb.co/94jRPw1/stencil-vegetal-cadence.jpg',
+      'https://i.ibb.co/QQHGphm/zeugma-pasta-relieve-efecto-piedra-2.jpg',
     ],
-    label: '25x36cm',
-    description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
+    label: '150ml',
+    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
     selected: false,
   },
-  
   {
-    id: 423,
-    name: 'Stencil FONDO Cadence',
-    price: '5.90',
+    id: 532,
+    name: 'TRITON ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
+    price: '4.25',
     images: [
-      'https://i.ibb.co/V9Z7yws/stencil-vegetal-cadence-1.jpg',
+      'https://i.ibb.co/t3pTynD/zeugma-pasta-relieve-efecto-piedra-3.jpg',
     ],
-    label: '25x36cm',
-    description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
+    label: '150ml',
+    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
     selected: false,
   },
-  
   {
-    id: 424,
-    name: 'Stencil VEGETAL Cadence BN160',
-    price: '5.90',
+    id: 533,
+    name: 'ASIA ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
+    price: '4.25',
     images: [
-      'https://i.ibb.co/XXWDZgL/stencil-vegetal-cadence-2.jpg',
+      'https://i.ibb.co/0nW9Qsc/zeugma-pasta-relieve-efecto-piedra-4.jpg',
     ],
-    label: '25x36cm',
-    description: 'Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor... con motivos vegetales.',
+    label: '150ml',
+    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
     selected: false,
   },
-  
-  
-  
-  
-  
-  
+  {
+    id: 534,
+    name: 'ADONIS ZEUGMA Pasta Relieve Efecto Piedra 150ml.',
+    price: '4.25',
+    images: [
+      'https://i.ibb.co/X309VBx/zeugma-pasta-relieve-efecto-piedra-5.jpg',
+    ],
+    label: '150ml',
+    description: 'Se puede aplicar tanto es superficies porosas como no porosas, usándose con pincel, espatula, plantilla y esponja... La superficie se puede lijar y alisar o dejar con una gruesa textura irregular. Se puede mezclar con otras pinturas y pastas cadence para crear diferentes efectos de color y estilos Mix Media. Mezcla 2 tonos diferentes de pasta ZEUGMA efecto piedra para conseguir un efecto super realista. El tempo de secado depende del grosor aplicado y de las condiciones atmosféricas. Una vez seco es impermeable y resistente a los impactos. Proteger del calor y de las heladas.',
+    selected: false,
+  },
 
-
-
   
-
-
-
 
 
 ];
@@ -101,7 +98,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3StencilsSerieBN = () => {
+export const Tienda3PastasZeugma = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -288,9 +285,10 @@ export const Tienda3StencilsSerieBN = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Stencil Cadence Serie BN🎨</h2>
+          <h2>Pastas Zeugma🎨</h2>
 
-          <h3>Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor...</h3>
+          <h3>Pastas de relieve CADENCE que imitan el efecto piedra (zeugma) en diferentes tonos de color. </h3>
+
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos
@@ -305,7 +303,7 @@ export const Tienda3StencilsSerieBN = () => {
 
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
-            
+
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
                 <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
@@ -319,7 +317,7 @@ export const Tienda3StencilsSerieBN = () => {
                 </Tag>
               )
             )}
-                
+
           </div> <div className="price-slider">
 
               <input
@@ -368,7 +366,7 @@ export const Tienda3StencilsSerieBN = () => {
         </div>
 
         <br></br><br></br>
-        
+
 
 
 

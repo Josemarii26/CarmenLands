@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './navbar/Navbar';
-import { ProductCard } from './tienda/ProductCard';
-import { SearchBar } from './tienda/SearchBar';
-import { Cart } from './tienda/Cart';
+import { Navbar } from '../navbar/Navbar';
+import { ProductCard } from '../tienda/ProductCard';
+import { SearchBar } from '../tienda/SearchBar';
+import { Cart } from '../tienda/Cart';
 import { Slide } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
@@ -15,84 +15,37 @@ import { Button } from '@chakra-ui/react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ScrollToTopButton from './parallax/parallax-2/ScrollToTopButton';
-import { Navbar2 } from './navbar/Navbar2';
-import { ProductCard2 } from './tienda/ProductCard2';
-import { Navbar3 } from './navbar/Navbar3';
+import ScrollToTopButton from '../parallax/parallax-2/ScrollToTopButton';
+import { Navbar2 } from '../navbar/Navbar2';
+import { ProductCard2 } from '../tienda/ProductCard2';
+import { Navbar3 } from '../navbar/Navbar3';
 
 
 const initialProducts = [
   {
-    id: 440,
-    name: 'Stencil CADENCE cenefa 10x25cm UA36',
-    price: '2.30',
+    id: 513,
+    name: 'Mixtion CREAM FOIL BOLD 150ml',
+    price: '5.25',
     images: [
-      'https://i.ibb.co/3RNsDFy/stencil-cadence-ua36-10x25cm.jpg',
+      'https://i.ibb.co/Q8vGdZw/mixtion-foil-cadence.jpg',
     ],
-    label: '10x25cm',
-    description: 'Stencils o Plantillas CADENCE con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '150ml',
+    description: 'Mixtión adhesivo al agua, estilo pasta de relieve para crear efectos dimensionales con foil o pan de oro, con ayuda de stencils o con técnica libre.',
     selected: false,
   },
   {
-    id: 441,
-    name: 'Stencil CADENCE cenefa 10x25cm UA29',
-    price: '2.30',
+    id: 514,
+    name: 'Mixtion PAN DE ORO 70ml',
+    price: '3.25',
     images: [
-      'https://i.ibb.co/X30gyNW/stencil-cadence-ua29-10x25cm.jpg',
+      'https://i.ibb.co/85kHRtV/mixtion-foil-cadence-1.jpg',
     ],
-    label: '10x25cm',
-    description: 'Stencils o Plantillas CADENCE con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
+    label: '70ml',
+    description: 'Mixtión adhesivo al agua de CADENCE para pegar  pan de oro. Uso: aplicar, esperar a que quede mordiente (pasa de color blanquecino a transparente) y aplicar el pan de oro o plata.    ',
     selected: false,
   },
-  {
-    id: 442,
-    name: 'Stencil CADENCE cenefa 6x20cm K165',
-    price: '1.80',
-    images: [
-      'https://i.ibb.co/7pCQFz7/stencil-cadence-k165-6x20cm.jpg',
-    ],
-    label: '6x20cm',
-    description: 'Stencils o Plantillas CADENCE con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
-    selected: false,
-  },
-  
-  {
-    id: 443,
-    name: 'Stencil CADENCE cenefa 6x20cm K163',
-    price: '1.80',
-    images: [
-      'https://i.ibb.co/mSP9NS7/Stencil-CADENCE-K163-6x20cm.jpg',
-    ],
-    label: '6x20cm',
-    description: 'Stencils o Plantillas CADENCE con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
-    selected: false,
-  },
-  
-  {
-    id: 444,
-    name: 'Stencil CADENCE cenefa 6x20cm K120',
-    price: '1.80',
-    images: [
-      'https://i.ibb.co/gmCFBXG/stencil-cadence-k120-6x20cm.jpg',
-    ],
-    label: '6x20cm',
-    description: 'Stencils o Plantillas CADENCE con diseños de cenefas y filigranas para usar en proyectos de decoración, manualidades, scrapbook, home decor...',
-    selected: false,
-  },
-  
-  
-  
-  
-  
-  
-  
-
-
 
   
-
-
-
 
 
 ];
@@ -101,7 +54,7 @@ const initialProducts = [
 const precioMinimo = 0;
 const precioMaximo = 20;
 
-export const Tienda3StencilsCenefas = () => {
+export const Tienda3PastasMixtion = () => {
   const [products, setProducts] = useState(initialProducts);
   const [priceRange, setPriceRange] = useState([precioMinimo, precioMaximo]);
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -288,9 +241,10 @@ export const Tienda3StencilsCenefas = () => {
         <div className="menu">
 
           <h1>Tienda de productos para artistas - Cadence 📘</h1>
-          <h2>Stencil Cadence Cenefas🎨</h2>
+          <h2>Mixtion Adhesivos🎨</h2>
 
-          <h3>Stencils o Plantillas CADENCE para decoración, manualidades, scrapbook, home decor...</h3>
+          <h3>Pan de ORO y los mixtiones necesarios para su colocación y barniz de finalizado. Todo ello de CADENCE</h3>
+
 
           <Button className="remove-button3" rightIcon={filterButtonIcon} onClick={handleToggleFilters} colorScheme='blue' variant='solid'>
             Filtrar Productos
@@ -305,7 +259,7 @@ export const Tienda3StencilsCenefas = () => {
 
         {showFilters && (
           <div data-aos="fade-right"><div className="filter">
-            
+
             {Array.from(new Set(initialProducts.map((product) => product.label)).values()).map(
               (selectedClass) => (
                 <Tag size={'lg'} key={'lg'} variant='solid' colorScheme='blue' >
@@ -319,7 +273,7 @@ export const Tienda3StencilsCenefas = () => {
                 </Tag>
               )
             )}
-                
+
           </div> <div className="price-slider">
 
               <input
@@ -368,7 +322,7 @@ export const Tienda3StencilsCenefas = () => {
         </div>
 
         <br></br><br></br>
-        
+
 
 
 
